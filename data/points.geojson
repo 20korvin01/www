@@ -1,0 +1,117 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "AKK – Arbeitskreis Kultur und Kommunikation",
+                "description": "Kulturzentrum"
+            },
+            "geometry": {
+                "coordinates": [
+                    8.41468272602252,
+                    49.01131665945512
+                ],
+                "type": "Point"
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Mensa am Adenauerring",
+                "description": "Kantine"
+            },
+            "geometry": {
+                "coordinates": [
+                    8.416892628867519,
+                    49.01189308526479
+                ],
+                "type": "Point"
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "[kœri]werk®",
+                "description": "Restaurant"
+            },
+            "geometry": {
+                "coordinates": [
+                    8.4164079183861,
+                    49.0117074888888
+                ],
+                "type": "Point"
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "chicco di caffè",
+                "description": "Café"
+            },
+            "geometry": {
+                "coordinates": [
+                    8.41721843247494,
+                    49.0113357536963
+                ],
+                "type": "Point"
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Cafeteria am Adenauerring 7",
+                "description": "Kantine"
+            },
+            "geometry": {
+                "coordinates": [
+                    8.417298456541108,
+                    49.01157426055662
+                ],
+                "type": "Point"
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Cafeteria Engesserstraße",
+                "description": "Kantine"
+            },
+            "geometry": {
+                "coordinates": [
+                    8.413424429965415,
+                    49.011284197982675
+                ],
+                "type": "Point"
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "Fachschaft Geodäsie und Geoinformatik",
+                "description": "Fachschaftsraum"
+            },
+            "geometry": {
+                "coordinates": [
+                    8.41090074698476,
+                    49.011082285841255
+                ],
+                "type": "Point"
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "name": "heimspiel.",
+                "description": "Veranstaltungsstätte"
+            },
+            "geometry": {
+                "coordinates": [
+                    8.414368005305962,
+                    49.01793343762892
+                ],
+                "type": "Point"
+            }
+        }
+    ]
+}

@@ -1,0 +1,32 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+#header {
+  position: fixed;
+  top: 20px;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  height: 10%;
+  width: 90%;
+  margin: auto;	
+  background-color: #e9ecf0;
+  border: 3px solid rgba(93, 94, 95, 0.2);
+  opacity: 0.8;
+  border-radius: 10px;
+}
+
+#header h1 {
+  font-size: 2em;
+  text-align: center;
+  color: #333;
+}
+
+#map {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
