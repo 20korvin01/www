@@ -1,0 +1,6307 @@
+{
+  "type": "FeatureCollection",
+  "generator": "overpass-turbo",
+  "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL.",
+  "timestamp": "2025-06-02T11:19:45Z",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/443386443",
+        "entrance": "service"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4168727,
+          49.0098172
+        ]
+      },
+      "id": "node/443386443"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/443386444",
+        "entrance": "main"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4168673,
+          49.0097529
+        ]
+      },
+      "id": "node/443386444"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/534797288",
+        "entrance": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4093092,
+          49.0119545
+        ]
+      },
+      "id": "node/534797288"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/553069413",
+        "entrance": "exit"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4142363,
+          49.0099404
+        ]
+      },
+      "id": "node/553069413"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/553069418",
+        "entrance": "main"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.414223,
+          49.0097566
+        ]
+      },
+      "id": "node/553069418"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/553069525",
+        "entrance": "service"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4143478,
+          49.0101519
+        ]
+      },
+      "id": "node/553069525"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/578063253",
+        "entrance": "main"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4117605,
+          49.009791
+        ]
+      },
+      "id": "node/578063253"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/578063350",
+        "door": "hinged",
+        "entrance": "main",
+        "level": "0",
+        "ref": "D047",
+        "wheelchair": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.412883,
+          49.0096413
+        ]
+      },
+      "id": "node/578063350"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/578063545",
+        "door": "hinged",
+        "entrance": "main",
+        "level": "0",
+        "ref": "DMc"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4093501,
+          49.011237
+        ]
+      },
+      "id": "node/578063545"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/578063719",
+        "entrance": "yes",
+        "level": "0",
+        "wheelchair": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4121182,
+          49.0102111
+        ]
+      },
+      "id": "node/578063719"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/677574104",
+        "door": "hinged",
+        "entrance": "main",
+        "level": "0",
+        "ref": "D",
+        "wheelchair": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4143231,
+          49.0095224
+        ]
+      },
+      "id": "node/677574104"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/696747324",
+        "entrance": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4170354,
+          49.0114772
+        ]
+      },
+      "id": "node/696747324"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/802569913",
+        "entrance": "yes",
+        "level": "0"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4169625,
+          49.009814
+        ]
+      },
+      "id": "node/802569913"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/914473057",
+        "entrance": "main",
+        "level": "0",
+        "wheelchair": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4081624,
+          49.012285
+        ]
+      },
+      "id": "node/914473057"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/925858852",
+        "entrance": "main"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.414003,
+          49.0097712
+        ]
+      },
+      "id": "node/925858852"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/960263417",
+        "entrance": "main",
+        "level": "0",
+        "lowest:point": "yes",
+        "wheelchair": "no",
+        "wheelchair:description": "Rollstuhlzugang auf der Rückseite"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4107432,
+          49.0108708
+        ]
+      },
+      "id": "node/960263417"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/971899371",
+        "door": "hinged",
+        "entrance": "main",
+        "level": "0",
+        "ref": "D045a",
+        "wheelchair": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4127417,
+          49.0099805
+        ]
+      },
+      "id": "node/971899371"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/980657762",
+        "entrance": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.408547,
+          49.0094941
+        ]
+      },
+      "id": "node/980657762"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/982371811",
+        "entrance": "yes",
+        "indoor": "door",
+        "level": "0",
+        "ref": "D156"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4172237,
+          49.0113351
+        ]
+      },
+      "id": "node/982371811"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1022397212",
+        "entrance": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4131192,
+          49.0094767
+        ]
+      },
+      "id": "node/1022397212"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1022397297",
+        "entrance": "main"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4131284,
+          49.0095672
+        ]
+      },
+      "id": "node/1022397297"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1244539571",
+        "entrance": "main",
+        "level": "0"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4061084,
+          49.0095807
+        ]
+      },
+      "id": "node/1244539571"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1247160790",
+        "entrance": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4109055,
+          49.0091731
+        ]
+      },
+      "id": "node/1247160790"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1482293684",
+        "entrance": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4167484,
+          49.0122374
+        ]
+      },
+      "id": "node/1482293684"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1482293687",
+        "entrance": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.413937,
+          49.0120866
+        ]
+      },
+      "id": "node/1482293687"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1482293709",
+        "entrance": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4139521,
+          49.01226
+        ]
+      },
+      "id": "node/1482293709"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1496284902",
+        "entrance": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4117644,
+          49.0123788
+        ]
+      },
+      "id": "node/1496284902"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1611778232",
+        "door": "hinged",
+        "entrance": "main",
+        "level": "0",
+        "ref": "D021",
+        "wheelchair": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4127536,
+          49.0106174
+        ]
+      },
+      "id": "node/1611778232"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1676830951",
+        "addr:city": "Karlsruhe",
+        "addr:housenumber": "7",
+        "addr:postcode": "76131",
+        "addr:street": "Adenauerring",
+        "door": "hinged",
+        "door:wings": "2",
+        "entrance": "yes",
+        "ref": "D151"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4173185,
+          49.0112981
+        ]
+      },
+      "id": "node/1676830951"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1676830989",
+        "entrance": "yes",
+        "ref": "D002"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4165817,
+          49.0116574
+        ]
+      },
+      "id": "node/1676830989"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1676830991",
+        "entrance": "yes",
+        "ref": "D003"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4165874,
+          49.0117187
+        ]
+      },
+      "id": "node/1676830991"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1676831010",
+        "door": "hinged",
+        "door:wings": "2",
+        "entrance": "main",
+        "level": "0",
+        "ref": "D164"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4168775,
+          49.0118577
+        ]
+      },
+      "id": "node/1676831010"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1676831013",
+        "entrance": "exit"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4165995,
+          49.0118505
+        ]
+      },
+      "id": "node/1676831013"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1679906946",
+        "entrance": "main"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4076521,
+          49.0119582
+        ]
+      },
+      "id": "node/1679906946"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1680260510",
+        "entrance": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4076373,
+          49.0122994
+        ]
+      },
+      "id": "node/1680260510"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1680617546",
+        "entrance": "main",
+        "level": "0",
+        "ref": "HE03",
+        "wheelchair": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4115092,
+          49.0102394
+        ]
+      },
+      "id": "node/1680617546"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1792156647",
+        "door": "hinged",
+        "entrance": "service",
+        "level": "0",
+        "ref": "D010b"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.411762,
+          49.012393
+        ]
+      },
+      "id": "node/1792156647"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1792156652",
+        "entrance": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4117596,
+          49.0124072
+        ]
+      },
+      "id": "node/1792156652"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1792156809",
+        "door": "hinged",
+        "entrance": "service",
+        "level": "0",
+        "ref": "D010a"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4117313,
+          49.0127007
+        ]
+      },
+      "id": "node/1792156809"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1792157003",
+        "entrance": "exit"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4158368,
+          49.0130478
+        ]
+      },
+      "id": "node/1792157003"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1795574807",
+        "entrance": "staircase"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4140496,
+          49.0128118
+        ]
+      },
+      "id": "node/1795574807"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1795609409",
+        "entrance": "exit"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4142176,
+          49.0106321
+        ]
+      },
+      "id": "node/1795609409"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1896290120",
+        "entrance": "staircase"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4127657,
+          49.0115648
+        ]
+      },
+      "id": "node/1896290120"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1896290181",
+        "entrance": "staircase"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4124075,
+          49.0116242
+        ]
+      },
+      "id": "node/1896290181"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1896290198",
+        "door": "hinged",
+        "entrance": "service",
+        "level": "0",
+        "ref": "D017"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4124621,
+          49.0117551
+        ]
+      },
+      "id": "node/1896290198"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2060246249",
+        "entrance": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4066861,
+          49.0096761
+        ]
+      },
+      "id": "node/2060246249"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2060246251",
+        "addr:city": "Karlsruhe",
+        "addr:country": "DE",
+        "addr:housenumber": "3",
+        "addr:postcode": "76133",
+        "addr:street": "Adlerstraße",
+        "entrance": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4064511,
+          49.0101219
+        ]
+      },
+      "id": "node/2060246251"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2060246252",
+        "addr:city": "Karlsruhe",
+        "addr:country": "DE",
+        "addr:housenumber": "3a",
+        "addr:postcode": "76133",
+        "addr:street": "Adlerstraße",
+        "entrance": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4063958,
+          49.0102252
+        ]
+      },
+      "id": "node/2060246252"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2060246253",
+        "addr:city": "Karlsruhe",
+        "addr:country": "DE",
+        "addr:housenumber": "5",
+        "addr:postcode": "76133",
+        "addr:street": "Adlerstraße",
+        "entrance": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4064864,
+          49.0100609
+        ]
+      },
+      "id": "node/2060246253"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2060246256",
+        "addr:city": "Karlsruhe",
+        "addr:country": "DE",
+        "addr:housenumber": "9",
+        "addr:postcode": "76133",
+        "addr:street": "Adlerstraße",
+        "entrance": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4066138,
+          49.0098198
+        ]
+      },
+      "id": "node/2060246256"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2060283585",
+        "addr:city": "Karlsruhe",
+        "addr:country": "DE",
+        "addr:housenumber": "7",
+        "addr:postcode": "76133",
+        "addr:street": "Adlerstraße",
+        "entrance": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4065433,
+          49.0099536
+        ]
+      },
+      "id": "node/2060283585"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2061890070",
+        "entrance": "yes",
+        "level": "0",
+        "wheelchair": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.414065,
+          49.0095389
+        ]
+      },
+      "id": "node/2061890070"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2270286744",
+        "entrance": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4123193,
+          49.0091205
+        ]
+      },
+      "id": "node/2270286744"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2270384577",
+        "entrance": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4070021,
+          49.0090224
+        ]
+      },
+      "id": "node/2270384577"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2270384580",
+        "entrance": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4069895,
+          49.0090458
+        ]
+      },
+      "id": "node/2270384580"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2270384585",
+        "entrance": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4079571,
+          49.0097999
+        ]
+      },
+      "id": "node/2270384585"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2541309091",
+        "addr:city": "Karlsruhe",
+        "addr:country": "DE",
+        "addr:housenumber": "2",
+        "addr:postcode": "76131",
+        "addr:street": "Fritz-Haber-Weg",
+        "entrance": "yes",
+        "source:addr": "survey"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4135934,
+          49.0119421
+        ]
+      },
+      "id": "node/2541309091"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2541309111",
+        "addr:city": "Karlsruhe",
+        "addr:country": "DE",
+        "addr:housenumber": "4",
+        "addr:postcode": "76131",
+        "addr:street": "Fritz-Haber-Weg",
+        "entrance": "yes",
+        "source:addr": "survey",
+        "wheelchair": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4136366,
+          49.012438
+        ]
+      },
+      "id": "node/2541309111"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2543109320",
+        "door": "sliding",
+        "entrance": "main"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4157858,
+          49.0125428
+        ]
+      },
+      "id": "node/2543109320"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2543109323",
+        "door": "sliding",
+        "entrance": "main"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4157214,
+          49.0125449
+        ]
+      },
+      "id": "node/2543109323"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2543109355",
+        "door": "sliding",
+        "entrance": "main"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4157821,
+          49.0125673
+        ]
+      },
+      "id": "node/2543109355"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2543109358",
+        "door": "sliding",
+        "entrance": "main"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4157212,
+          49.0125692
+        ]
+      },
+      "id": "node/2543109358"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2545131154",
+        "door": "hinged",
+        "entrance": "yes",
+        "level": "-1",
+        "ref": "D-113a"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4129543,
+          49.009824
+        ]
+      },
+      "id": "node/2545131154"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2550732676",
+        "entrance": "main"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4158953,
+          49.0128548
+        ]
+      },
+      "id": "node/2550732676"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2550732680",
+        "door": "sliding",
+        "entrance": "main",
+        "level": "0",
+        "ref": "D001"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.415894,
+          49.0128916
+        ]
+      },
+      "id": "node/2550732680"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2550781799",
+        "entrance": "exit",
+        "highest:point": "yes",
+        "level": "0"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4159344,
+          49.0131673
+        ]
+      },
+      "id": "node/2550781799"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2557240319",
+        "entrance": "main"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.417328,
+          49.0109574
+        ]
+      },
+      "id": "node/2557240319"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2557240340",
+        "entrance": "main"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4173373,
+          49.0110566
+        ]
+      },
+      "id": "node/2557240340"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2573487180",
+        "addr:city": "Karlsruhe",
+        "addr:country": "DE",
+        "addr:housenumber": "89",
+        "addr:postcode": "76133",
+        "addr:street": "Kaiserstraße",
+        "entrance": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4097303,
+          49.0092191
+        ]
+      },
+      "id": "node/2573487180"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2583846022",
+        "door": "hinged",
+        "entrance": "yes",
+        "level": "0",
+        "ref": "D045c",
+        "wheelchair": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4127397,
+          49.0099532
+        ]
+      },
+      "id": "node/2583846022"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2583846026",
+        "door": "hinged",
+        "entrance": "yes",
+        "level": "0",
+        "ref": "D045a",
+        "wheelchair": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4127436,
+          49.0100077
+        ]
+      },
+      "id": "node/2583846026"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2587994028",
+        "entrance": "main"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4109229,
+          49.0096043
+        ]
+      },
+      "id": "node/2587994028"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2613373988",
+        "entrance": "yes",
+        "wheelchair": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4125938,
+          49.0101626
+        ]
+      },
+      "id": "node/2613373988"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2613374004",
+        "entrance": "main",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4123428,
+          49.0104873
+        ]
+      },
+      "id": "node/2613374004"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2623245459",
+        "entrance": "yes",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4124337,
+          49.0104845
+        ]
+      },
+      "id": "node/2623245459"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2623245464",
+        "entrance": "yes",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4123883,
+          49.0104859
+        ]
+      },
+      "id": "node/2623245464"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2634074587",
+        "entrance": "emergency"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4089649,
+          49.0108066
+        ]
+      },
+      "id": "node/2634074587"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2634074591",
+        "entrance": "emergency"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4089619,
+          49.0108068
+        ]
+      },
+      "id": "node/2634074591"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2634074595",
+        "entrance": "emergency"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4089675,
+          49.0108069
+        ]
+      },
+      "id": "node/2634074595"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2634074598",
+        "entrance": "emergency"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4089589,
+          49.0108072
+        ]
+      },
+      "id": "node/2634074598"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2634074601",
+        "entrance": "emergency"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4089697,
+          49.0108081
+        ]
+      },
+      "id": "node/2634074601"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2634074604",
+        "entrance": "emergency"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4089557,
+          49.0108089
+        ]
+      },
+      "id": "node/2634074604"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2634074608",
+        "entrance": "emergency"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4089957,
+          49.010823
+        ]
+      },
+      "id": "node/2634074608"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2634074611",
+        "entrance": "emergency"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4089144,
+          49.0108398
+        ]
+      },
+      "id": "node/2634074611"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2634074614",
+        "entrance": "emergency"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4089688,
+          49.0108432
+        ]
+      },
+      "id": "node/2634074614"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2634074617",
+        "entrance": "emergency"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4089129,
+          49.0108418
+        ]
+      },
+      "id": "node/2634074617"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2634074620",
+        "entrance": "emergency"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4089127,
+          49.0108445
+        ]
+      },
+      "id": "node/2634074620"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2634074623",
+        "entrance": "emergency"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4089134,
+          49.010847
+        ]
+      },
+      "id": "node/2634074623"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2634074626",
+        "entrance": "emergency"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4089148,
+          49.0108491
+        ]
+      },
+      "id": "node/2634074626"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2634074629",
+        "entrance": "emergency"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4089453,
+          49.0108608
+        ]
+      },
+      "id": "node/2634074629"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2634074632",
+        "entrance": "emergency"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4090018,
+          49.0108617
+        ]
+      },
+      "id": "node/2634074632"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2634074635",
+        "entrance": "emergency"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4089409,
+          49.010864
+        ]
+      },
+      "id": "node/2634074635"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2634074639",
+        "entrance": "emergency"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4089777,
+          49.0108798
+        ]
+      },
+      "id": "node/2634074639"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2639697142",
+        "entrance": "main"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4164353,
+          49.0114123
+        ]
+      },
+      "id": "node/2639697142"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2639697144",
+        "entrance": "main"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4164347,
+          49.0114123
+        ]
+      },
+      "id": "node/2639697144"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2639697146",
+        "entrance": "main"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4163586,
+          49.0114153
+        ]
+      },
+      "id": "node/2639697146"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2639697147",
+        "entrance": "main"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4163574,
+          49.0114154
+        ]
+      },
+      "id": "node/2639697147"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2639697153",
+        "entrance": "main"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4164351,
+          49.0114168
+        ]
+      },
+      "id": "node/2639697153"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2642122236",
+        "entrance": "yes",
+        "level": "0",
+        "wheelchair": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.412105,
+          49.0100315
+        ]
+      },
+      "id": "node/2642122236"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2642122241",
+        "entrance": "yes",
+        "level": "0",
+        "wheelchair": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4121321,
+          49.0103957
+        ]
+      },
+      "id": "node/2642122241"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2642122242",
+        "entrance": "yes",
+        "level": "-1"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4117268,
+          49.01051
+        ]
+      },
+      "id": "node/2642122242"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2651990136",
+        "door": "revolving",
+        "entrance": "yes",
+        "level": "0",
+        "name": "Eingang Ost",
+        "ref": "D017b"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4172743,
+          49.0109712
+        ]
+      },
+      "id": "node/2651990136"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2651990151",
+        "access": "permissive",
+        "entrance": "yes",
+        "note": "Aufzug - Zugang nur nach Klingeln",
+        "wheelchair": "designated"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.416214,
+          49.0109858
+        ]
+      },
+      "id": "node/2651990151"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2651990158",
+        "door": "revolving",
+        "entrance": "yes",
+        "level": "0",
+        "name": "Eingang Ost",
+        "ref": "D017a"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4172765,
+          49.0109944
+        ]
+      },
+      "id": "node/2651990158"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2651990179",
+        "contact:facebook": "https://www.facebook.com/KIT-Dreht%C3%BCr-437740246353305/",
+        "contact:twitter": "https://twitter.com/drehtuerKIT",
+        "entrance": "yes",
+        "loc_name": "Drehtür der KIT Bibliothek",
+        "name": "Eingang West"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4161986,
+          49.0110149
+        ]
+      },
+      "id": "node/2651990179"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2651990203",
+        "contact:facebook": "https://www.facebook.com/KIT-Dreht%C3%BCr-437740246353305/",
+        "contact:twitter": "https://twitter.com/drehtuerKIT",
+        "entrance": "yes",
+        "loc_name": "Drehtür der KIT Bibliothek",
+        "name": "Eingang West"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4162013,
+          49.0110381
+        ]
+      },
+      "id": "node/2651990203"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2652778311",
+        "entrance": "yes",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4113035,
+          49.0113192
+        ]
+      },
+      "id": "node/2652778311"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2652802055",
+        "entrance": "main"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4108247,
+          49.0108633
+        ]
+      },
+      "id": "node/2652802055"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2656042335",
+        "entrance": "yes",
+        "level": "-1",
+        "wheelchair": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4116422,
+          49.0099632
+        ]
+      },
+      "id": "node/2656042335"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2690945132",
+        "door": "hinged",
+        "entrance": "exit",
+        "level": "0",
+        "ref": "D007"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4162513,
+          49.0116094
+        ]
+      },
+      "id": "node/2690945132"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2822748583",
+        "access": "emergency",
+        "door": "hinged",
+        "door:wings": "1",
+        "entrance": "emergency",
+        "level": "0",
+        "ref": "D030"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4161567,
+          49.0118787
+        ]
+      },
+      "id": "node/2822748583"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2900776852",
+        "entrance": "yes",
+        "level": "0",
+        "wheelchair": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4128262,
+          49.0097069
+        ]
+      },
+      "id": "node/2900776852"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2920134446",
+        "door": "no",
+        "entrance": "yes",
+        "level": "0",
+        "ref": "D020",
+        "repeat_on": "1"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4163305,
+          49.011786
+        ]
+      },
+      "id": "node/2920134446"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2920134447",
+        "door": "no",
+        "entrance": "yes",
+        "level": "0",
+        "ref": "D021"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4163038,
+          49.0117871
+        ]
+      },
+      "id": "node/2920134447"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2920918419",
+        "entrance": "yes",
+        "level": "0",
+        "repeat_on": "1",
+        "wheelchair": "yes",
+        "wheelchair:description": "Zugang über Rampe"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4136248,
+          49.0093998
+        ]
+      },
+      "id": "node/2920918419"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2920918422",
+        "entrance": "yes",
+        "level": "0;2"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.413506,
+          49.009412
+        ]
+      },
+      "id": "node/2920918422"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2920918425",
+        "entrance": "yes",
+        "level": "1;3"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4133125,
+          49.0094411
+        ]
+      },
+      "id": "node/2920918425"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2920918432",
+        "entrance": "yes",
+        "level": "0;2"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4133186,
+          49.0095073
+        ]
+      },
+      "id": "node/2920918432"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2920918433",
+        "entrance": "yes",
+        "level": "0;1;2;3"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4132465,
+          49.0095129
+        ]
+      },
+      "id": "node/2920918433"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2920918434",
+        "entrance": "yes",
+        "level": "0"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4131553,
+          49.0095212
+        ]
+      },
+      "id": "node/2920918434"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/2920918438",
+        "entrance": "yes",
+        "level": "1;3"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4133253,
+          49.009579
+        ]
+      },
+      "id": "node/2920918438"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3095684579",
+        "entrance": "emergency"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4121998,
+          49.0118597
+        ]
+      },
+      "id": "node/3095684579"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3095684642",
+        "addr:city": "Karlsruhe",
+        "addr:country": "DE",
+        "addr:housenumber": "6",
+        "addr:postcode": "76131",
+        "addr:street": "Fritz-Haber-Weg",
+        "entrance": "yes",
+        "source:addr": "survey",
+        "wheelchair": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4136723,
+          49.0128538
+        ]
+      },
+      "id": "node/3095684642"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3152616559",
+        "entrance": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.412816,
+          49.0102835
+        ]
+      },
+      "id": "node/3152616559"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3191601934",
+        "door": "hinged",
+        "entrance": "main",
+        "level": "0",
+        "ref": "D017a",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4108221,
+          49.0124599
+        ]
+      },
+      "id": "node/3191601934"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3191601950",
+        "entrance": "main",
+        "level": "0",
+        "ref": "D028",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4105393,
+          49.0124708
+        ]
+      },
+      "id": "node/3191601950"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3196665921",
+        "door": "hinged",
+        "entrance": "service",
+        "level": "0",
+        "ref": "D009a"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4113588,
+          49.0126781
+        ]
+      },
+      "id": "node/3196665921"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3198923937",
+        "door": "hinged",
+        "entrance": "main",
+        "level": "0",
+        "ref": "D001.4"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4138632,
+          49.0107719
+        ]
+      },
+      "id": "node/3198923937"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3203168593",
+        "door": "hinged",
+        "entrance": "main",
+        "level": "0",
+        "ref": "D022"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4137622,
+          49.0105799
+        ]
+      },
+      "id": "node/3203168593"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3204463960",
+        "door": "hinged",
+        "entrance": "yes",
+        "level": "0",
+        "ref": "D001.1"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4133455,
+          49.0106043
+        ]
+      },
+      "id": "node/3204463960"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3204466671",
+        "door": "hinged",
+        "entrance": "yes",
+        "level": "0",
+        "ref": "D091",
+        "wheelchair": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4170457,
+          49.011822
+        ]
+      },
+      "id": "node/3204466671"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3204466682",
+        "entrance": "yes",
+        "level": "0",
+        "wheelchair": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.413979,
+          49.0125726
+        ]
+      },
+      "id": "node/3204466682"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3204466693",
+        "entrance": "yes",
+        "level": "0",
+        "wheelchair": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4139871,
+          49.0126669
+        ]
+      },
+      "id": "node/3204466693"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3209978245",
+        "entrance": "yes",
+        "level": "-1",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.413523,
+          49.0098685
+        ]
+      },
+      "id": "node/3209978245"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3209978250",
+        "door": "hinged",
+        "entrance": "yes",
+        "level": "-0.5",
+        "ref": "D-101.5",
+        "wheelchair": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4135069,
+          49.0100462
+        ]
+      },
+      "id": "node/3209978250"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3214202630",
+        "entrance": "yes",
+        "level": "0"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4136639,
+          49.0116174
+        ]
+      },
+      "id": "node/3214202630"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3214202631",
+        "door": "hinged",
+        "entrance": "yes",
+        "level": "0",
+        "ref": "D003"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4137119,
+          49.0118362
+        ]
+      },
+      "id": "node/3214202631"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3216079602",
+        "door": "yes",
+        "entrance": "yes",
+        "level": "0"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4139555,
+          49.0119342
+        ]
+      },
+      "id": "node/3216079602"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3216079609",
+        "door:electricallyoperated:switch": "yes",
+        "entrance": "main",
+        "level": "0",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4081936,
+          49.0123031
+        ]
+      },
+      "id": "node/3216079609"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3216079613",
+        "door": "yes",
+        "entrance": "yes",
+        "level": "0"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.414,
+          49.0124292
+        ]
+      },
+      "id": "node/3216079613"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3241203065",
+        "entrance": "main",
+        "level": "0"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4098605,
+          49.009479
+        ]
+      },
+      "id": "node/3241203065"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3247639120",
+        "addr:city": "Karlsruhe",
+        "addr:country": "DE",
+        "addr:housenumber": "10",
+        "addr:postcode": "76131",
+        "addr:street": "Engesserstraße",
+        "entrance": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4101937,
+          49.0120172
+        ]
+      },
+      "id": "node/3247639120"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3247639121",
+        "addr:city": "Karlsruhe",
+        "addr:country": "DE",
+        "addr:housenumber": "12",
+        "addr:postcode": "76131",
+        "addr:street": "Engesserstraße",
+        "entrance": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4104586,
+          49.011928
+        ]
+      },
+      "id": "node/3247639121"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3247639122",
+        "addr:city": "Karlsruhe",
+        "addr:country": "DE",
+        "addr:housenumber": "8",
+        "addr:postcode": "76131",
+        "addr:street": "Engesserstraße",
+        "entrance": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4099292,
+          49.0121063
+        ]
+      },
+      "id": "node/3247639122"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3284135517",
+        "entrance": "main"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4105483,
+          49.0123832
+        ]
+      },
+      "id": "node/3284135517"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3286558902",
+        "door": "hinged",
+        "door:wings": "1",
+        "entrance": "exit",
+        "level": "0",
+        "ref": "D064"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4168689,
+          49.0121043
+        ]
+      },
+      "id": "node/3286558902"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3286558913",
+        "entrance": "yes",
+        "level": "0",
+        "ref": "D065",
+        "wheelchair": "no",
+        "wheelchair:description": "Treppen im Gebäude"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4168867,
+          49.0121113
+        ]
+      },
+      "id": "node/3286558913"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3294327629",
+        "entrance": "yes",
+        "level": "0",
+        "wheelchair": "yes",
+        "wheelchair:description": "Zugang über Rampe"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4140492,
+          49.0093815
+        ]
+      },
+      "id": "node/3294327629"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3298703730",
+        "entrance": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4094461,
+          49.0120999
+        ]
+      },
+      "id": "node/3298703730"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3301103014",
+        "entrance": "main",
+        "level": "0"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4136437,
+          49.0113679
+        ]
+      },
+      "id": "node/3301103014"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3301103017",
+        "entrance": "main",
+        "level": "0"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4136077,
+          49.0113693
+        ]
+      },
+      "id": "node/3301103017"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3305744381",
+        "addr:city": "Karlsruhe",
+        "addr:housenumber": "1",
+        "addr:street": "Englerstraße",
+        "entrance": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4095827,
+          49.011658
+        ]
+      },
+      "id": "node/3305744381"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3305744382",
+        "addr:city": "Karlsruhe",
+        "addr:housenumber": "3",
+        "addr:street": "Englerstraße",
+        "entrance": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4097841,
+          49.0115542
+        ]
+      },
+      "id": "node/3305744382"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3305744383",
+        "addr:city": "Karlsruhe",
+        "addr:housenumber": "5",
+        "addr:street": "Englerstraße",
+        "entrance": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4099822,
+          49.0114522
+        ]
+      },
+      "id": "node/3305744383"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3306159440",
+        "door": "hinged",
+        "entrance": "emergency",
+        "level": "0",
+        "ref": "DTR02"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4170683,
+          49.0097259
+        ]
+      },
+      "id": "node/3306159440"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3306161761",
+        "entrance": "service"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4169291,
+          49.0098152
+        ]
+      },
+      "id": "node/3306161761"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3314828562",
+        "door": "hinged",
+        "entrance": "yes",
+        "level": "0"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4135248,
+          49.0114385
+        ]
+      },
+      "id": "node/3314828562"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3314828586",
+        "door": "hinged",
+        "entrance": "yes",
+        "level": "0"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4135305,
+          49.01151
+        ]
+      },
+      "id": "node/3314828586"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3314828607",
+        "access:conditional": "no @ winter",
+        "entrance": "yes",
+        "level": "0"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4134979,
+          49.0115703
+        ]
+      },
+      "id": "node/3314828607"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3384979278",
+        "addr:city": "Karlsruhe",
+        "addr:housenumber": "1",
+        "addr:street": "Lehmannstraße",
+        "entrance": "yes",
+        "source:addr": "Maps4BW, LGL, www.lgl-bw.de"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4103222,
+          49.0114733
+        ]
+      },
+      "id": "node/3384979278"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3384979279",
+        "addr:city": "Karlsruhe",
+        "addr:housenumber": "3",
+        "addr:street": "Lehmannstraße",
+        "entrance": "yes",
+        "source:addr": "Maps4BW, LGL, www.lgl-bw.de"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4105102,
+          49.0116996
+        ]
+      },
+      "id": "node/3384979279"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3384979281",
+        "entrance": "emergency"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4089516,
+          49.010812
+        ]
+      },
+      "id": "node/3384979281"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3384979283",
+        "door": "hinged",
+        "entrance": "emergency",
+        "level": "0",
+        "ref": "DMn"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4089449,
+          49.010817
+        ]
+      },
+      "id": "node/3384979283"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3384979284",
+        "entrance": "emergency"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4089382,
+          49.010822
+        ]
+      },
+      "id": "node/3384979284"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3385017198",
+        "entrance": "exit"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4168504,
+          49.0128961
+        ]
+      },
+      "id": "node/3385017198"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3385017199",
+        "entrance": "staircase"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4169419,
+          49.0129041
+        ]
+      },
+      "id": "node/3385017199"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3385017200",
+        "entrance": "exit"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4168514,
+          49.0129074
+        ]
+      },
+      "id": "node/3385017200"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3385710197",
+        "automatic_door": "yes",
+        "door": "hinged",
+        "entrance": "main",
+        "level": "0",
+        "ref": "D042",
+        "wheelchair": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4155347,
+          49.0101332
+        ]
+      },
+      "id": "node/3385710197"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3387662696",
+        "door": "hinged",
+        "entrance": "yes",
+        "level": "0",
+        "ref": "D011"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4148207,
+          49.0110571
+        ]
+      },
+      "id": "node/3387662696"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3387662701",
+        "door": "hinged",
+        "entrance": "yes",
+        "level": "0",
+        "ref": "D030"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4143751,
+          49.0110742
+        ]
+      },
+      "id": "node/3387662701"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3402066450",
+        "door": "hinged",
+        "entrance": "yes",
+        "ref": "D028",
+        "wheelchair": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4101892,
+          49.0125011
+        ]
+      },
+      "id": "node/3402066450"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3439701456",
+        "entrance": "exit",
+        "level": "0",
+        "note": "nur Ausgang, evtl. auch nur im Notfall"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4170057,
+          49.0114975
+        ]
+      },
+      "id": "node/3439701456"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3439701469",
+        "entrance": "yes",
+        "level": "0"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4170215,
+          49.0116696
+        ]
+      },
+      "id": "node/3439701469"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3473083793",
+        "door": "hinged",
+        "entrance": "main",
+        "level": "0",
+        "ref": "D026",
+        "wheelchair": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4128565,
+          49.0116517
+        ]
+      },
+      "id": "node/3473083793"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3489327590",
+        "entrance": "exit",
+        "level": "0"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.416599,
+          49.011845
+        ]
+      },
+      "id": "node/3489327590"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3510886846",
+        "entrance": "yes",
+        "level": "0"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4088345,
+          49.0094776
+        ]
+      },
+      "id": "node/3510886846"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3513133312",
+        "access": "private",
+        "entrance": "yes",
+        "level": "0"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4147092,
+          49.0090224
+        ]
+      },
+      "id": "node/3513133312"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3513133314",
+        "entrance": "yes",
+        "level": "0"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4146259,
+          49.0090257
+        ]
+      },
+      "id": "node/3513133314"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3520551353",
+        "entrance": "yes",
+        "level": "0"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4140556,
+          49.0090485
+        ]
+      },
+      "id": "node/3520551353"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3564355415",
+        "entrance": "yes",
+        "indoor": "door",
+        "level": "1",
+        "ref": "D269"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4116693,
+          49.0101813
+        ]
+      },
+      "id": "node/3564355415"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3564355416",
+        "entrance": "yes",
+        "indoor": "door",
+        "level": "1",
+        "ref": "D054"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4116772,
+          49.0102884
+        ]
+      },
+      "id": "node/3564355416"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3588430235",
+        "access": "delivery",
+        "amenity": "loading_dock",
+        "entrance": "service"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4175312,
+          49.0123251
+        ]
+      },
+      "id": "node/3588430235"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3590582644",
+        "addr:city": "Karlsruhe",
+        "addr:country": "DE",
+        "addr:housenumber": "93",
+        "addr:postcode": "76133",
+        "addr:street": "Kaiserstraße",
+        "entrance": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.408867,
+          49.0092562
+        ]
+      },
+      "id": "node/3590582644"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3611324645",
+        "access": "private",
+        "entrance": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4094643,
+          49.0094563
+        ]
+      },
+      "id": "node/3611324645"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3665156001",
+        "entrance": "yes",
+        "level": "0"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4095691,
+          49.0094533
+        ]
+      },
+      "id": "node/3665156001"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3665156002",
+        "description": "Eingang zu den Psycho- und Physiotherapiepraxen",
+        "entrance": "yes",
+        "level": "0"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.408931,
+          49.0094776
+        ]
+      },
+      "id": "node/3665156002"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3675643762",
+        "entrance": "yes",
+        "indoor": "door",
+        "level": "0",
+        "ref": "D159"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4170185,
+          49.0119805
+        ]
+      },
+      "id": "node/3675643762"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3686190469",
+        "access": "private",
+        "entrance": "yes",
+        "level": "0"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4114567,
+          49.0091628
+        ]
+      },
+      "id": "node/3686190469"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3686190470",
+        "entrance": "yes",
+        "level": "0"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.411415,
+          49.0091649
+        ]
+      },
+      "id": "node/3686190470"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3686190530",
+        "entrance": "yes",
+        "level": "0",
+        "ref": "D120"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4174854,
+          49.011498
+        ]
+      },
+      "id": "node/3686190530"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3686190531",
+        "entrance": "yes",
+        "level": "0",
+        "ref": "D123"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4172079,
+          49.011509
+        ]
+      },
+      "id": "node/3686190531"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3686190537",
+        "entrance": "yes",
+        "level": "0",
+        "ref": "D098"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.417118,
+          49.0117618
+        ]
+      },
+      "id": "node/3686190537"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3698328873",
+        "entrance": "yes",
+        "level": "0"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4148261,
+          49.0090177
+        ]
+      },
+      "id": "node/3698328873"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3698328875",
+        "access": "private",
+        "entrance": "yes",
+        "level": "0"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4147585,
+          49.0090204
+        ]
+      },
+      "id": "node/3698328875"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3708646409",
+        "addr:city": "Karlsruhe",
+        "addr:country": "DE",
+        "addr:housenumber": "13;15",
+        "addr:postcode": "76131",
+        "addr:street": "Kaiserstraße",
+        "description": "Eingang zu den Hausnummern 13 und 15",
+        "entrance": "yes",
+        "source": "survey"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4149543,
+          49.0090126
+        ]
+      },
+      "id": "node/3708646409"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3708647605",
+        "description": "Edeka Warenanlieferung",
+        "entrance": "service",
+        "opening_hours": "Mo-Sa 08:00-16:00"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4107797,
+          49.009078
+        ]
+      },
+      "id": "node/3708647605"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3708647606",
+        "access": "private",
+        "entrance": "yes",
+        "level": "0"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4129725,
+          49.0090886
+        ]
+      },
+      "id": "node/3708647606"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3708647608",
+        "access": "private",
+        "entrance": "yes",
+        "level": "0"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4116034,
+          49.0091556
+        ]
+      },
+      "id": "node/3708647608"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3708647609",
+        "access": "private",
+        "entrance": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4112155,
+          49.0091746
+        ]
+      },
+      "id": "node/3708647609"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3792593761",
+        "entrance": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.415039,
+          49.0103737
+        ]
+      },
+      "id": "node/3792593761"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3796835729",
+        "door": "hinged",
+        "entrance": "main",
+        "level": "0",
+        "ref": "DMk"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4088748,
+          49.0109574
+        ]
+      },
+      "id": "node/3796835729"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3809126160",
+        "access": "private",
+        "entrance": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4130532,
+          49.013784
+        ]
+      },
+      "id": "node/3809126160"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3809126162",
+        "access": "private",
+        "entrance": "yes",
+        "wheelchair": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4127342,
+          49.0137961
+        ]
+      },
+      "id": "node/3809126162"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/3821454275",
+        "access": "private",
+        "entrance": "yes",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4128613,
+          49.0134866
+        ]
+      },
+      "id": "node/3821454275"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4057042060",
+        "entrance": "yes",
+        "level": "0",
+        "note": "Eingang zur BBBank"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4096693,
+          49.0090188
+        ]
+      },
+      "id": "node/4057042060"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4078947349",
+        "door": "hinged",
+        "entrance": "main",
+        "level": "0",
+        "ref": "D008"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4154968,
+          49.0097365
+        ]
+      },
+      "id": "node/4078947349"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4078947363",
+        "entrance": "exit"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4159513,
+          49.013171
+        ]
+      },
+      "id": "node/4078947363"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4092379358",
+        "entrance": "yes",
+        "level": "0"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4078292,
+          49.0122907
+        ]
+      },
+      "id": "node/4092379358"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4092379378",
+        "entrance": "service",
+        "level": "0"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4144884,
+          49.0133414
+        ]
+      },
+      "id": "node/4092379378"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4254977389",
+        "entrance": "yes",
+        "level": "0",
+        "ref": "D157"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4171405,
+          49.0113868
+        ]
+      },
+      "id": "node/4254977389"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4334076323",
+        "entrance": "main",
+        "level": "0"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4148807,
+          49.0133002
+        ]
+      },
+      "id": "node/4334076323"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4393877183",
+        "entrance": "service",
+        "level": "0",
+        "name": "Probenanlieferung Straßenbaulaboratorium"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4150307,
+          49.0102793
+        ]
+      },
+      "id": "node/4393877183"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4393877186",
+        "access": "private",
+        "entrance": "service",
+        "level": "0"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4160671,
+          49.0097392
+        ]
+      },
+      "id": "node/4393877186"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4393877188",
+        "entrance": "service",
+        "level": "0"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4164655,
+          49.0098198
+        ]
+      },
+      "id": "node/4393877188"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4393877292",
+        "access": "private",
+        "entrance": "main",
+        "level": "0"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4161399,
+          49.0100326
+        ]
+      },
+      "id": "node/4393877292"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4393877295",
+        "entrance": "main",
+        "level": "0"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4161416,
+          49.0101118
+        ]
+      },
+      "id": "node/4393877295"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4393877297",
+        "entrance": "service",
+        "level": "0"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4160835,
+          49.0101541
+        ]
+      },
+      "id": "node/4393877297"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4393877302",
+        "entrance": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4150546,
+          49.0105482
+        ]
+      },
+      "id": "node/4393877302"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4424877227",
+        "entrance": "exit"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4082014,
+          49.0119651
+        ]
+      },
+      "id": "node/4424877227"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/4481753907",
+        "entrance": "main",
+        "wheelchair": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4163763,
+          49.0092993
+        ]
+      },
+      "id": "node/4481753907"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5119365618",
+        "entrance": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4071875,
+          49.0109125
+        ]
+      },
+      "id": "node/5119365618"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5119365619",
+        "entrance": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4070249,
+          49.0108607
+        ]
+      },
+      "id": "node/5119365619"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5247262610",
+        "access": "private",
+        "amenity": "parking_entrance",
+        "description": "Zugang zur Tiefgarage für Fußgänger",
+        "entrance": "yes",
+        "foot": "yes",
+        "horse": "no",
+        "layer": "-1",
+        "parking": "underground",
+        "vehicle": "no",
+        "wheelchair": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4067539,
+          49.0128249
+        ]
+      },
+      "id": "node/5247262610"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5247262617",
+        "access": "private",
+        "amenity": "parking_entrance",
+        "description": "Zugang zur Tiefgarage für Fußgänger",
+        "entrance": "yes",
+        "foot": "yes",
+        "horse": "no",
+        "layer": "-1",
+        "parking": "underground",
+        "vehicle": "no",
+        "wheelchair": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4073169,
+          49.0123979
+        ]
+      },
+      "id": "node/5247262617"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5375485701",
+        "entrance": "main",
+        "wheelchair": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4090847,
+          49.0123834
+        ]
+      },
+      "id": "node/5375485701"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5599248485",
+        "description": "Eingang zum Studentenwohnheim und zu FIMA/SLE",
+        "entrance": "yes",
+        "level": "0"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4111992,
+          49.0100198
+        ]
+      },
+      "id": "node/5599248485"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5919977046",
+        "entrance": "yes",
+        "ref": "D121"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.417421,
+          49.0115005
+        ]
+      },
+      "id": "node/5919977046"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/5919977047",
+        "entrance": "yes",
+        "ref": "D134"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4172816,
+          49.0114346
+        ]
+      },
+      "id": "node/5919977047"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6047151338",
+        "entrance": "yes",
+        "level": "0",
+        "ref": "D147"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4175325,
+          49.0113712
+        ]
+      },
+      "id": "node/6047151338"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6416450637",
+        "entrance": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4086726,
+          49.0129531
+        ]
+      },
+      "id": "node/6416450637"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/6913615173",
+        "entrance": "yes",
+        "level": "-1"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4089556,
+          49.0113601
+        ]
+      },
+      "id": "node/6913615173"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7253179566",
+        "entrance": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4095509,
+          49.010682
+        ]
+      },
+      "id": "node/7253179566"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/7815486192",
+        "access": "private",
+        "barrier": "gate",
+        "entrance": "service",
+        "level": "0"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4177031,
+          49.0119139
+        ]
+      },
+      "id": "node/7815486192"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8478375918",
+        "door": "yes",
+        "entrance": "yes",
+        "level": "0",
+        "ref": "D039"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4165933,
+          49.0117826
+        ]
+      },
+      "id": "node/8478375918"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9349010375",
+        "entrance": "main",
+        "level": "0"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4083847,
+          49.0130921
+        ]
+      },
+      "id": "node/9349010375"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9349010381",
+        "entrance": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4135718,
+          49.0104343
+        ]
+      },
+      "id": "node/9349010381"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9349010382",
+        "entrance": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4135619,
+          49.0102985
+        ]
+      },
+      "id": "node/9349010382"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9360642714",
+        "door": "yes",
+        "entrance": "yes",
+        "level": "-1"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4094851,
+          49.0108892
+        ]
+      },
+      "id": "node/9360642714"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9424868585",
+        "door": "yes",
+        "entrance": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.410566,
+          49.0094518
+        ]
+      },
+      "id": "node/9424868585"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9570852915",
+        "entrance": "yes",
+        "level": "0"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4148265,
+          49.0130587
+        ]
+      },
+      "id": "node/9570852915"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9571155819",
+        "entrance": "yes",
+        "level": "0"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4144676,
+          49.0131026
+        ]
+      },
+      "id": "node/9571155819"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9571155820",
+        "entrance": "main",
+        "level": "0"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.415133,
+          49.0132881
+        ]
+      },
+      "id": "node/9571155820"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9571776081",
+        "entrance": "staircase"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4140436,
+          49.0127441
+        ]
+      },
+      "id": "node/9571776081"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9626360472",
+        "access": "yes",
+        "door": "hinged",
+        "entrance": "emergency",
+        "level": "0"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4155737,
+          49.0130071
+        ]
+      },
+      "id": "node/9626360472"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9626360497",
+        "access": "yes",
+        "door": "hinged",
+        "entrance": "emergency",
+        "level": "0"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4155226,
+          49.012563
+        ]
+      },
+      "id": "node/9626360497"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9626360503",
+        "access": "yes",
+        "door": "hinged",
+        "entrance": "emergency",
+        "level": "0"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.415671,
+          49.0129807
+        ]
+      },
+      "id": "node/9626360503"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9626360506",
+        "access": "yes",
+        "door": "hinged",
+        "entrance": "emergency",
+        "level": "0"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4158707,
+          49.012553
+        ]
+      },
+      "id": "node/9626360506"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9626360513",
+        "access": "yes",
+        "door": "hinged",
+        "entrance": "emergency",
+        "level": "0"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4158579,
+          49.0125534
+        ]
+      },
+      "id": "node/9626360513"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9626366217",
+        "access": "yes",
+        "door": "hinged",
+        "entrance": "emergency",
+        "level": "0"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4153,
+          49.0127501
+        ]
+      },
+      "id": "node/9626366217"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9626366223",
+        "access": "yes",
+        "door": "hinged",
+        "entrance": "emergency",
+        "level": "0"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4156332,
+          49.0129946
+        ]
+      },
+      "id": "node/9626366223"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9626366232",
+        "access": "yes",
+        "door": "hinged",
+        "entrance": "emergency",
+        "level": "0"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4156196,
+          49.0129984
+        ]
+      },
+      "id": "node/9626366232"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9626366238",
+        "access": "yes",
+        "door": "hinged",
+        "entrance": "emergency",
+        "level": "0"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.415276,
+          49.0127843
+        ]
+      },
+      "id": "node/9626366238"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9626366270",
+        "access": "yes",
+        "door": "hinged",
+        "entrance": "emergency",
+        "level": "0"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4155621,
+          49.0130084
+        ]
+      },
+      "id": "node/9626366270"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9626366284",
+        "access": "yes",
+        "door": "hinged",
+        "entrance": "emergency",
+        "level": "0"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4152637,
+          49.0128226
+        ]
+      },
+      "id": "node/9626366284"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9626366304",
+        "access": "yes",
+        "door": "hinged",
+        "entrance": "emergency",
+        "level": "0"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4155373,
+          49.0125626
+        ]
+      },
+      "id": "node/9626366304"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9626366312",
+        "access": "private",
+        "door": "hinged",
+        "entrance": "emergency",
+        "level": "0"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4153373,
+          49.0129588
+        ]
+      },
+      "id": "node/9626366312"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9626366316",
+        "access": "yes",
+        "door": "hinged",
+        "entrance": "emergency",
+        "level": "0"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4156563,
+          49.0125591
+        ]
+      },
+      "id": "node/9626366316"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9626366329",
+        "access": "yes",
+        "door": "hinged",
+        "entrance": "emergency",
+        "level": "0"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4156717,
+          49.0125587
+        ]
+      },
+      "id": "node/9626366329"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9626366344",
+        "access": "yes",
+        "door": "hinged",
+        "entrance": "emergency",
+        "level": "0"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4156813,
+          49.0129758
+        ]
+      },
+      "id": "node/9626366344"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9626366458",
+        "access": "yes",
+        "door": "hinged",
+        "entrance": "emergency",
+        "level": "0"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4152935,
+          49.0127577
+        ]
+      },
+      "id": "node/9626366458"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9626366459",
+        "access": "yes",
+        "door": "hinged",
+        "entrance": "emergency",
+        "level": "0"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4152723,
+          49.0127922
+        ]
+      },
+      "id": "node/9626366459"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9626366461",
+        "access": "yes",
+        "door": "hinged",
+        "entrance": "emergency",
+        "level": "0"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4152627,
+          49.0128318
+        ]
+      },
+      "id": "node/9626366461"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9707065226",
+        "access": "yes",
+        "door": "hinged",
+        "entrance": "main",
+        "level": "0",
+        "ref": "D010"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4151186,
+          49.0111174
+        ]
+      },
+      "id": "node/9707065226"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9918952934",
+        "access": "yes",
+        "door": "hinged",
+        "entrance": "main",
+        "level": "0",
+        "ref": "D162"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4168495,
+          49.0118803
+        ]
+      },
+      "id": "node/9918952934"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9918952935",
+        "access": "yes",
+        "door": "hinged",
+        "entrance": "main",
+        "level": "0",
+        "ref": "D163"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4168198,
+          49.0118813
+        ]
+      },
+      "id": "node/9918952935"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9918952936",
+        "access": "yes",
+        "door": "hinged",
+        "entrance": "main",
+        "level": "0",
+        "ref": "HE04"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4168465,
+          49.0118438
+        ]
+      },
+      "id": "node/9918952936"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9918952937",
+        "access": "yes",
+        "door": "hinged",
+        "entrance": "main",
+        "level": "0",
+        "ref": "HE05"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4168163,
+          49.0118448
+        ]
+      },
+      "id": "node/9918952937"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9918953101",
+        "access": "yes",
+        "door": "hinged",
+        "entrance": "yes",
+        "indoor": "room",
+        "level": "0",
+        "material": "concrete",
+        "ref": "D010"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4161361,
+          49.0117195
+        ]
+      },
+      "id": "node/9918953101"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9918953109",
+        "access": "yes",
+        "door": "hinged",
+        "entrance": "emergency",
+        "indoor": "room",
+        "level": "0",
+        "material": "concrete",
+        "ref": "D029"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4161519,
+          49.011871
+        ]
+      },
+      "id": "node/9918953109"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9918953110",
+        "access": "yes",
+        "door": "hinged",
+        "entrance": "main",
+        "indoor": "room",
+        "level": "0",
+        "material": "concrete",
+        "ref": "HE03"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4168801,
+          49.0118425
+        ]
+      },
+      "id": "node/9918953110"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9918953111",
+        "access": "yes",
+        "door": "hinged",
+        "entrance": "main",
+        "indoor": "room",
+        "level": "0",
+        "material": "concrete",
+        "ref": "HE02"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4169105,
+          49.0118415
+        ]
+      },
+      "id": "node/9918953111"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9918953112",
+        "access": "yes",
+        "door": "hinged",
+        "entrance": "main",
+        "indoor": "room",
+        "level": "0",
+        "material": "concrete",
+        "ref": "D160"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4169131,
+          49.011878
+        ]
+      },
+      "id": "node/9918953112"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9918953113",
+        "access": "yes",
+        "door": "hinged",
+        "entrance": "main",
+        "indoor": "room",
+        "level": "0",
+        "material": "concrete",
+        "ref": "D161"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4168835,
+          49.011879
+        ]
+      },
+      "id": "node/9918953113"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9918953141",
+        "access": "yes",
+        "door": "hinged",
+        "entrance": "yes",
+        "indoor": "room",
+        "level": "0",
+        "material": "concrete",
+        "ref": "D005"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4165846,
+          49.01173
+        ]
+      },
+      "id": "node/9918953141"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9918953142",
+        "access": "yes",
+        "door": "hinged",
+        "entrance": "yes",
+        "indoor": "room",
+        "level": "0",
+        "material": "concrete",
+        "ref": "D004"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4165781,
+          49.0116688
+        ]
+      },
+      "id": "node/9918953142"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9918953151",
+        "access": "yes",
+        "door": "hinged",
+        "entrance": "yes",
+        "indoor": "room",
+        "level": "0",
+        "material": "concrete",
+        "ref": "D036"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4165786,
+          49.0117952
+        ]
+      },
+      "id": "node/9918953151"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9918953234",
+        "door": "hinged",
+        "entrance": "yes",
+        "indoor": "room",
+        "level": "0",
+        "material": "concrete",
+        "ref": "D008"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4162342,
+          49.0116169
+        ]
+      },
+      "id": "node/9918953234"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9918953245",
+        "access": "yes",
+        "door": "hinged",
+        "entrance": "yes",
+        "indoor": "room",
+        "level": "0",
+        "material": "concrete",
+        "ref": "D063"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4168365,
+          49.0121069
+        ]
+      },
+      "id": "node/9918953245"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9918962842",
+        "door": "hinged",
+        "entrance": "yes",
+        "level": "0",
+        "ref": "D124"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4121063,
+          49.0100318
+        ]
+      },
+      "id": "node/9918962842"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9918962851",
+        "door": "hinged",
+        "entrance": "yes",
+        "level": "0",
+        "ref": "D194"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.41213,
+          49.0104064
+        ]
+      },
+      "id": "node/9918962851"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9918962858",
+        "door": "hinged",
+        "entrance": "main",
+        "level": "0",
+        "ref": "HE01"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4121134,
+          49.010214
+        ]
+      },
+      "id": "node/9918962858"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9918962860",
+        "door": "hinged",
+        "entrance": "yes",
+        "level": "0",
+        "ref": "D125"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4121071,
+          49.0100406
+        ]
+      },
+      "id": "node/9918962860"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9918962868",
+        "door": "hinged",
+        "entrance": "yes",
+        "level": "0",
+        "ref": "D193"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4121292,
+          49.0103981
+        ]
+      },
+      "id": "node/9918962868"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/9918962878",
+        "door": "hinged",
+        "entrance": "main",
+        "level": "0",
+        "ref": "HE02"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4121143,
+          49.010225
+        ]
+      },
+      "id": "node/9918962878"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10026919961",
+        "access": "yes",
+        "door": "hinged",
+        "entrance": "yes",
+        "level": "0",
+        "ref": "D55"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4116379,
+          49.0095148
+        ]
+      },
+      "id": "node/10026919961"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10026919965",
+        "access": "yes",
+        "door": "hinged",
+        "entrance": "yes",
+        "level": "0",
+        "ref": "D58"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4118488,
+          49.0095065
+        ]
+      },
+      "id": "node/10026919965"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10172361790",
+        "entrance": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4077728,
+          49.0102222
+        ]
+      },
+      "id": "node/10172361790"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10250711989",
+        "door": "hinged",
+        "entrance": "emergency",
+        "level": "0",
+        "ref": "D022"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4123389,
+          49.0103988
+        ]
+      },
+      "id": "node/10250711989"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10250711995",
+        "automatic_door": "yes",
+        "door": "hinged",
+        "entrance": "main",
+        "level": "0",
+        "ref": "D024"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4123201,
+          49.0104729
+        ]
+      },
+      "id": "node/10250711995"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10267365584",
+        "door": "hinged",
+        "entrance": "main",
+        "highest:point": "yes",
+        "level": "0",
+        "ref": "D068b"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.410776,
+          49.0108965
+        ]
+      },
+      "id": "node/10267365584"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10267365627",
+        "door": "hinged",
+        "entrance": "main",
+        "level": "0",
+        "ref": "D068c"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4108093,
+          49.0108796
+        ]
+      },
+      "id": "node/10267365627"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10267365629",
+        "door": "hinged",
+        "entrance": "main",
+        "level": "0",
+        "ref": "D068a"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4107398,
+          49.0109149
+        ]
+      },
+      "id": "node/10267365629"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10572420772",
+        "door": "hinged",
+        "entrance": "main",
+        "level": "0",
+        "ref": "D010"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4120959,
+          49.0127546
+        ]
+      },
+      "id": "node/10572420772"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10572432064",
+        "door": "hinged",
+        "entrance": "exit",
+        "level": "-1",
+        "ref": "D-101"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4158368,
+          49.013095
+        ]
+      },
+      "id": "node/10572432064"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10572432093",
+        "entrance": "exit"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4158368,
+          49.013102
+        ]
+      },
+      "id": "node/10572432093"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10572434063",
+        "door": "hinged",
+        "entrance": "main",
+        "level": "0",
+        "ref": "D027"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4096369,
+          49.0128208
+        ]
+      },
+      "id": "node/10572434063"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10572443385",
+        "door": "hinged",
+        "entrance": "yes",
+        "level": "0",
+        "ref": "D010.1b"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4111047,
+          49.0127187
+        ]
+      },
+      "id": "node/10572443385"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10572443386",
+        "door": "hinged",
+        "entrance": "yes",
+        "level": "0",
+        "ref": "D010.1a"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.410981,
+          49.0127544
+        ]
+      },
+      "id": "node/10572443386"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10572443390",
+        "door": "hinged",
+        "entrance": "yes",
+        "level": "0",
+        "ref": "D017b"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4110811,
+          49.0124491
+        ]
+      },
+      "id": "node/10572443390"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10572443647",
+        "door": "hinged",
+        "entrance": "service",
+        "level": "0",
+        "ref": "D006"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4117096,
+          49.0127167
+        ]
+      },
+      "id": "node/10572443647"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10572443648",
+        "door": "hinged",
+        "entrance": "service",
+        "level": "0",
+        "ref": "D004"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4113816,
+          49.0127265
+        ]
+      },
+      "id": "node/10572443648"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10572443652",
+        "door": "hinged",
+        "entrance": "service",
+        "level": "0",
+        "ref": "D009b"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4112831,
+          49.0124414
+        ]
+      },
+      "id": "node/10572443652"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10572443654",
+        "door": "hinged",
+        "entrance": "main",
+        "level": "0",
+        "ref": "D013"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4115159,
+          49.012345
+        ]
+      },
+      "id": "node/10572443654"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10572444929",
+        "entrance": "exit"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4122125,
+          49.0126305
+        ]
+      },
+      "id": "node/10572444929"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10572444931",
+        "entrance": "exit"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4122608,
+          49.0126288
+        ]
+      },
+      "id": "node/10572444931"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10572444949",
+        "entrance": "emergency"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4122067,
+          49.0129269
+        ]
+      },
+      "id": "node/10572444949"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10572444952",
+        "entrance": "emergency"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4121589,
+          49.0129285
+        ]
+      },
+      "id": "node/10572444952"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10572446813",
+        "entrance": "exit"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4158368,
+          49.0130732
+        ]
+      },
+      "id": "node/10572446813"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10572446814",
+        "entrance": "exit"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4159216,
+          49.0131644
+        ]
+      },
+      "id": "node/10572446814"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10572446884",
+        "access": "no",
+        "door": "hinged",
+        "entrance": "service",
+        "level": "0",
+        "ref": "D",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4141795,
+          49.0092966
+        ]
+      },
+      "id": "node/10572446884"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10572446885",
+        "door": "hinged",
+        "entrance": "emergency",
+        "level": "2",
+        "ref": "D",
+        "repeat_on": "3;4;5;6;7;8"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4142502,
+          49.0096223
+        ]
+      },
+      "id": "node/10572446885"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10572448123",
+        "entrance": "emergency"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4142569,
+          49.009622
+        ]
+      },
+      "id": "node/10572448123"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10572448124",
+        "entrance": "emergency"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4142439,
+          49.0096226
+        ]
+      },
+      "id": "node/10572448124"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10574699362",
+        "door": "hinged",
+        "entrance": "service",
+        "level": "0",
+        "ref": "D034",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4129411,
+          49.0120921
+        ]
+      },
+      "id": "node/10574699362"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10576708635",
+        "door": "hinged",
+        "entrance": "main",
+        "level": "0",
+        "ref": "D007"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4129541,
+          49.0122223
+        ]
+      },
+      "id": "node/10576708635"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10577748210",
+        "entrance": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4157699,
+          49.0102422
+        ]
+      },
+      "id": "node/10577748210"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10579373784",
+        "door": "hinged",
+        "entrance": "emergency",
+        "level": "0",
+        "ref": "DTR01"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4170442,
+          49.0094436
+        ]
+      },
+      "id": "node/10579373784"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10579373785",
+        "door": "hinged",
+        "entrance": "emergency",
+        "level": "1",
+        "repeat_on": "2;3;4;5"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4169192,
+          49.00943
+        ]
+      },
+      "id": "node/10579373785"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10579373794",
+        "entrance": "emergency"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4169093,
+          49.0094303
+        ]
+      },
+      "id": "node/10579373794"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10579373795",
+        "entrance": "emergency"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4169281,
+          49.0094296
+        ]
+      },
+      "id": "node/10579373795"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10579373798",
+        "door": "hinged",
+        "entrance": "main",
+        "level": "0",
+        "ref": "D013"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4168586,
+          49.0096546
+        ]
+      },
+      "id": "node/10579373798"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10579373805",
+        "entrance": "exit",
+        "highest:point": "yes",
+        "level": "0"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4170443,
+          49.0094446
+        ]
+      },
+      "id": "node/10579373805"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10579373807",
+        "entrance": "emergency"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4170452,
+          49.0094545
+        ]
+      },
+      "id": "node/10579373807"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10579373810",
+        "entrance": "emergency"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4170435,
+          49.009435
+        ]
+      },
+      "id": "node/10579373810"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10607778915",
+        "entrance": "staircase"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4140516,
+          49.0128353
+        ]
+      },
+      "id": "node/10607778915"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10607778987",
+        "door": "hinged",
+        "entrance": "staircase",
+        "level": "-1",
+        "ref": "D-129",
+        "repeat_on": "0"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4140507,
+          49.0128249
+        ]
+      },
+      "id": "node/10607778987"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10607779002",
+        "door": "hinged",
+        "entrance": "emergency",
+        "level": "-1",
+        "ref": "D123",
+        "repeat_on": "0;1;2;3;4;5;6"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4141906,
+          49.0132118
+        ]
+      },
+      "id": "node/10607779002"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10607779100",
+        "entrance": "staircase"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.414123,
+          49.0127412
+        ]
+      },
+      "id": "node/10607779100"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10607779102",
+        "entrance": "staircase"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4140521,
+          49.012841
+        ]
+      },
+      "id": "node/10607779102"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10611760537",
+        "door": "hinged",
+        "entrance": "main",
+        "level": "-1",
+        "ref": "D-132",
+        "repeat_on": "0;1"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4139646,
+          49.0119183
+        ]
+      },
+      "id": "node/10611760537"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10614457858",
+        "door": "hinged",
+        "entrance": "main",
+        "level": "-1",
+        "ref": "D-125",
+        "repeat_on": "0;1"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.414013,
+          49.0124151
+        ]
+      },
+      "id": "node/10614457858"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10699945023",
+        "door": "hinged",
+        "entrance": "main",
+        "level": "0",
+        "ref": "DM"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4088569,
+          49.0109708
+        ]
+      },
+      "id": "node/10699945023"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10699945032",
+        "door": "revolving",
+        "entrance": "main",
+        "level": "0",
+        "ref": "DM"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.409406,
+          49.0111948
+        ]
+      },
+      "id": "node/10699945032"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10728433316",
+        "door": "hinged",
+        "entrance": "yes",
+        "level": "0",
+        "ref": "D027"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4140911,
+          49.0111679
+        ]
+      },
+      "id": "node/10728433316"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10739764001",
+        "door": "hinged",
+        "entrance": "yes",
+        "level": "0",
+        "ref": "D011"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4170763,
+          49.0139612
+        ]
+      },
+      "id": "node/10739764001"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10741496371",
+        "entrance": "exit"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4142179,
+          49.0106349
+        ]
+      },
+      "id": "node/10741496371"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10741496400",
+        "entrance": "main"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4138233,
+          49.0105776
+        ]
+      },
+      "id": "node/10741496400"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10741496407",
+        "entrance": "main"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4137783,
+          49.0105793
+        ]
+      },
+      "id": "node/10741496407"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10749025963",
+        "door": "hinged",
+        "entrance": "main",
+        "level": "0",
+        "ref": "D001.2"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4134055,
+          49.0107314
+        ]
+      },
+      "id": "node/10749025963"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10891517166",
+        "door": "hinged",
+        "entrance": "yes",
+        "level": "0",
+        "ref": "D017.1"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4119314,
+          49.0095019
+        ]
+      },
+      "id": "node/10891517166"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10891517190",
+        "door": "hinged",
+        "entrance": "yes",
+        "level": "0",
+        "ref": "D009.4",
+        "repeat_on": "1;2"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4120487,
+          49.0094353
+        ]
+      },
+      "id": "node/10891517190"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10891527805",
+        "door": "hinged",
+        "entrance": "yes",
+        "level": "0",
+        "ref": "D025.3"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4127349,
+          49.00943
+        ]
+      },
+      "id": "node/10891527805"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10898909851",
+        "door": "hinged",
+        "entrance": "yes",
+        "level": "0",
+        "ref": "D007"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4117387,
+          49.0129655
+        ]
+      },
+      "id": "node/10898909851"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10898909852",
+        "door": "hinged",
+        "entrance": "yes",
+        "level": "0",
+        "ref": "D007"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4117311,
+          49.0128786
+        ]
+      },
+      "id": "node/10898909852"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10898909853",
+        "door": "hinged",
+        "entrance": "yes",
+        "level": "0",
+        "ref": "D007",
+        "repeat_on": "1;2"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4113968,
+          49.0128903
+        ]
+      },
+      "id": "node/10898909853"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10898909854",
+        "door": "hinged",
+        "entrance": "yes",
+        "level": "0",
+        "ref": "D007",
+        "repeat_on": "1;2"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4114047,
+          49.0129808
+        ]
+      },
+      "id": "node/10898909854"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10899981417",
+        "door": "hinged",
+        "entrance": "service",
+        "level": "0",
+        "ref": "D013",
+        "wheelchair": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4120152,
+          49.0110823
+        ]
+      },
+      "id": "node/10899981417"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10899981418",
+        "door": "hinged",
+        "entrance": "main",
+        "level": "0",
+        "ref": "D011",
+        "wheelchair": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4120125,
+          49.0110413
+        ]
+      },
+      "id": "node/10899981418"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10920002035",
+        "door": "hinged",
+        "entrance": "main",
+        "level": "0",
+        "ref": "D027"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4165398,
+          49.0129769
+        ]
+      },
+      "id": "node/10920002035"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10924836057",
+        "entrance": "main"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4154701,
+          49.0097374
+        ]
+      },
+      "id": "node/10924836057"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10959556391",
+        "door": "hinged",
+        "entrance": "emergency",
+        "level": "0",
+        "ref": "D014"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.412197,
+          49.0118278
+        ]
+      },
+      "id": "node/10959556391"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10959559568",
+        "door": "hinged",
+        "entrance": "main",
+        "level": "0",
+        "ref": "D025"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4127733,
+          49.0118873
+        ]
+      },
+      "id": "node/10959559568"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10959559660",
+        "entrance": "main"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4122983,
+          49.011856
+        ]
+      },
+      "id": "node/10959559660"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/10959559666",
+        "entrance": "emergency"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4121945,
+          49.0117996
+        ]
+      },
+      "id": "node/10959559666"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11042891628",
+        "door": "hinged",
+        "entrance": "yes",
+        "level": "0",
+        "ref": "D026"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4105217,
+          49.0127711
+        ]
+      },
+      "id": "node/11042891628"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11046855109",
+        "door": "hinged",
+        "entrance": "yes",
+        "level": "0",
+        "ref": "DN"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4112481,
+          49.0130222
+        ]
+      },
+      "id": "node/11046855109"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11046855110",
+        "door": "hinged",
+        "entrance": "yes",
+        "level": "0",
+        "ref": "DN",
+        "wheelchair": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4110353,
+          49.0130301
+        ]
+      },
+      "id": "node/11046855110"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11046855111",
+        "door": "hinged",
+        "entrance": "yes",
+        "level": "0",
+        "ref": "DW",
+        "wheelchair": "designated"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4108864,
+          49.0130053
+        ]
+      },
+      "id": "node/11046855111"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11046855112",
+        "door": "hinged",
+        "entrance": "yes",
+        "level": "0",
+        "ref": "DW",
+        "wheelchair": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4108776,
+          49.0129028
+        ]
+      },
+      "id": "node/11046855112"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11046855113",
+        "door": "hinged",
+        "entrance": "yes",
+        "level": "0",
+        "ref": "DS",
+        "wheelchair": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4110209,
+          49.0128662
+        ]
+      },
+      "id": "node/11046855113"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11048182989",
+        "door": "hinged",
+        "entrance": "emergency",
+        "level": "0",
+        "ref": "D017"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4109886,
+          49.0132409
+        ]
+      },
+      "id": "node/11048182989"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11048182990",
+        "door": "hinged",
+        "entrance": "main",
+        "level": "0",
+        "ref": "D017",
+        "repeat_on": "-1;1;2",
+        "wheelchair": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4110185,
+          49.0131199
+        ]
+      },
+      "id": "node/11048182990"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11052798570",
+        "entrance": "staircase"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4091007,
+          49.0123781
+        ]
+      },
+      "id": "node/11052798570"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11052798573",
+        "entrance": "staircase"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.409066,
+          49.0123895
+        ]
+      },
+      "id": "node/11052798573"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/11317572923",
+        "entrance": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4110703,
+          49.0110014
+        ]
+      },
+      "id": "node/11317572923"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12373996431",
+        "door": "hinged",
+        "entrance": "yes",
+        "level": "0",
+        "wheelchair": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4149883,
+          49.0094551
+        ]
+      },
+      "id": "node/12373996431"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12373996432",
+        "door": "hinged",
+        "entrance": "yes",
+        "level": "0",
+        "wheelchair": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4159373,
+          49.0094148
+        ]
+      },
+      "id": "node/12373996432"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/12787673046",
+        "entrance": "yes"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.407689,
+          49.0101033
+        ]
+      },
+      "id": "node/12787673046"
+    }
+  ]
+}

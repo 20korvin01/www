@@ -1,0 +1,45 @@
+[out:json][timeout:180];
+
+// Gebäude
+way["building"](49.009,8.406,49.014,8.418);
+
+// Wege und Plätze
+way["highway"](49.009,8.406,49.014,8.418);
+way["footway"](49.009,8.406,49.014,8.418);
+way["path"](49.009,8.406,49.014,8.418);
+way["pedestrian"](49.009,8.406,49.014,8.418);
+way["place"](49.009,8.406,49.014,8.418);
+
+// Parkplätze
+node["amenity"="parking"](49.009,8.406,49.014,8.418);
+way["amenity"="parking"](49.009,8.406,49.014,8.418);
+
+// Fahrradständer
+node["amenity"="bicycle_parking"](49.009,8.406,49.014,8.418);
+way["amenity"="bicycle_parking"](49.009,8.406,49.014,8.418);
+
+// Bushaltestellen
+node["highway"="bus_stop"](49.009,8.406,49.014,8.418);
+way["highway"="bus_stop"](49.009,8.406,49.014,8.418);
+
+// Grünflächen
+way["leisure"="park"](49.009,8.406,49.014,8.418);
+way["landuse"="grass"](49.009,8.406,49.014,8.418);
+way["landuse"="meadow"](49.009,8.406,49.014,8.418);
+
+// Denkmäler
+node["historic"="memorial"](49.009,8.406,49.014,8.418);
+way["historic"="memorial"](49.009,8.406,49.014,8.418);
+
+// Sportanlagen
+way["leisure"="sports_centre"](49.009,8.406,49.014,8.418);
+way["leisure"="pitch"](49.009,8.406,49.014,8.418);
+way["leisure"="stadium"](49.009,8.406,49.014,8.418);
+
+// Zugangspunkte, Eingänge, Tore
+node["barrier"="gate"](49.009,8.406,49.014,8.418);
+node["entrance"](49.009,8.406,49.014,8.418);
+
+out body;
+>;
+out skel qt;
