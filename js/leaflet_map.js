@@ -1,12 +1,7 @@
-// Verschiedene Hintergrundkarten definieren
+// Hintergrundkarten #########################################################################################################################
 const osm = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
   attribution: '© OpenStreetMap contributors',
   maxZoom: 19
-});
-
-const esriSat = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
-  attribution: 'Tiles © Esri',
-  maxZoom: 19,
 });
 
 const cartoLight = L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
@@ -14,19 +9,45 @@ const cartoLight = L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/
   maxZoom: 19,
 });
 
+const cartoDark = L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+  attribution: '© OpenStreetMap, © CartoDB',
+  maxZoom: 19,
+});
+
+const Stadia_AlidadeSatellite = L.tileLayer('https://tiles.stadiamaps.com/tiles/alidade_satellite/{z}/{x}/{y}{r}.{ext}', {
+	minZoom: 0,
+	maxZoom: 20,
+	attribution: '&copy; CNES, Distribution Airbus DS, © Airbus DS, © PlanetObserver (Contains Copernicus Data) | &copy; <a href="https://www.stadiamaps.com/" target="_blank">Stadia Maps</a> &copy; <a href="https://openmaptiles.org/" target="_blank">OpenMapTiles</a> &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+	ext: 'jpg'
+});
+
+const Thunderforest_Pioneer = L.tileLayer('https://{s}.tile.thunderforest.com/pioneer/{z}/{x}/{y}{r}.png?apikey=9169d91a96a64cd7892be660840f312e', {
+	attribution: '&copy; <a href="http://www.thunderforest.com/">Thunderforest</a>, &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+	maxZoom: 22
+});
+
+const Thunderforest_Landscape = L.tileLayer('https://{s}.tile.thunderforest.com/landscape/{z}/{x}/{y}{r}.png?apikey=9169d91a96a64cd7892be660840f312e', {
+  attribution: '&copy; <a href="http://www.thunderforest.com/">Thunderforest</a>, &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+  maxZoom: 22
+});
+
+
 // Map initialisieren mit Standardlayer
 const map = L.map('map', {
   center: [49.01090860025595, 8.410805554961891],
   zoom: 19,
-  layers: [cartoLight], // Standardlayer
+  layers: [Thunderforest_Pioneer], // Standardlayer
   fullscreenControl: true,
 });
 
 // Layer-Control hinzufügen
 const baseMaps = {
+  "Thunderforest Pioneer": Thunderforest_Pioneer,
+  "Thunderforest Landscape": Thunderforest_Landscape,
   "Carto Light": cartoLight,
+  "Carto Dark": cartoDark,
   "OpenStreetMap": osm,
-  "ESRI Satellit": esriSat,
+  "Stadia Alidade Satellite": Stadia_AlidadeSatellite,
 };
 L.control.layers(baseMaps, null, { position: 'topright', collapsed: true }).addTo(map);
 
