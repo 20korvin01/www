@@ -126,6 +126,9 @@ fetch('data/campusplan.geojson')
   });
 
 // POIs mit Markercluster
+
+/*
+=======
 let markers; // global, damit im Overlay verwendbar
 
 fetch('data/Overpass_KITCampus.geojson')
@@ -167,7 +170,68 @@ fetch('data/Overpass_KITCampus.geojson')
     // Nur diesen Layer-Control-Aufruf behalten:
     L.control.layers(baseMaps, overlays, { position: 'topright', collapsed: true }).addTo(map);
   });
+*/
 
+
+
+fetchOverpassQueryFromFile('Abfrage_overpass_KitCampus.txt', function(osmData) {
+  const geojson = osmToGeoJSON(osmData);
+
+  // Create cluster group (with optional config)
+  const markers = L.markerClusterGroup({
+    disableClusteringAtZoom: 19
+  });
+
+  // Create GeoJSON layer with circle markers and popup
+  const geoJsonLayer = L.geoJSON(geojson, {
+    pointToLayer: function(feature, latlng) {
+      return L.circleMarker(latlng, { radius: 6, color: '#FF5722' });
+    },
+    onEachFeature: function(feature, layer) {
+      layer.on('click', function() {
+        // Build a table with all properties
+        let props = feature.properties || {};
+        let tableRows = Object.keys(props).map(key =>
+          `<tr><td><strong>${key}</strong></td><td>${props[key]}</td></tr>`
+        ).join('');
+
+        let popupContent = `
+          <table>${tableRows}</table>
+          <button id="route-btn">Route zu diesem Punkt</button>
+        `;
+
+        layer.bindPopup(popupContent).openPopup();
+
+        // Example routing logic if you have user location & routingControl
+        const destination = layer.getLatLng();
+        if (currentPosition) {
+          routingControl.setWaypoints([
+            L.latLng(currentPosition[0], currentPosition[1]),
+            destination
+          ]);
+        } else {
+          alert("User location not available.");
+        }
+      });
+    }
+  });
+
+  // Add GeoJSON layer to cluster group
+  markers.addLayer(geoJsonLayer);
+
+  // Add cluster group to map
+  map.addLayer(markers);
+});
+
+/*
+fetchOverpassQueryFromFile('Abfrage_overpass_KitCampus.txt', function(geojson) {
+  console.log('Received data:', geojson); // <-- Add this
+  L.geoJSON(geojson, { 
+    // your options
+  }).addTo(map);
+});
+
+*/
 
 document.addEventListener('click', function (e) {
   if (e.target && e.target.id === 'route-btn') {
