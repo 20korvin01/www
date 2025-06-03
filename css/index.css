@@ -12,7 +12,7 @@ html, body {
   z-index: 1000;
   width: 60vw;
   min-width: 220px;
-  max-width: 700px;
+  max-width: 500px;
   height: auto;
   margin: 0;
   background-color: #e9ecf0;
@@ -59,7 +59,7 @@ html, body {
   position: fixed;
   top: 2vw;
   left: 5vw;
-  width: 22vw;
+  width: 30vw;
   min-width: 180px;
   max-width: 320px;
   z-index: 1000;
@@ -74,6 +74,7 @@ html, body {
   min-height: 1.25em;
   transition: box-shadow 0.3s, width 0.3s, font-size 0.3s;
   box-sizing: border-box;
+  animation: fadeInDown 0.8s cubic-bezier(.4,0,.2,1);
 }
 
 #geolocation-table {
@@ -103,21 +104,32 @@ html, body {
 /* Responsive Anpassungen für sehr kleine Bildschirme */
 @media (max-width: 600px) {
   #header {
-    width: 95vw;
+    position: fixed;
+    top: 2vw;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 70vw;
     min-width: 0;
     padding: 0.3em 0.5em;
+    margin-top: 0;
+    z-index: 1000;
   }
   #header h1 {
     font-size: clamp(1em, 6vw, 1.5em);
     padding: 0.3em 0;
   }
   #geolocation {
-    left: 2vw;
-    width: 90vw;
+    position: fixed;
+    top: calc(2vw + 60px); /* 60px ≈ Höhe des Headers */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60vw;
     min-width: 0;
-    max-width: 98vw;
+    max-width: 60vw;
     font-size: 0.95em;
     padding: 0.3em 0.5em;
+    margin-top: 0;
+    z-index: 999;
   }
 }
 

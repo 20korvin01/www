@@ -14,13 +14,6 @@ const cartoDark = L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x
   maxZoom: 19,
 });
 
-const Stadia_AlidadeSatellite = L.tileLayer('https://tiles.stadiamaps.com/tiles/alidade_satellite/{z}/{x}/{y}{r}.{ext}', {
-	minZoom: 0,
-	maxZoom: 20,
-	attribution: '&copy; CNES, Distribution Airbus DS, © Airbus DS, © PlanetObserver (Contains Copernicus Data) | &copy; <a href="https://www.stadiamaps.com/" target="_blank">Stadia Maps</a> &copy; <a href="https://openmaptiles.org/" target="_blank">OpenMapTiles</a> &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-	ext: 'jpg'
-});
-
 const Thunderforest_Pioneer = L.tileLayer('https://{s}.tile.thunderforest.com/pioneer/{z}/{x}/{y}{r}.png?apikey=9169d91a96a64cd7892be660840f312e', {
 	attribution: '&copy; <a href="http://www.thunderforest.com/">Thunderforest</a>, &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
 	maxZoom: 22
@@ -34,22 +27,23 @@ const Thunderforest_Landscape = L.tileLayer('https://{s}.tile.thunderforest.com/
 
 // Map initialisieren mit Standardlayer
 const map = L.map('map', {
-  center: [49.01090860025595, 8.410805554961891],
-  zoom: 19,
+  center: [49.01348979913584, 8.416214959608762],
+  zoom: 16,
   layers: [Thunderforest_Pioneer], // Standardlayer
   fullscreenControl: true,
 });
 
-// Layer-Control hinzufügen
+// Basemaps
 const baseMaps = {
   "Thunderforest Pioneer": Thunderforest_Pioneer,
   "Thunderforest Landscape": Thunderforest_Landscape,
   "Carto Light": cartoLight,
   "Carto Dark": cartoDark,
-  "OpenStreetMap": osm,
-  "Stadia Alidade Satellite": Stadia_AlidadeSatellite,
+  "OpenStreetMap": osm
 };
-L.control.layers(baseMaps, null, { position: 'topright', collapsed: true }).addTo(map);
+
+// Layer-Control hinzufügen
+// L.control.layers(baseMaps, null, { position: 'topright', collapsed: true }).addTo(map);
 
 // Maßstab
 L.control.scale({ metric: true, imperial: false }).addTo(map);
@@ -85,11 +79,16 @@ map.whenReady(function () {
 
 map.on('locationfound', function (e) {
   currentPosition = [e.latitude, e.longitude];
+  // Geschwindigkeit berechnen und auf 0 setzen, falls NaN
+  let speed = e.speed * 3.6;
+  if (isNaN(speed)) speed = 0;
   document.getElementById('geolocation').innerHTML = `
     <table id="geolocation-table">
       <tr><td>Breite</td><td>${e.latitude.toFixed(6)}</td></tr>
       <tr><td>Länge</td><td>${e.longitude.toFixed(6)}</td></tr>
       <tr><td>Genauigkeit</td><td>${e.accuracy.toFixed(1)} m</td></tr>
+      <tr><td>Geschwindigkeit</td><td>${speed.toFixed(2)} km/h</td></tr>
+      <tr><td>Zoomlevel</td><td>${map.getZoom()}</td></tr>
     </table>
   `;
 });
@@ -127,17 +126,18 @@ fetch('data/campusplan.geojson')
   });
 
 // POIs mit Markercluster
+
 /*
+=======
+let markers; // global, damit im Overlay verwendbar
+
 fetch('data/Overpass_KITCampus.geojson')
   .then(res => res.json())
   .then(geojson => {
-    // Cluster-Gruppe erstellen
-    const markers = L.markerClusterGroup({
-      // Optional: Cluster-Optionen, z.B. ab welcher Zoomstufe aufgelöst wird
+    markers = L.markerClusterGroup({
       disableClusteringAtZoom: 19
     });
 
-    // GeoJSON-Layer mit circleMarker als Marker
     const geoJsonLayer = L.geoJSON(geojson, {
       pointToLayer: function (feature, latlng) {
         return L.circleMarker(latlng, {
@@ -160,11 +160,15 @@ fetch('data/Overpass_KITCampus.geojson')
       }
     });
 
-    // GeoJSON-Layer zur Cluster-Gruppe hinzufügen
     markers.addLayer(geoJsonLayer);
-
-    // Cluster-Gruppe zur Karte hinzufügen
     map.addLayer(markers);
+
+    // Overlays-Objekt für Layer Control
+    const overlays = {
+      "POIs": markers
+    };
+    // Nur diesen Layer-Control-Aufruf behalten:
+    L.control.layers(baseMaps, overlays, { position: 'topright', collapsed: true }).addTo(map);
   });
 */
 
@@ -270,16 +274,23 @@ L.Control.CenterControl = L.Control.extend({
     `;
     L.DomEvent.on(btn, 'click', function(e) {
       L.DomEvent.stopPropagation(e);
-      map.setView([49.01090860025595, 8.410805554961891], 19);
+      map.setView([49.01348979913584, 8.416214959608762], 16);
     });
     return container;
   },
   onRemove: function(map) {}
 });
 
-// Control links oben UNTER dem LocateControl platzieren
+// Zurück-zum-Zentrum-Control hinzufügen
 const centerControl = new L.Control.CenterControl({ position: 'topleft' });
 map.addControl(centerControl);
+
+map.on('zoomend', function () {
+  const zoomCell = document.querySelector('#geolocation-table tr:last-child td:last-child');
+  if (zoomCell) {
+    zoomCell.textContent = map.getZoom();
+  }
+});
 
 
 
