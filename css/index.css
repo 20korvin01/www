@@ -59,7 +59,7 @@ html, body {
   position: fixed;
   top: 2vw;
   left: 5vw;
-  width: 22vw;
+  width: 30vw;
   min-width: 180px;
   max-width: 320px;
   z-index: 1000;
@@ -123,9 +123,9 @@ html, body {
     top: calc(2vw + 60px); /* 60px ≈ Höhe des Headers */
     left: 50%;
     transform: translateX(-50%);
-    width: 70vw;
+    width: 60vw;
     min-width: 0;
-    max-width: 50vw;
+    max-width: 60vw;
     font-size: 0.95em;
     padding: 0.3em 0.5em;
     margin-top: 0;
