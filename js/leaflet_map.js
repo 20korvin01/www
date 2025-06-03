@@ -85,6 +85,13 @@ map.whenReady(function () {
 
 map.on('locationfound', function (e) {
   currentPosition = [e.latitude, e.longitude];
+  document.getElementById('geolocation').innerHTML = `
+    <table id="geolocation-table">
+      <tr><td>Breite</td><td>${e.latitude.toFixed(6)}</td></tr>
+      <tr><td>Länge</td><td>${e.longitude.toFixed(6)}</td></tr>
+      <tr><td>Genauigkeit</td><td>${e.accuracy.toFixed(1)} m</td></tr>
+    </table>
+  `;
 });
 
 // Routing
@@ -185,6 +192,32 @@ document.addEventListener('click', function (e) {
     }
   }
 });
+
+// Leaflet-Control für "Zurück zum Zentrum"
+L.Control.CenterControl = L.Control.extend({
+  onAdd: function(map) {
+    const container = L.DomUtil.create('div', 'leaflet-bar');
+    const btn = L.DomUtil.create('button', 'leaflet-center-btn', container);
+    btn.title = 'Zurück zum KIT Zentrum';
+    btn.innerHTML = `
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="#222" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+        <circle cx="12" cy="12" r="10"/>
+        <line x1="12" y1="8" x2="12" y2="16"/>
+        <line x1="8" y1="12" x2="16" y2="12"/>
+      </svg>
+    `;
+    L.DomEvent.on(btn, 'click', function(e) {
+      L.DomEvent.stopPropagation(e);
+      map.setView([49.01090860025595, 8.410805554961891], 19);
+    });
+    return container;
+  },
+  onRemove: function(map) {}
+});
+
+// Control links oben UNTER dem LocateControl platzieren
+const centerControl = new L.Control.CenterControl({ position: 'topleft' });
+map.addControl(centerControl);
 
 
 

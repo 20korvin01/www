@@ -6,39 +6,150 @@ html, body {
 
 #header {
   position: fixed;
-  top: 20px;
-  left: 30%;
-  right: 30%;
+  top: 2vw;
+  left: 50%;
+  transform: translateX(-50%);
   z-index: 1000;
-  height: 10%;
-  width: 50%;
-  margin: auto;	
+  width: 60vw;
+  min-width: 220px;
+  max-width: 700px;
+  height: auto;
+  margin: 0;
   background-color: #e9ecf0;
   border: 3px solid rgba(93, 94, 95, 0.2);
   opacity: 0.8;
   border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5em 1em;
+  box-sizing: border-box;
 }
 
 #header h1 {
-  font-size: 2em;
+  font-family: 'Segoe UI', 'Roboto', 'Arial', sans-serif;
+  font-size: clamp(1.2em, 4vw, 2.2em);
+  font-weight: 700;
+  color: #1a3a5d;
+  background: none;
+  text-transform: none;
+  letter-spacing: 0.04em;
   text-align: center;
-  color: #333;
+  margin: 0;
+  padding: 0.5em 0;
+  border-radius: 8px;
+  box-shadow: 0 2px 12px 0 rgba(0,0,0,0.04);
+  text-shadow: 0 1px 0 rgba(0,0,0,0.03);
+  transition: color 0.3s, font-size 0.3s;
+  animation: fadeInDown 0.8s cubic-bezier(.4,0,.2,1);
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 #geolocation {
   position: fixed;
-  top: 20px;
-  left: 10%;
-  right: 70%;
+  top: 2vw;
+  left: 5vw;
+  width: 22vw;
+  min-width: 180px;
+  max-width: 320px;
   z-index: 1000;
-  background-color: #e9ecf0;
-  border: 3px solid rgba(93, 94, 95, 0.2);
-  opacity: 0.8;
-  border-radius: 10px;
+  background: #f6f8fa;
+  border: 2px solid #b6c2ce;
+  opacity: 0.97;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px 0 rgba(0,0,0,0.07);
+  padding: 0.5em 0.7em;
+  font-family: 'Segoe UI', 'Roboto', 'Arial', sans-serif;
+  font-size: clamp(0.8em, 1.2vw, 1em);
+  min-height: 1.25em;
+  transition: box-shadow 0.3s, width 0.3s, font-size 0.3s;
+  box-sizing: border-box;
 }
 
+#geolocation-table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#geolocation-table td {
+  padding: 0.15em 0.5em;
+  border: none;
+  font-size: 1em;
+}
+
+#geolocation-table tr:not(:last-child) td {
+  border-bottom: 2px solid #7da4c7;
+}
+
+#geolocation-table td:first-child {
+  font-weight: 600;
+  color: #23476a;
+}
+
+#geolocation::before {
+  content: none;
+}
+
+/* Responsive Anpassungen für sehr kleine Bildschirme */
+@media (max-width: 600px) {
+  #header {
+    width: 95vw;
+    min-width: 0;
+    padding: 0.3em 0.5em;
+  }
+  #header h1 {
+    font-size: clamp(1em, 6vw, 1.5em);
+    padding: 0.3em 0;
+  }
+  #geolocation {
+    left: 2vw;
+    width: 90vw;
+    min-width: 0;
+    max-width: 98vw;
+    font-size: 0.95em;
+    padding: 0.3em 0.5em;
+  }
+}
+
+/* KARTE */
 #map {
   position: absolute;
   width: 100%;
   height: 100%;
+}
+
+#center-btn {
+  position: fixed;
+  left: 5vw;
+  top: calc(2vw + 60px); /* etwas unter #geolocation */
+  z-index: 1001;
+}
+
+.leaflet-bar .leaflet-center-btn {
+  background-color: #fff;
+  border: none;
+  width: 34px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 1px 5px rgba(0,0,0,0.2);
+  border-radius: 4px;
+  font-size: 1.3em;
+  transition: background 0.2s;
+}
+
+.leaflet-bar .leaflet-center-btn:hover {
+  background: #f4f4f4;
 }
