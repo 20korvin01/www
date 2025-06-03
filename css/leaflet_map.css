@@ -1,0 +1,21 @@
+/* Rote Umrandung für campusplan.geojson */
+.campus-outline {
+  stroke: red;
+  stroke-width: 5;
+  fill-opacity: 0;
+}
+
+/* POI Marker */
+.poi-marker {
+  stroke: #FF5722;
+  stroke-width: 2;
+  fill: #FF5722;
+  fill-opacity: 0.8;
+}
+
+/* Routing-Button im Popup */
+#route-btn {
+  margin-top: 10px;
+  width: 100%;
+  cursor: pointer;
+}

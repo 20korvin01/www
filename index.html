@@ -3,35 +3,43 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Leaflet Map</title>
+  <title>KIT CAMPUS</title>
   <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
-  <!-- Mapbox GL JS auskommentiert -->
-  <!--
+  <!-- ################## MAPBOX ################## -->
+  <!-- CSS & JS -->
   <link href="https://api.mapbox.com/mapbox-gl-js/v3.12.0/mapbox-gl.css" rel="stylesheet">
   <script src="https://api.mapbox.com/mapbox-gl-js/v3.12.0/mapbox-gl.js"></script>
+  <!-- Geocoder -->
   <link href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.2/mapbox-gl-geocoder.css" rel="stylesheet" />
   <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.2/mapbox-gl-geocoder.min.js"></script>
+  <!-- Directions -->
   <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.1.1/mapbox-gl-directions.css" type="text/css">
   <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-directions/v4.1.1/mapbox-gl-directions.js"></script>
-  -->
-
-  <!-- Leaflet CSS & JS -->
+ 
+  <!-- ################## LEAFLET ################## -->
+  <!-- CSS & JS -->
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-
-  <!-- Leaflet Routing Machine -->
+  <!-- Routing Machine -->
   <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine@3.2.12/dist/leaflet-routing-machine.css" />
   <script src="https://unpkg.com/leaflet-routing-machine@3.2.12/dist/leaflet-routing-machine.js"></script>
-
-  <!-- Leaflet Control Geocoder -->
+  <!-- Control Geocoder -->
   <script src="https://unpkg.com/leaflet-control-geocoder@2.4.0/dist/Control.Geocoder.js"></script>
   <link rel="stylesheet" href="https://unpkg.com/leaflet-control-geocoder@2.4.0/dist/Control.Geocoder.css" />
-
-  <!-- Leaflet Locate Control -->
+  <!-- Locate Control -->
   <link rel="stylesheet" href="https://unpkg.com/leaflet.locatecontrol@0.81.0/dist/L.Control.Locate.min.css" />
   <script src="https://unpkg.com/leaflet.locatecontrol@0.81.0/dist/L.Control.Locate.min.js"></script>
-  
+  <!-- Marker Cluster -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css" />
+  <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
+  <!-- Fullscreen -->
+   <link rel="stylesheet" href="https://unpkg.com/leaflet.fullscreen@1.6.0/Control.FullScreen.css" />
+<script src="https://unpkg.com/leaflet.fullscreen@1.6.0/Control.FullScreen.js"></script>
+
+  <!-- ################## CSS ################## -->
   <link rel="stylesheet" href="css/index.css">
+  <link rel="stylesheet" href="css/leaflet_map.css">
 </head>
 
 <body>
