@@ -15,8 +15,8 @@ const cartoDark = L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x
 });
 
 const Thunderforest_Pioneer = L.tileLayer('https://{s}.tile.thunderforest.com/pioneer/{z}/{x}/{y}{r}.png?apikey=9169d91a96a64cd7892be660840f312e', {
-	attribution: '&copy; <a href="http://www.thunderforest.com/">Thunderforest</a>, &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-	maxZoom: 22
+  attribution: '&copy; <a href="http://www.thunderforest.com/">Thunderforest</a>, &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+  maxZoom: 22
 });
 
 const Thunderforest_Landscape = L.tileLayer('https://{s}.tile.thunderforest.com/landscape/{z}/{x}/{y}{r}.png?apikey=9169d91a96a64cd7892be660840f312e', {
@@ -42,8 +42,11 @@ const baseMaps = {
   "OpenStreetMap": osm
 };
 
-// Layer-Control hinzufügen
-// L.control.layers(baseMaps, null, { position: 'topright', collapsed: true }).addTo(map);
+// Overlay-Layer-Objekt global anlegen
+window.overlayMaps = {};
+
+// Layer-Control direkt initialisieren (Panel ist sofort sichtbar)
+window.layerControl = L.control.layers(baseMaps, window.overlayMaps, { position: 'topright', collapsed: true }).addTo(map);
 
 // Maßstab
 L.control.scale({ metric: true, imperial: false }).addTo(map);
@@ -112,7 +115,7 @@ fetch('data/campusplan.geojson')
   .then(geojson => {
     L.geoJSON(geojson, {
       style: function (feature) {
-        return { className: 'campus-outline' }; // CSS-Klasse statt Inline-Style
+        return { className: 'campus-outline' };
       },
       onEachFeature: function (feature, layer) {
         layer.off('click');
@@ -125,56 +128,8 @@ fetch('data/campusplan.geojson')
     }).addTo(map);
   });
 
-// POIs mit Markercluster
-
-/*
-=======
-let markers; // global, damit im Overlay verwendbar
-
-fetch('data/Overpass_KITCampus.geojson')
-  .then(res => res.json())
-  .then(geojson => {
-    markers = L.markerClusterGroup({
-      disableClusteringAtZoom: 19
-    });
-
-    const geoJsonLayer = L.geoJSON(geojson, {
-      pointToLayer: function (feature, latlng) {
-        return L.circleMarker(latlng, {
-          radius: 6,
-          className: 'poi-marker'
-        });
-      },
-      onEachFeature: function (feature, layer) {
-        layer.on('click', function () {
-          let props = feature.properties;
-          let tableRows = Object.keys(props).map(key =>
-            `<tr><td><strong>${key}</strong></td><td>${props[key]}</td></tr>`
-          ).join('');
-          let popupContent = `
-            <table>${tableRows}</table>
-            <button id="route-btn">Route zu diesem Punkt</button>
-          `;
-          layer.bindPopup(popupContent).openPopup();
-        });
-      }
-    });
-
-    markers.addLayer(geoJsonLayer);
-    map.addLayer(markers);
-
-    // Overlays-Objekt für Layer Control
-    const overlays = {
-      "POIs": markers
-    };
-    // Nur diesen Layer-Control-Aufruf behalten:
-    L.control.layers(baseMaps, overlays, { position: 'topright', collapsed: true }).addTo(map);
-  });
-*/
-
-
-
-fetchOverpassQueryFromFile('Abfrage_overpass_KitCampus.txt', function(osmData) {
+// Overpass API Abfrage ##################################################################
+fetchOverpassQueryFromFile('Abfrage_overpass_KitCampus.txt', function (osmData) {
   const geojson = osmToGeoJSON(osmData);
 
   // Create cluster group (with optional config)
@@ -184,11 +139,11 @@ fetchOverpassQueryFromFile('Abfrage_overpass_KitCampus.txt', function(osmData) {
 
   // Create GeoJSON layer with circle markers and popup
   const geoJsonLayer = L.geoJSON(geojson, {
-    pointToLayer: function(feature, latlng) {
+    pointToLayer: function (feature, latlng) {
       return L.circleMarker(latlng, { radius: 6, color: '#FF5722' });
     },
-    onEachFeature: function(feature, layer) {
-      layer.on('click', function() {
+    onEachFeature: function (feature, layer) {
+      layer.on('click', function () {
         // Build a table with all properties
         let props = feature.properties || {};
         let tableRows = Object.keys(props).map(key =>
@@ -201,17 +156,6 @@ fetchOverpassQueryFromFile('Abfrage_overpass_KitCampus.txt', function(osmData) {
         `;
 
         layer.bindPopup(popupContent).openPopup();
-
-        // Example routing logic if you have user location & routingControl
-        const destination = layer.getLatLng();
-        if (currentPosition) {
-          routingControl.setWaypoints([
-            L.latLng(currentPosition[0], currentPosition[1]),
-            destination
-          ]);
-        } else {
-          alert("User location not available.");
-        }
       });
     }
   });
@@ -219,27 +163,18 @@ fetchOverpassQueryFromFile('Abfrage_overpass_KitCampus.txt', function(osmData) {
   // Add GeoJSON layer to cluster group
   markers.addLayer(geoJsonLayer);
 
+  // Overlay-Layer für Layer-Control registrieren
+  window.overlayMaps["POIs"] = markers;
+  window.layerControl.addOverlay(markers, "POIs");
+
   // Add cluster group to map
   map.addLayer(markers);
 });
 
-/*
-fetchOverpassQueryFromFile('Abfrage_overpass_KitCampus.txt', function(geojson) {
-  console.log('Received data:', geojson); // <-- Add this
-  L.geoJSON(geojson, { 
-    // your options
-  }).addTo(map);
-});
-
-*/
-
 document.addEventListener('click', function (e) {
   if (e.target && e.target.id === 'route-btn') {
     // Zielkoordinate aus dem Popup ermitteln
-    const popup = e.target.closest('.leaflet-popup-content');
-    // Versuche, die Koordinaten aus dem Popup zu extrahieren
     let targetLatLng = null;
-    // Finde das nächste Popup-Objekt in der Karte
     map.eachLayer(function (layer) {
       if (layer instanceof L.CircleMarker && layer.isPopupOpen && layer.isPopupOpen()) {
         targetLatLng = layer.getLatLng();
@@ -252,7 +187,6 @@ document.addEventListener('click', function (e) {
         L.latLng(currentPosition[0], currentPosition[1]),
         targetLatLng
       ]);
-      // routingControl.show();
     } else {
       alert('Standort oder Ziel nicht gefunden!');
     }
@@ -261,7 +195,7 @@ document.addEventListener('click', function (e) {
 
 // Leaflet-Control für "Zurück zum Zentrum"
 L.Control.CenterControl = L.Control.extend({
-  onAdd: function(map) {
+  onAdd: function (map) {
     const container = L.DomUtil.create('div', 'leaflet-bar');
     const btn = L.DomUtil.create('button', 'leaflet-center-btn', container);
     btn.title = 'Zurück zum KIT Zentrum';
@@ -272,19 +206,19 @@ L.Control.CenterControl = L.Control.extend({
         <line x1="8" y1="12" x2="16" y2="12"/>
       </svg>
     `;
-    L.DomEvent.on(btn, 'click', function(e) {
+    L.DomEvent.on(btn, 'click', function (e) {
       L.DomEvent.stopPropagation(e);
       map.setView([49.01348979913584, 8.416214959608762], 16);
     });
     return container;
   },
-  onRemove: function(map) {}
+  onRemove: function (map) { }
 });
 
-// Zurück-zum-Zentrum-Control hinzufügen
 const centerControl = new L.Control.CenterControl({ position: 'topleft' });
 map.addControl(centerControl);
 
+// Zoomlevel aktualisieren
 map.on('zoomend', function () {
   const zoomCell = document.querySelector('#geolocation-table tr:last-child td:last-child');
   if (zoomCell) {
