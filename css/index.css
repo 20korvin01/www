@@ -4,8 +4,17 @@ html, body {
   padding: 0;
 }
 
-#header {
-  position: fixed;
+#map {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+}
+
+#map #header {
+  position: absolute;
   top: 2vw;
   left: 50%;
   transform: translateX(-50%);
@@ -15,9 +24,8 @@ html, body {
   max-width: 500px;
   height: auto;
   margin: 0;
-  background-color: #e9ecf0;
+  background-color: #f6f8fa;
   border: 3px solid rgba(93, 94, 95, 0.2);
-  opacity: 0.8;
   border-radius: 10px;
   display: flex;
   align-items: center;
@@ -26,7 +34,7 @@ html, body {
   box-sizing: border-box;
 }
 
-#header h1 {
+#map #header h1 {
   font-family: 'Segoe UI', 'Roboto', 'Arial', sans-serif;
   font-size: clamp(1.2em, 4vw, 2.2em);
   font-weight: 700;
@@ -55,8 +63,8 @@ html, body {
   }
 }
 
-#geolocation {
-  position: fixed;
+#map #geolocation {
+  position: absolute;
   top: 2vw;
   left: 5vw;
   width: 30vw;
@@ -103,8 +111,8 @@ html, body {
 
 /* Responsive Anpassungen für sehr kleine Bildschirme */
 @media (max-width: 600px) {
-  #header {
-    position: fixed;
+  #map #header {
+    position: absolute;
     top: 2vw;
     left: 50%;
     transform: translateX(-50%);
@@ -114,13 +122,13 @@ html, body {
     margin-top: 0;
     z-index: 1000;
   }
-  #header h1 {
+  #map #header h1 {
     font-size: clamp(1em, 6vw, 1.5em);
     padding: 0.3em 0;
   }
-  #geolocation {
-    position: fixed;
-    top: calc(2vw + 60px); /* 60px ≈ Höhe des Headers */
+  #map #geolocation {
+    position: absolute;
+    top: calc(2vw + 60px);
     left: 50%;
     transform: translateX(-50%);
     width: 60vw;

@@ -1,6 +1,6 @@
 /* Rote Umrandung für campusplan.geojson */
 .campus-outline {
-  stroke: red;
+  stroke: rgb(195, 59, 59);
   stroke-width: 5;
   fill-opacity: 0;
 }
