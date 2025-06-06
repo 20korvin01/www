@@ -21,18 +21,38 @@ function fetchOverpassQueryFromFile(filePath, callback) {
 }
 
 function osmToGeoJSON(osmData) {
-  const features = osmData.elements
+  const features = [];
+
+  // Nodes als Punkte
+  osmData.elements
     .filter(el => el.type === 'node' && el.lat && el.lon)
-    .map(el => ({
-      type: "Feature",
-      id: el.type + "/" + el.id,
-      properties: el.tags || {},
-      geometry: {
-        type: "Point",
-        coordinates: [el.lon, el.lat]
-      }
-    }));
-  
+    .forEach(el => {
+      features.push({
+        type: "Feature",
+        id: el.type + "/" + el.id,
+        properties: el.tags || {},
+        geometry: {
+          type: "Point",
+          coordinates: [el.lon, el.lat]
+        }
+      });
+    });
+
+  // Ways als Punkte (center) falls vorhanden
+  osmData.elements
+    .filter(el => el.type === 'way' && el.center)
+    .forEach(el => {
+      features.push({
+        type: "Feature",
+        id: el.type + "/" + el.id,
+        properties: el.tags || {},
+        geometry: {
+          type: "Point",
+          coordinates: [el.center.lon, el.center.lat]
+        }
+      });
+    });
+
   return {
     type: "FeatureCollection",
     features: features
