@@ -104,7 +104,11 @@ fetch('data/campusplan.geojson')
   });
 
 // Overpass API Abfrage ##################################################################
-fetchOverpassQueryFromFile('Abfrage_overpass_KitCampus.txt', function (osmData) {
+
+const queryURL = "https://mobilegisserver.mywire.org:8443/geoserver/mobilegis/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=mobilegis%3Agroup3campuslayer&maxFeatures=50&outputFormat=application%2Fjson";
+
+//fetchOverpassQueryFromFile('Abfrage_overpass_KitCampus.txt', function (osmData) {
+fetchWFS(queryURL, function (osmData) {
   const geojson = osmToGeoJSON(osmData);
 
   // Cluster-Gruppe für Marker
