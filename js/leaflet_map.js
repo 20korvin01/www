@@ -105,9 +105,34 @@ L.geoJSON(campusPolygon, {
 
 const queryURL = "https://mobilegisserver.mywire.org:8443/geoserver/mobilegis/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=mobilegis%3Agroup3campuslayer&maxFeatures=50&outputFormat=application%2Fjson";
 
+// Hilfsfunktion: MultiPoints in einzelne Points aufsplitten
+function flattenMultiPoints(geojson) {
+  if (!geojson || !geojson.features) return geojson;
+  const newFeatures = [];
+  geojson.features.forEach(f => {
+    if (f.geometry && f.geometry.type === "MultiPoint") {
+      f.geometry.coordinates.forEach((coords, idx) => {
+        newFeatures.push({
+          type: "Feature",
+          properties: f.properties,
+          geometry: {
+            type: "Point",
+            coordinates: coords
+          },
+          id: f.id ? `${f.id}_pt${idx}` : undefined
+        });
+      });
+    } else {
+      newFeatures.push(f);
+    }
+  });
+  return { ...geojson, features: newFeatures };
+}
+
 //fetchOverpassQueryFromFile('Abfrage_overpass_KitCampus.txt', function (osmData) {
 fetchWFS(queryURL, function (osmData) {
-  const geojson = osmToGeoJSON(osmData);
+  // Falls WFS MultiPoints liefert, in Points umwandeln
+  const geojson = flattenMultiPoints(osmData);
 
   // Cluster-Gruppe für Marker
   const markers = L.markerClusterGroup({

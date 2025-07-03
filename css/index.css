@@ -69,7 +69,7 @@ html, body {
   left: 5vw;
   width: 30vw;
   min-width: 180px;
-  max-width: 320px;
+  max-width: 220px;
   z-index: 1000;
   background: #f6f8fa;
   border: 2px solid #b6c2ce;
@@ -110,34 +110,37 @@ html, body {
 }
 
 /* Responsive Anpassungen für sehr kleine Bildschirme */
-@media (max-width: 600px) {
-  #map #header {
-    position: absolute;
-    top: 2vw;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 70vw;
+@media (max-width: 700px) {
+  #map {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  #map #header, #map #geolocation {
+    position: static;
+    left: unset;
+    top: unset;
+    transform: none;
+    margin: 0.5em 0 0 0;
+    width: 90vw;
+    max-width: 98vw;
     min-width: 0;
-    padding: 0.3em 0.5em;
-    margin-top: 0;
+    box-sizing: border-box;
+  }
+  #map #header {
+    order: 1;
     z-index: 1000;
+    padding: 0.3em 0.5em;
   }
   #map #header h1 {
     font-size: clamp(1em, 6vw, 1.5em);
     padding: 0.3em 0;
   }
   #map #geolocation {
-    position: absolute;
-    top: calc(2vw + 60px);
-    left: 50%;
-    transform: translateX(-50%);
-    width: 60vw;
-    min-width: 0;
-    max-width: 60vw;
+    order: 2;
+    z-index: 999;
     font-size: 0.95em;
     padding: 0.3em 0.5em;
-    margin-top: 0;
-    z-index: 999;
   }
 }
 
