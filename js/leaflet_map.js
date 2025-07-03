@@ -85,23 +85,21 @@ const routingControl = L.Routing.control({
 }).addTo(map);
 
 // KIT-Campus als Hintergrundlayer ########################################################################
-fetch('data/campusplan.geojson')
-  .then(res => res.json())
-  .then(geojson => {
-    L.geoJSON(geojson, {
-      style: function (feature) {
-        return { className: 'campus-outline' };
-      },
-      onEachFeature: function (feature, layer) {
-        layer.off('click');
-        layer.on('click', function (e) {
-          e.originalEvent.preventDefault();
-          e.originalEvent.stopPropagation();
-        });
-        layer.options.interactive = false;
-      }
-    }).addTo(map);
-  });
+import { campusPolygon } from './campusplan.js';
+
+L.geoJSON(campusPolygon, {
+  style: function (feature) {
+    return { className: 'campus-outline' };
+  },
+  onEachFeature: function (feature, layer) {
+    layer.off('click');
+    layer.on('click', function (e) {
+      e.originalEvent.preventDefault();
+      e.originalEvent.stopPropagation();
+    });
+    layer.options.interactive = false;
+  }
+}).addTo(map);
 
 // Overpass API Abfrage ##################################################################
 
