@@ -103,7 +103,7 @@ L.geoJSON(campusPolygon, {
 
 // Overpass API Abfrage ##################################################################
 
-const queryURL = "https://mobilegisserver.mywire.org:8443/geoserver/mobilegis/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=mobilegis%3Agroup3campuslayer&maxFeatures=50&outputFormat=application%2Fjson";
+const queryURL = "https://mobilegisserver.mywire.org:8443/geoserver/mobilegis/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=mobilegis%3Agroup3campuslayer&outputFormat=application%2Fjson";
 
 // Hilfsfunktion: MultiPoints in einzelne Points aufsplitten
 function flattenMultiPoints(geojson) {
@@ -236,20 +236,20 @@ fetchWFS(queryURL, function (osmData) {
       }
     },
     onEachFeature: function (feature, layer) {
-      layer.on('click', function () {
-        // Build a table with all properties
-        let props = feature.properties || {};
-        let tableRows = Object.keys(props).map(key =>
+      // Build a table with all properties, aber nur nicht-null Werte anzeigen
+      let props = feature.properties || {};
+      let tableRows = Object.keys(props)
+        .filter(key => props[key] !== null && props[key] !== undefined && props[key] !== "null" && props[key] !== "")
+        .map(key =>
           `<tr><td><strong>${key}</strong></td><td>${props[key]}</td></tr>`
         ).join('');
 
-        let popupContent = `
-          <table>${tableRows}</table>
-          <button id="route-btn">Route zu diesem Punkt</button>
-        `;
+      let popupContent = `
+        <table>${tableRows}</table>
+        <button id="route-btn">Route zu diesem Punkt</button>
+      `;
 
-        layer.bindPopup(popupContent).openPopup();
-      });
+      layer.bindPopup(popupContent);
     }
   });
 
