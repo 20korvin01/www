@@ -14,24 +14,28 @@ html, body {
 }
 
 #map #header {
-  position: absolute;
+  position: fixed;
   top: 2vw;
   left: 50%;
-  transform: translateX(-50%);
-  z-index: 1000;
-  width: 60vw;
-  min-width: 220px;
-  max-width: 500px;
+  transform: translate(-50%, 0);
+  z-index: 2000;
+  width: 40vw;
   height: auto;
   margin: 0;
-  background-color: #f6f8fa;
-  border: 3px solid rgba(93, 94, 95, 0.2);
-  border-radius: 10px;
+  padding: 0.15em 1.7em 0.13em 1.7em;
+  background: linear-gradient(135deg, #fafdff 60%, #e3f0fa 100%);
+  border: none;
+  border-radius: 18px;
+  box-shadow: 0 8px 32px 0 rgba(60, 120, 180, 0.18), 0 1.5px 8px 0 rgba(0,0,0,0.10);
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0.5em 1em;
+  font-family: 'Segoe UI', 'Roboto', 'Arial', sans-serif;
+  font-size: clamp(1.05em, 1.6vw, 1.18em);
+  transition: box-shadow 0.3s, width 0.3s, font-size 0.3s, background 0.3s;
   box-sizing: border-box;
+  border-top: 4px solid #4ea1e0;
+  border-bottom: 4px solid #b6e0fa;
 }
 
 #map #header h1 {
@@ -44,12 +48,11 @@ html, body {
   letter-spacing: 0.04em;
   text-align: center;
   margin: 0;
-  padding: 0.5em 0;
+  padding: 0.2em 0;
   border-radius: 8px;
-  box-shadow: 0 2px 12px 0 rgba(0,0,0,0.04);
+  box-shadow: none;
   text-shadow: 0 1px 0 rgba(0,0,0,0.03);
   transition: color 0.3s, font-size 0.3s;
-  animation: fadeInDown 0.8s cubic-bezier(.4,0,.2,1);
 }
 
 @keyframes fadeInDown {
@@ -63,71 +66,111 @@ html, body {
   }
 }
 
-#map #geolocation {
+/* =====================
+   Allgemeines Layout
+   ===================== */
+html, body {
+  /* Volle Höhe für die Karte */
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+#map {
+  /* Karte nimmt gesamten Viewport ein */
   position: absolute;
-  top: 2vw;
-  left: 5vw;
-  width: 30vw;
-  min-width: 180px;
-  max-width: 220px;
-  z-index: 1000;
-  background: #f6f8fa;
-  border: 2px solid #b6c2ce;
-  opacity: 0.97;
-  border-radius: 12px;
-  box-shadow: 0 4px 16px 0 rgba(0,0,0,0.07);
-  padding: 0.5em 0.7em;
-  font-family: 'Segoe UI', 'Roboto', 'Arial', sans-serif;
-  font-size: clamp(0.8em, 1.2vw, 1em);
-  min-height: 1.25em;
-  transition: box-shadow 0.3s, width 0.3s, font-size 0.3s;
-  box-sizing: border-box;
-  animation: fadeInDown 0.8s cubic-bezier(.4,0,.2,1);
-}
-
-#geolocation-table {
-  border-collapse: collapse;
   width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  overflow: hidden;
 }
 
-#geolocation-table td {
-  padding: 0.15em 0.5em;
+/* =====================
+   Header (Karten-Titel)
+   ===================== */
+#map #header {
+  /* Fester Header oben mittig */
+  position: fixed;
+  top: 2vw;
+  left: 50%;
+  transform: translate(-50%, 0);
+  z-index: 2000;
+  width: 40vw;
+  height: auto;
+  margin: 0;
+  padding: 0.15em 1.7em 0.13em 1.7em;
+  background: linear-gradient(135deg, #fafdff 60%, #e3f0fa 100%);
   border: none;
-  font-size: 1em;
+  border-radius: 18px;
+  box-shadow: 0 8px 32px 0 rgba(60, 120, 180, 0.18), 0 1.5px 8px 0 rgba(0,0,0,0.10);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Segoe UI', 'Roboto', 'Arial', sans-serif;
+  font-size: clamp(1.05em, 1.6vw, 1.18em);
+  transition: box-shadow 0.3s, width 0.3s, font-size 0.3s, background 0.3s;
+  box-sizing: border-box;
+  border-top: 4px solid #4ea1e0;
+  border-bottom: 4px solid #b6e0fa;
 }
 
-#geolocation-table tr:not(:last-child) td {
-  border-bottom: 2px solid #7da4c7;
+#map #header h1 {
+  /* Titeltext im Header */
+  font-family: 'Segoe UI', 'Roboto', 'Arial', sans-serif;
+  font-size: clamp(1.2em, 4vw, 2.2em);
+  font-weight: 700;
+  color: #1a3a5d;
+  background: none;
+  text-transform: none;
+  letter-spacing: 0.04em;
+  text-align: center;
+  margin: 0;
+  padding: 0.2em 0;
+  border-radius: 8px;
+  box-shadow: none;
+  text-shadow: 0 1px 0 rgba(0,0,0,0.03);
+  transition: color 0.3s, font-size 0.3s;
 }
 
-#geolocation-table td:first-child {
-  font-weight: 600;
-  color: #23476a;
+/* =====================
+   Animationen
+   ===================== */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-#geolocation::before {
-  content: none;
-}
-
-/* Responsive Anpassungen für sehr kleine Bildschirme */
+/* =====================
+   Responsive Anpassungen für sehr kleine Bildschirme
+   ===================== */
 @media (max-width: 700px) {
+  /* Karte und Header/Geolocation untereinander anordnen */
   #map {
     display: flex;
     flex-direction: column;
     align-items: center;
   }
   #map #header, #map #geolocation {
+    /* Header und Standortinfo werden gestapelt */
     position: static;
     left: unset;
     top: unset;
     transform: none;
     margin: 0.5em 0 0 0;
-    width: 90vw;
+    width: 70vw;
     max-width: 98vw;
     min-width: 0;
     box-sizing: border-box;
   }
   #map #header {
+    /* Header ganz oben, etwas kompakter */
     order: 1;
     z-index: 1000;
     padding: 0.3em 0.5em;
@@ -137,62 +180,18 @@ html, body {
     padding: 0.3em 0;
   }
   #map #geolocation {
+    /* Standortinfo darunter */
     order: 2;
     z-index: 999;
     font-size: 0.95em;
     padding: 0.3em 0.5em;
+    display: none;
   }
-}
-
-/* KARTE */
-#map {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-}
-
-#center-btn {
-  position: fixed;
-  left: 5vw;
-  top: calc(2vw + 60px); /* etwas unter #geolocation */
-  z-index: 1001;
-}
-
-.leaflet-bar .leaflet-center-btn {
-  background-color: #fff;
-  border: none;
-  width: 34px;
-  height: 34px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  box-shadow: 0 1px 5px rgba(0,0,0,0.2);
-  border-radius: 4px;
-  font-size: 1.3em;
-  transition: background 0.2s;
-}
-
-.leaflet-bar .leaflet-center-btn:hover {
-  background: #f4f4f4;
-}
-
-#map-legend {
-  position: absolute;
-  bottom: 24px;
-  right: 24px;
-  background: #fff;
-  padding: 10px 14px 10px 10px;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-  font-size: 1em;
-  z-index: 1200;
-  min-width: 120px;
-  user-select: none;
-}
-
-.capacity-label {
-  pointer-events: none;
-  font-family: 'Segoe UI', Arial, sans-serif;
-  text-shadow: 0 1px 2px #fff, 0 0 2px #fff;
+  #geolocation-toggle, .leaflet-info-btn {
+    /* Buttons unterhalb, nicht mehr absolut */
+    position: static;
+    margin: 0.5em 0 0 0;
+    left: unset;
+    top: unset;
+  }
 }

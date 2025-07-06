@@ -1,3 +1,25 @@
+// Legende ein-/ausblenden mit Fade ###############################################################
+
+const legendToggle = document.getElementById('legend-toggle');
+const mapLegend = document.getElementById('map-legend');
+let legendVisible = true;
+function setLegendVisible(visible) {
+  if (visible) {
+    mapLegend.style.display = '';
+    legendToggle.setAttribute('aria-pressed', 'true');
+    legendToggle.classList.add('active');
+  } else {
+    mapLegend.style.display = 'none';
+    legendToggle.setAttribute('aria-pressed', 'false');
+    legendToggle.classList.remove('active');
+  }
+}
+legendToggle.addEventListener('click', () => {
+  legendVisible = !legendVisible;
+  setLegendVisible(legendVisible);
+});
+
+
 // Hintergrundkarten #########################################################################################################################
 const osm = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
   attribution: '© OpenStreetMap contributors',
@@ -31,6 +53,7 @@ const baseMaps = {
   "Carto Dark": cartoDark,
   "OpenStreetMap": osm
 };
+
 // Leaflet-Map initialisieren ######################################################################
 // Map initialisieren mit Standardlayer
 const map = L.map('map', {
@@ -72,19 +95,58 @@ const lc = L.control.locate({
 map.whenReady(function () {
   lc.start();
 });
-// Routing
-const routingControl = L.Routing.control({
-  waypoints: [],
-  routeWhileDragging: false,
-  geocoder: L.Control.Geocoder.nominatim(),
-  show: false,
-  collapsible: true,
-  language: 'de',
-  lineOptions: { styles: [{ color: '#3388ff', weight: 3, opacity: 0.7, dashArray: '5, 10' }] },
-  createMarker: function () { return null; } // Keine Marker erstellen 
-}).addTo(map);
 
-// KIT-Campus als Hintergrundlayer ########################################################################
+
+// Routing mit OpenRouteService ########################################################################################################################################################################
+const openRouteServiceApiKey = 'eyJvcmciOiI1YjNjZTM1OTc4NTExMTAwMDFjZjYyNDgiLCJpZCI6ImEzNzM3YWIyYTk5ZTRkMTRhYjEyYjY0NDYyYmE3Njk4IiwiaCI6Im11cm11cjY0In0=';
+let routingLayer = null;
+
+function getORSRoute(start, end, callback) {
+  const url = 'https://api.openrouteservice.org/v2/directions/foot-walking/geojson';
+  fetch(url, {
+    method: 'POST',
+    headers: {
+      'Accept': 'application/json, application/geo+json, application/gpx+xml, img/png; charset=utf-8',
+      'Content-Type': 'application/json',
+      'Authorization': openRouteServiceApiKey
+    },
+    body: JSON.stringify({
+      coordinates: [
+        [start.lng, start.lat],
+        [end.lng, end.lat]
+      ]
+    })
+  })
+    .then(response => response.json())
+    .then(data => callback(null, data))
+    .catch(err => callback(err));
+}
+
+function showORSRoute(start, end, doneCb) {
+  getORSRoute(start, end, (err, data) => {
+    if (err || !data || !data.features || !data.features[0]) {
+      alert('Route konnte nicht berechnet werden!');
+      if (doneCb) doneCb();
+      return;
+    }
+    // Vorherige Route entfernen
+    if (routingLayer) {
+      map.removeLayer(routingLayer);
+    }
+    routingLayer = L.geoJSON(data, {
+      style: {
+        color: '#3388ff',
+        weight: 4,
+        opacity: 0.8,
+        dashArray: '5, 10'
+      }
+    }).addTo(map);
+    // Kein automatisches Zoomen mehr
+    if (doneCb) doneCb();
+  });
+}
+
+// KIT-Campus als Hintergrundlayer ################################################################################################################################
 import { campusPolygon } from './campusplan.js';
 
 L.geoJSON(campusPolygon, {
@@ -101,8 +163,9 @@ L.geoJSON(campusPolygon, {
   }
 }).addTo(map);
 
-// Overpass API Abfrage ##################################################################
 
+
+// GeoServer Abfrage ##########################################################################################################################
 const queryURL = "https://mobilegisserver.mywire.org:8443/geoserver/mobilegis/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=mobilegis%3Agroup3campuslayer&outputFormat=application%2Fjson";
 
 // Hilfsfunktion: MultiPoints in einzelne Points aufsplitten
@@ -129,7 +192,7 @@ function flattenMultiPoints(geojson) {
   return { ...geojson, features: newFeatures };
 }
 
-//fetchOverpassQueryFromFile('Abfrage_overpass_KitCampus.txt', function (osmData) {
+// Funktion zum Abrufen von WFS-Daten
 fetchWFS(queryURL, function (osmData) {
   // Falls WFS MultiPoints liefert, in Points umwandeln
   const geojson = flattenMultiPoints(osmData);
@@ -139,117 +202,134 @@ fetchWFS(queryURL, function (osmData) {
     disableClusteringAtZoom: 19
   });
 
-  // Haus-Icon
-  const houseIcon = L.icon({
-    iconUrl: 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 16 16"><path d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5" fill="%231976D2"/></svg>',
+
+  // Bootstrap Icons als Marker-Icons (inline SVGs, wie in der Legende)
+  // Haus-Icon (bi-house-door-fill, #1976D2)
+  const houseIcon = L.divIcon({
+    className: 'custom-marker-icon',
+    html: `<i class="bi bi-house-door-fill" style="font-size:2em;color:#1976D2;"></i>`,
     iconSize: [32, 32],
     iconAnchor: [16, 32],
     popupAnchor: [0, -32]
   });
 
-  // Gras-Icon
-  const grassIcon = L.icon({
-    iconUrl: 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 16 16"><circle cx="8" cy="8" r="8" fill="%23388e3c"/></svg>',
-    iconSize: [18, 18],
-    iconAnchor: [9, 18],
-    popupAnchor: [0, -18]
+  // Gras-Icon (bi-tree-fill, #388e3c)
+  const grassIcon = L.divIcon({
+    className: 'custom-marker-icon',
+    html: `<i class="bi bi-tree-fill" style="font-size:1.4em;color:#388e3c;"></i>`,
+    iconSize: [22, 22],
+    iconAnchor: [11, 22],
+    popupAnchor: [0, -22]
   });
 
-  // Fahrrad-Icon
-  const bicycleIcon = L.icon({
-    iconUrl: 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 16 16"><path d="M4 4.5a.5.5 0 0 1 .5-.5H6a.5.5 0 0 1 0 1v.5h4.14l.386-1.158A.5.5 0 0 1 11 4h1a.5.5 0 0 1 0 1h-.64l-.311.935.807 1.29a3 3 0 1 1-.848.53l-.508-.812-2.076 3.322A.5.5 0 0 1 8 10.5H5.959a3 3 0 1 1-1.815-3.274L5 5.856V5h-.5a.5.5 0 0 1-.5-.5m1.5 2.443-.508.814c.5.444.85 1.054.967 1.743h1.139zM8 9.057 9.598 6.5H6.402zM4.937 9.5a2 2 0 0 0-.487-.877l-.548.877zM3.603 8.092A2 2 0 1 0 4.937 10.5H3a.5.5 0 0 1-.424-.765zm7.947.53a2 2 0 1 0 .848-.53l1.026 1.643a.5.5 0 1 1-.848.53z" fill="%23009088"/></svg>',
+  // Fahrrad-Icon (bi-bicycle, #009088)
+  const bicycleIcon = L.divIcon({
+    className: 'custom-marker-icon',
+    html: `<i class="bi bi-bicycle" style="font-size:2em;color:#009088;"></i>`,
     iconSize: [32, 32],
     iconAnchor: [16, 32],
     popupAnchor: [0, -32]
   });
 
-  // Auto-Icon
-  const carIcon = L.icon({
-    iconUrl: 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="%23444" viewBox="0 0 16 16"><path d="M2.52 3.515A2.5 2.5 0 0 1 4.82 2h6.362c1 0 1.904.596 2.298 1.515l.792 1.848c.075.175.21.319.38.404.5.25.855.715.965 1.262l.335 1.679q.05.242.049.49v.413c0 .814-.39 1.543-1 1.997V13.5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-1.338c-1.292.048-2.745.088-4 .088s-2.708-.04-4-.088V13.5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-1.892c-.61-.454-1-1.183-1-1.997v-.413a2.5 2.5 0 0 1 .049-.49l.335-1.68c.11-.546.465-1.012.964-1.261a.8.8 0 0 0 .381-.404l.792-1.848ZM3 10a1 1 0 1 0 0-2 1 1 0 0 0 0 2m10 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2M6 8a1 1 0 0 0 0 2h4a1 1 0 1 0 0-2zM2.906 5.189a.51.51 0 0 0 .497.731c.91-.073 3.35-.17 4.597-.17s3.688.097 4.597.17a.51.51 0 0 0 .497-.731l-.956-1.913A.5.5 0 0 0 11.691 3H4.309a.5.5 0 0 0-.447.276L2.906 5.19Z"/></svg>',
+  // Auto-Icon (bi-car-front-fill, #444)
+  const carIcon = L.divIcon({
+    className: 'custom-marker-icon',
+    html: `<i class="bi bi-car-front-fill" style="font-size:2em;color:#444;"></i>`,
     iconSize: [32, 32],
     iconAnchor: [16, 32],
     popupAnchor: [0, -32]
   });
 
-  // Sonstiges Icon
-  const otherIcon = L.icon({
-    iconUrl: 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 16 16"><circle cx="8" cy="8" r="8" fill="%23FF5722"/></svg>',
-    iconSize: [18, 18],
-    iconAnchor: [9, 18],
-    popupAnchor: [0, -18]
+  // Sonstiges Icon (bi-geo-alt-fill, #FF5722)
+  const otherIcon = L.divIcon({
+    className: 'custom-marker-icon',
+    html: `<i class="bi bi-geo-alt-fill" style="font-size:1.4em;color:#FF5722;"></i>`,
+    iconSize: [22, 22],
+    iconAnchor: [11, 22],
+    popupAnchor: [0, -22]
   });
 
   // GeoJSON-Layer erstellen und Icons zuweisen
   const geoJsonLayer = L.geoJSON(geojson, {
     pointToLayer: function (feature, latlng) {
-      // bicycle_parking → Fahrrad-Icon + Kapazität als Label
+      // bicycle_parking → Fahrrad-Icon + Kapazität als Teil des Icons
       if (feature.properties && feature.properties.amenity === "bicycle_parking") {
-        const marker = L.marker(latlng, { icon: bicycleIcon });
+        let html = `<span style='position:relative;display:inline-block;'>` +
+          `<i class=\"bi bi-bicycle\" style=\"font-size:2em;color:#009088;vertical-align:middle;\"></i>`;
         if (feature.properties.capacity) {
-          const capacity = feature.properties.capacity;
-          const label = L.divIcon({
-            className: 'capacity-label',
-            html: `<div style="color:#009088;font-weight:bold;font-size:1.1em;text-align:center;">${capacity}</div>`,
-            iconSize: [32, 16],
-            iconAnchor: [16, 32]
-          });
-          L.marker([latlng.lat + 0.000015, latlng.lng], { icon: label, interactive: false }).addTo(markers);
+          html += `<span style=\"position:absolute;bottom:0;left:50%;transform:translateX(-50%);color:#009088;font-weight:bold;font-size:1em;background:rgba(255,255,255,0.85);padding:0 2px;border-radius:4px;line-height:1;\">${feature.properties.capacity}</span>`;
         }
-        return marker;
+        html += `</span>`;
+        const icon = L.divIcon({
+          className: 'custom-marker-icon',
+          html: html,
+          iconSize: [32, 32],
+          iconAnchor: [16, 32],
+          popupAnchor: [0, -32]
+        });
+        return L.marker(latlng, { icon });
       }
-      // parking → Auto-Icon + Kapazität als Label
+      // parking → Auto-Icon + Kapazität als Teil des Icons
       else if (feature.properties && feature.properties.amenity === "parking") {
-        const marker = L.marker(latlng, { icon: carIcon });
+        let html = `<span style='position:relative;display:inline-block;'>` +
+          `<i class=\"bi bi-car-front-fill\" style=\"font-size:2em;color:#444;vertical-align:middle;\"></i>`;
         if (feature.properties.capacity) {
-          const capacity = feature.properties.capacity;
-          const label = L.divIcon({
-            className: 'capacity-label',
-            html: `<div style="color:#444;font-weight:bold;font-size:1.1em;text-align:center;">${capacity}</div>`,
-            iconSize: [32, 16],
-            iconAnchor: [16, 32]
-          });
-          L.marker([latlng.lat + 0.000015, latlng.lng], { icon: label, interactive: false }).addTo(markers);
+          html += `<span style=\"position:absolute;bottom:0;left:50%;transform:translateX(-50%);color:#444;font-weight:bold;font-size:1em;background:rgba(255,255,255,0.85);padding:0 2px;border-radius:4px;line-height:1;\">${feature.properties.capacity}</span>`;
         }
-        return marker;
+        html += `</span>`;
+        const icon = L.divIcon({
+          className: 'custom-marker-icon',
+          html: html,
+          iconSize: [32, 32],
+          iconAnchor: [16, 32],
+          popupAnchor: [0, -32]
+        });
+        return L.marker(latlng, { icon });
       }
       // landuse → Gras-Icon
       else if (feature.properties && feature.properties.landuse) {
         return L.marker(latlng, { icon: grassIcon });
       }
-      // building → Haus-Icon + ref als Label
+      // building → Haus-Icon + ref als Teil des Icons
       else if (feature.properties && feature.properties.building) {
         if (!feature.properties.ref) {
           return null; // Gebäude ohne ref werden nicht angezeigt
         }
-        const marker = L.marker(latlng, { icon: houseIcon });
-        const ref = feature.properties.ref;
-        const label = L.divIcon({
-          className: 'ref-label',
-          html: `<div style="color:#1976D2;font-weight:bold;font-size:1.1em;text-align:center;">${ref}</div>`,
-          iconSize: [32, 16],
-          iconAnchor: [16, 32]
+        let html = `<span style='position:relative;display:inline-block;'>` +
+          `<i class=\"bi bi-house-door-fill\" style=\"font-size:2em;color:#1976D2;vertical-align:middle;\"></i>` +
+          `<span style=\"position:absolute;bottom:0;left:50%;transform:translateX(-50%);color:#1976D2;font-weight:bold;font-size:1em;background:rgba(255,255,255,0.85);padding:0 2px;border-radius:4px;line-height:1;\">${feature.properties.ref}</span>` +
+          `</span>`;
+        const icon = L.divIcon({
+          className: 'custom-marker-icon',
+          html: html,
+          iconSize: [32, 32],
+          iconAnchor: [16, 32],
+          popupAnchor: [0, -32]
         });
-        L.marker([latlng.lat + 0.000015, latlng.lng], { icon: label, interactive: false }).addTo(markers);
-        return marker;
+        return L.marker(latlng, { icon });
       } else {
         return L.marker(latlng, { icon: otherIcon });
       }
     },
     onEachFeature: function (feature, layer) {
-      // Build a table with all properties, aber nur nicht-null Werte anzeigen
+      // Elegantes Popup-Design mit moderner Card-Optik
       let props = feature.properties || {};
       let tableRows = Object.keys(props)
         .filter(key => props[key] !== null && props[key] !== undefined && props[key] !== "null" && props[key] !== "")
         .map(key =>
-          `<tr><td><strong>${key}</strong></td><td>${props[key]}</td></tr>`
+          `<tr><td class='popup-key'>${key}</td><td class='popup-value'>${props[key]}</td></tr>`
         ).join('');
 
       let popupContent = `
-        <table>${tableRows}</table>
-        <button id="route-btn">Route zu diesem Punkt</button>
+        <div class="popup-card">
+          <div class="popup-table-wrap">
+            <table class="popup-table">${tableRows}</table>
+          </div>
+          <button id="route-btn" class="popup-route-btn"><i class="bi bi-signpost-split-fill"></i> Routing</button>
+        </div>
       `;
 
-      layer.bindPopup(popupContent);
+      layer.bindPopup(popupContent, { className: 'custom-leaflet-popup' });
     }
   });
 
@@ -263,13 +343,15 @@ fetchWFS(queryURL, function (osmData) {
   // Add cluster group to map
   map.addLayer(markers);
 });
-// Routing-Button im Popup ########################################################################
+
+
+
+// Routing-Button im Popup mit OpenRouteService ####################################################
 document.addEventListener('click', function (e) {
   if (e.target && e.target.id === 'route-btn') {
     // Zielkoordinate aus dem Popup ermitteln
     let targetLatLng = null;
     map.eachLayer(function (layer) {
-      // Prüfe auf Marker ODER CircleMarker
       if (
         (layer instanceof L.Marker || layer instanceof L.CircleMarker) &&
         layer.isPopupOpen && layer.isPopupOpen()
@@ -277,47 +359,52 @@ document.addEventListener('click', function (e) {
         targetLatLng = layer.getLatLng();
       }
     });
-
-    // Route zum angeklickten Punkt hinzufügen
     if (currentPosition && targetLatLng) {
-      routingControl.setWaypoints([
-        L.latLng(currentPosition[0], currentPosition[1]),
-        targetLatLng
-      ]);
+      const btn = e.target;
+      const originalHTML = btn.innerHTML;
+      btn.disabled = true;
+      let spinnerTimeout = setTimeout(() => {
+        btn.innerHTML = `<span class="spinner" style="display:inline-block;width:1.2em;height:1.2em;vertical-align:middle;margin-right:0.5em;border:2.5px solid #fff;border-top:2.5px solid #4ea1e0;border-radius:50%;animation:spinBtn 0.7s linear infinite;"></span> Routing`;
+      }, 500);
+
+      showORSRoute(
+        { lat: currentPosition[0], lng: currentPosition[1] },
+        targetLatLng,
+        function afterRoute() {
+          clearTimeout(spinnerTimeout);
+          btn.disabled = false;
+          btn.innerHTML = originalHTML;
+        }
+      );
     } else {
       alert('Standort oder Ziel nicht gefunden!');
     }
   }
 });
 
-// Leaflet-Control für "Zurück zum Zentrum" ########################################################
-L.Control.CenterControl = L.Control.extend({
-  onAdd: function (map) {
-    const container = L.DomUtil.create('div', 'leaflet-bar');
-    const btn = L.DomUtil.create('button', 'leaflet-center-btn', container);
-    btn.title = 'Zurück zum KIT Zentrum';
-    btn.innerHTML = `
-      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="#222" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
-        <circle cx="12" cy="12" r="10"/>
-        <line x1="12" y1="8" x2="12" y2="16"/>
-        <line x1="8" y1="12" x2="16" y2="12"/>
-      </svg>
-    `;
-    L.DomEvent.on(btn, 'click', function (e) {
-      L.DomEvent.stopPropagation(e);
-      map.setView([49.01348979913584, 8.416214959608762], 16);
-    });
-    return container;
-  },
-  onRemove: function (map) { }
+
+// Karten-Buttons: Zentrum & Geolocation Info ##################################################
+document.getElementById('center-btn')?.addEventListener('click', function (e) {
+  e.stopPropagation();
+  map.setView([49.01348979913584, 8.416214959608762], 16);
 });
 
-const centerControl = new L.Control.CenterControl({ position: 'topleft' });
-map.addControl(centerControl);
+document.getElementById('geolocation-toggle')?.addEventListener('click', function () {
+  const geo = document.getElementById('geolocation');
+  if (geo) {
+    if (geo.style.display === 'none' || geo.style.display === '') {
+      geo.style.display = 'block';
+    } else {
+      geo.style.display = 'none';
+    }
+  }
+});
+
+
 
 // Geolocation-Informationen ########################################################################
 map.on('zoomend', function () {
-  const zoomCell = document.querySelector('#geolocation-table tr:last-child td:last-child');
+  const zoomCell = document.getElementById('geo-zoom');
   if (zoomCell) {
     zoomCell.textContent = map.getZoom();
   }
@@ -328,16 +415,15 @@ map.on('locationfound', function (e) {
   // Geschwindigkeit berechnen und auf 0 setzen, falls NaN
   let speed = e.speed * 3.6;
   if (isNaN(speed)) speed = 0;
-  document.getElementById('geolocation').innerHTML = `
-    <table id="geolocation-table">
-      <tr><td>Breite</td><td>${e.latitude.toFixed(6)}</td></tr>
-      <tr><td>Länge</td><td>${e.longitude.toFixed(6)}</td></tr>
-      <tr><td>Genauigkeit</td><td>${e.accuracy.toFixed(1)} m</td></tr>
-      <tr><td>Geschwindigkeit</td><td>${speed.toFixed(2)} km/h</td></tr>
-      <tr><td>Zoomlevel</td><td>${map.getZoom()}</td></tr>
-    </table>
-  `;
+  const lat = document.getElementById('geo-lat');
+  const lng = document.getElementById('geo-lng');
+  const acc = document.getElementById('geo-acc');
+  const spd = document.getElementById('geo-speed');
+  const zoom = document.getElementById('geo-zoom');
+  if (lat) lat.textContent = e.latitude.toFixed(6);
+  if (lng) lng.textContent = e.longitude.toFixed(6);
+  if (acc) acc.textContent = e.accuracy.toFixed(1) + ' m';
+  if (spd) spd.textContent = speed.toFixed(2) + ' km/h';
+  if (zoom) zoom.textContent = map.getZoom();
 });
-
-
 

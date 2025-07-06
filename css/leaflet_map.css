@@ -1,13 +1,423 @@
-/* Rote Umrandung für campusplan.geojson */
+.custom-leaflet-popup .leaflet-popup-close-button {
+  /* Popup-Close-Button (X) im Popup-Stil */
+  /* Stil für den Schließen-Button im Popup */
+  background: rgba(255,255,255,0.85);
+  border-radius: 50%;
+  border: 2.5px solid #4ea1e0;
+  box-shadow: 0 2px 8px 0 rgba(60, 120, 180, 0.13), 0 1px 4px 0 rgba(0,0,0,0.07);
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3em;
+  color: #2176ae;
+  cursor: pointer;
+  transition: background 0.18s, color 0.18s, box-shadow 0.18s;
+  z-index: 10;
+  opacity: 0.7;
+}
+
+/* Hover-Effekt für den Schließen-Button im Popup */
+.custom-leaflet-popup .leaflet-popup-close-button:hover {
+  background: rgba(255,255,255,0.95);
+  color: #1976D2;
+  box-shadow: 0 4px 16px rgba(80,120,180,0.13);
+  opacity: 1;
+}
+.custom-leaflet-popup .leaflet-popup-content-wrapper,
+.custom-leaflet-popup .leaflet-popup-content {
+  background: none;
+  box-shadow: none;
+  border: none;
+  padding: 0;
+}
+
+/* =====================
+   Popup-Karten-Design
+   ===================== */
+.popup-card {
+  background: linear-gradient(135deg, #fafdff 60%, #e3f0fa 100%);
+  border-radius: 14px;
+  box-shadow: 0 4px 16px 0 rgba(60, 120, 180, 0.13), 0 1px 4px 0 rgba(0,0,0,0.07);
+  border-top: 2.5px solid #4ea1e0;
+  border-bottom: 2.5px solid #b6e0fa;
+  padding: 0.6em 0.4em 0.6em 0.4em;
+  min-width: 20vw;
+  max-width: 30vw;
+  font-family: 'Segoe UI', 'Roboto', 'Arial', sans-serif;
+  font-size: 0.92em;
+  opacity: 0.98;
+  animation:none;
+  overflow-x: hidden;
+}
+
+/* Responsive Anpassung für kleine Bildschirme */
+@media (max-width: 600px) {
+  .popup-card {
+    min-width: 40vw;
+    max-width: 50vw;
+  }
+}
+
+/* Tabelle im Popup: Scrollbar und Layout */
+.popup-table-wrap {
+  max-height: 140px;
+  overflow-y: auto;
+  margin-bottom: 0.5em;
+  overflow-x: auto;
+}
+/* Tabelle im Popup: Grundlayout */
+.popup-table {
+  border-collapse: separate;
+  border-spacing: 0 0.18em;
+  width: 100%;
+  background: none;
+  table-layout: fixed;
+}
+/* Zellen-Stil in der Popup-Tabelle */
+.popup-table td {
+  padding: 0.13em 0.3em 0.13em 0.2em;
+  border: none;
+  font-size: 0.93em;
+  background: rgba(255,255,255,0.82);
+  border-radius: 5px;
+  box-shadow: 0 1px 2px 0 rgba(80,120,180,0.05);
+  transition: background 0.2s;
+  word-break: break-word;
+  white-space: normal;
+  overflow: visible;
+  text-overflow: unset;
+  width: 50%;
+}
+/* Untere Umrandung für alle Zeilen außer der letzten */
+.popup-table tr:not(:last-child) td {
+  border-bottom: 1.2px solid #b6e0fa;
+}
+/* Schlüssel-Spalte in der Popup-Tabelle */
+.popup-key {
+  font-weight: 600;
+  color: #2176ae;
+  background: transparent;
+  box-shadow: none;
+  margin-right: 0.5em;
+  max-width: none;
+  overflow: visible;
+  text-overflow: unset;
+  white-space: normal;
+}
+/* Wert-Spalte in der Popup-Tabelle */
+.popup-value {
+  text-align: left;
+  color: #23476a;
+  font-family: 'Roboto Mono', 'Consolas', monospace;
+  font-size: 0.93em;
+  max-width: none;
+  overflow: visible;
+  text-overflow: unset;
+  white-space: normal;
+}
+
+/* Routing-Button im Popup */
+.popup-route-btn {
+  margin-top: 0.7em;
+  width: 100%;
+  background: linear-gradient(90deg, #4ea1e0 60%, #2176ae 100%);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.08em;
+  font-weight: 600;
+  padding: 0.55em 0.2em 0.5em 0.2em;
+  box-shadow: 0 2px 8px rgba(80,120,180,0.10);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5em;
+  transition: background 0.18s, color 0.18s, box-shadow 0.18s;
+}
+/* Hover-Effekt für Routing-Button */
+.popup-route-btn:hover {
+  background: linear-gradient(90deg, #2176ae 60%, #4ea1e0 100%);
+  color: #fff;
+  box-shadow: 0 4px 16px rgba(80,120,180,0.13);
+}
+/* =====================
+   Map Control Buttons (Center, Geolocation, Legend)
+   ===================== */
+#center-btn,
+#geolocation-toggle,
+#legend-toggle {
+  margin-bottom: 0;
+  background: #fff;
+  border: 2px solid #909192;
+  border-radius: 4px;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  cursor: pointer;
+  font-size: 1.5em;
+  margin: 0;
+  transition: background 0.2s, border 0.2s;
+}
+/* Hover-Effekt für Map Control Buttons */
+#center-btn:hover,
+#geolocation-toggle:hover,
+#legend-toggle:hover {
+  background: #f4f4f4;
+  border-color: #7da4c7;
+}
+
+/* Leaflet-eigener Center-Button */
+.leaflet-bar .leaflet-center-btn {
+  background-color: #fff;
+  border: none;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 1px 5px rgba(0,0,0,0.2);
+  border-radius: 4px;
+  font-size: 1.3em;
+  transition: background 0.2s;
+}
+
+/* Hover-Effekt für Leaflet Center-Button */
+.leaflet-bar .leaflet-center-btn:hover {
+  background: #f4f4f4;
+}
+
+/* =====================
+   Legende für die Karte
+   ===================== */
+#map-legend {
+  position: fixed;
+  bottom: 30px;
+  right: 1.2vw;
+  min-width: 110px;
+  max-width: 320px;
+  width: auto;
+  z-index: 4000;
+  background: linear-gradient(135deg, #fafdff 60%, #e3f0fa 100%);
+  border: none;
+  opacity: 0.99;
+  border-radius: 18px;
+  box-shadow: 0 8px 32px 0 rgba(60, 120, 180, 0.18), 0 1.5px 8px 0 rgba(0,0,0,0.10);
+  padding: 0.45em 0.7em 0.45em 0.7em;
+  font-family: 'Segoe UI', 'Roboto', 'Arial', sans-serif;
+  font-size: clamp(0.90em, 0.85vw, 0.98em);
+  min-height: 1.5em;
+  user-select: none;
+  border-top: 4px solid #4ea1e0;
+  border-bottom: 4px solid #b6e0fa;
+  animation: geo-fadein-legend 0.5s cubic-bezier(.4,1.4,.6,1) 1;
+  transition: box-shadow 0.3s, width 0.3s, font-size 0.3s, opacity 0.3s, background 0.3s;
+  box-sizing: border-box;
+  display: block;
+}
+
+/* Responsive Anpassung für Legende auf kleinen Bildschirmen */
+@media (max-width: 600px) {
+  #map-legend {
+    min-width: 40vw;
+    max-width: 50vw;
+    width: 50vw;
+    padding: 1.1em 0.7em 1em 0.7em;
+    font-size: 1em;
+    right: 2vw;
+    left: auto;
+  }
+}
+
+/* Titelzeile der Legende */
+#map-legend .legend-title {
+  display: flex;
+  align-items: center;
+  font-size: 1em;
+  font-weight: 600;
+  color: #2176ae;
+  margin-bottom: 0.5em;
+  gap: 0.5em;
+}
+/* Icon im Legendentitel */
+#map-legend .legend-title i {
+  font-size: 1.08em;
+  color: #4ea1e0;
+  vertical-align: middle;
+}
+/* Einzelne Zeile in der Legende */
+#map-legend .legend-row {
+  display: flex;
+  align-items: center;
+  font-size: 0.92em;
+  margin-bottom: 0.18em;
+  gap: 0.5em;
+}
+/* Letzte Zeile in der Legende */
+#map-legend .legend-row:last-child {
+  margin-bottom: 0;
+}
+/* Icon in der Legende */
+#map-legend .legend-icon {
+  width: 1.05em;
+  height: 1.05em;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 0.32em;
+}
+
+/* Kapazitätslabel auf der Karte */
+.capacity-label {
+  pointer-events: none;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  text-shadow: 0 1px 2px #fff, 0 0 2px #fff;
+}
+
+
+
+/* =====================
+   GeoJSON-Umrandung für Campus
+   ===================== */
 .campus-outline {
   stroke: rgb(195, 59, 59);
   stroke-width: 5;
   fill-opacity: 0;
 }
 
-/* Routing-Button im Popup */
+/* Routing-Button im Popup (veraltet?) */
 #route-btn {
   margin-top: 10px;
   width: 100%;
   cursor: pointer;
+}
+
+
+/* =====================
+   Geolocation Info Block - Modern Card Style
+   ===================== */
+#map #geolocation {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 38vw;
+  min-width: 300px;
+  max-width: 480px;
+  z-index: 2000;
+  background: linear-gradient(135deg, #fafdff 60%, #e3f0fa 100%);
+  border: none;
+  opacity: 0.99;
+  border-radius: 18px;
+  box-shadow: 0 8px 32px 0 rgba(60, 120, 180, 0.18), 0 1.5px 8px 0 rgba(0,0,0,0.10);
+  padding: 1.6em 1.7em 1.3em 1.7em;
+  font-family: 'Segoe UI', 'Roboto', 'Arial', sans-serif;
+  font-size: clamp(1.05em, 1.6vw, 1.18em);
+  min-height: 1.5em;
+  transition: box-shadow 0.3s, width 0.3s, font-size 0.3s, opacity 0.3s, background 0.3s;
+  box-sizing: border-box;
+  display: block;
+  border-top: 4px solid #4ea1e0;
+  border-bottom: 4px solid #b6e0fa;
+  animation: geo-fadein 0.5s cubic-bezier(.4,1.4,.6,1) 1;
+}
+
+
+/* Animation für das Einblenden des Geolocation-Blocks */
+@keyframes geo-fadein {
+  from { opacity: 0; transform: translate(-50%, -60%) scale(0.97); }
+  to   { opacity: 0.99; transform: translate(-50%, -50%) scale(1); }
+}
+
+/* Animation für das Einblenden der Legende */
+@keyframes geo-fadein-legend {
+  from { opacity: 0; transform: translateY(20px) scale(0.97); }
+  to   { opacity: 0.99; transform: translateY(0) scale(1); }
+}
+
+/* Geolocation- und Info-Button */
+#geolocation-toggle, .leaflet-info-btn {
+  background: #fff;
+  border: 2px solid #909192;
+  border-radius: 4px;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  cursor: pointer;
+  font-size: 1.5em;
+  margin-bottom: 0;
+  transition: background 0.2s, border 0.2s;
+}
+/* Hover-Effekt für Geolocation- und Info-Button */
+#geolocation-toggle:hover, .leaflet-info-btn:hover {
+  background: #f4f4f4;
+}
+
+
+/* =====================
+   Geolocation Table Styling
+   ===================== */
+#geolocation-table {
+  border-collapse: separate;
+  border-spacing: 0 0.25em;
+  width: 100%;
+  margin-top: 0.2em;
+}
+/* Zellen-Stil in der Geolocation-Tabelle */
+#geolocation-table td {
+  padding: 0.22em 1.2em 0.22em 0.3em;
+  border: none;
+  font-size: 1.04em;
+  background: rgba(255,255,255,0.82);
+  border-radius: 6px;
+  box-shadow: 0 1px 3px 0 rgba(80,120,180,0.06);
+  transition: background 0.2s;
+}
+/* Untere Umrandung für alle Zeilen außer der letzten in Geolocation-Tabelle */
+#geolocation-table tr:not(:last-child) td {
+  border-bottom: 1.5px solid #b6e0fa;
+}
+/* Schlüssel-Spalte in der Geolocation-Tabelle */
+#geolocation-table td:first-child {
+  font-weight: 600;
+  color: #2176ae;
+  letter-spacing: 0.01em;
+  background: transparent;
+  box-shadow: none;
+  margin-right: 1.5em;
+}
+/* Wert-Spalte in der Geolocation-Tabelle */
+#geolocation-table td:last-child {
+  text-align: right;
+  color: #23476a;
+  font-family: 'Roboto Mono', 'Consolas', monospace;
+  font-size: 0.98em;
+}
+
+/* =====================
+   Map Buttons (eigene Buttons, z.B. für Routing)
+   ===================== */
+#map-buttons {
+  position: fixed;
+  left: var(--leaflet-control-left, 10px);
+  z-index: 1201;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  top: calc(10px + 4 * 42px); /* 10px Abstand + 4 Leaflet-Buttons à 42px */
+}
+
+/* Spinner-Animation für Routing-Button */
+@keyframes spinBtn {
+  0% { transform: rotate(0deg);}
+  100% { transform: rotate(360deg);}
 }
