@@ -1,6 +1,24 @@
+/* Schließen-Button für Info-Panels) */
+.info-close-btn {
+  margin-top: 0.7em;
+  width: 100%;
+  background: #fff;
+  border: 1.5px solid #4ea1e0;
+  border-radius: 8px;
+  font-size: 1em;
+  font-weight: 600;
+  padding: 0.4em 0.2em;
+  box-shadow: 0 2px 8px rgba(80,120,180,0.10);
+  cursor: pointer;
+  color: #2176ae;
+  transition: background 0.18s, border 0.18s, color 0.18s;
+}
+.info-close-btn:hover {
+  background: #fafdff;
+  border-color: #1976D2;
+  color: #1976D2;
+}
 .custom-leaflet-popup .leaflet-popup-close-button {
-  /* Popup-Close-Button (X) im Popup-Stil */
-  /* Stil für den Schließen-Button im Popup */
   background: rgba(255,255,255,0.85);
   border-radius: 50%;
   border: 2.5px solid #4ea1e0;
@@ -144,8 +162,9 @@
   box-shadow: 0 4px 16px rgba(80,120,180,0.13);
 }
 /* =====================
-   Map Control Buttons (Center, Geolocation, Legend)
+   Map Control Buttons
    ===================== */
+/* Map Control Buttons (links) */
 #center-btn,
 #geolocation-toggle,
 #legend-toggle {
@@ -173,7 +192,7 @@
 }
 
 /* Leaflet-eigener Center-Button */
-.leaflet-bar .leaflet-center-btn {
+.leaflet-bar .leaflet-btn {
   background-color: #fff;
   border: none;
   width: 35px;
@@ -189,7 +208,7 @@
 }
 
 /* Hover-Effekt für Leaflet Center-Button */
-.leaflet-bar .leaflet-center-btn:hover {
+.leaflet-bar .leaflet-btn:hover {
   background: #f4f4f4;
 }
 
@@ -299,113 +318,11 @@
 }
 
 
-/* =====================
-   Geolocation Info Block - Modern Card Style
-   ===================== */
-#map #geolocation {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 38vw;
-  min-width: 300px;
-  max-width: 480px;
-  z-index: 2000;
-  background: linear-gradient(135deg, #fafdff 60%, #e3f0fa 100%);
-  border: none;
-  opacity: 0.99;
-  border-radius: 18px;
-  box-shadow: 0 8px 32px 0 rgba(60, 120, 180, 0.18), 0 1.5px 8px 0 rgba(0,0,0,0.10);
-  padding: 1.6em 1.7em 1.3em 1.7em;
-  font-family: 'Segoe UI', 'Roboto', 'Arial', sans-serif;
-  font-size: clamp(1.05em, 1.6vw, 1.18em);
-  min-height: 1.5em;
-  transition: box-shadow 0.3s, width 0.3s, font-size 0.3s, opacity 0.3s, background 0.3s;
-  box-sizing: border-box;
-  display: block;
-  border-top: 4px solid #4ea1e0;
-  border-bottom: 4px solid #b6e0fa;
-  animation: geo-fadein 0.5s cubic-bezier(.4,1.4,.6,1) 1;
-}
-
-
-/* Animation für das Einblenden des Geolocation-Blocks */
-@keyframes geo-fadein {
-  from { opacity: 0; transform: translate(-50%, -60%) scale(0.97); }
-  to   { opacity: 0.99; transform: translate(-50%, -50%) scale(1); }
-}
-
-/* Animation für das Einblenden der Legende */
-@keyframes geo-fadein-legend {
-  from { opacity: 0; transform: translateY(20px) scale(0.97); }
-  to   { opacity: 0.99; transform: translateY(0) scale(1); }
-}
-
-/* Geolocation- und Info-Button */
-#geolocation-toggle, .leaflet-info-btn {
-  background: #fff;
-  border: 2px solid #909192;
-  border-radius: 4px;
-  width: 35px;
-  height: 35px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-  cursor: pointer;
-  font-size: 1.5em;
-  margin-bottom: 0;
-  transition: background 0.2s, border 0.2s;
-}
-/* Hover-Effekt für Geolocation- und Info-Button */
-#geolocation-toggle:hover, .leaflet-info-btn:hover {
-  background: #f4f4f4;
-}
-
-
-/* =====================
-   Geolocation Table Styling
-   ===================== */
-#geolocation-table {
-  border-collapse: separate;
-  border-spacing: 0 0.25em;
-  width: 100%;
-  margin-top: 0.2em;
-}
-/* Zellen-Stil in der Geolocation-Tabelle */
-#geolocation-table td {
-  padding: 0.22em 1.2em 0.22em 0.3em;
-  border: none;
-  font-size: 1.04em;
-  background: rgba(255,255,255,0.82);
-  border-radius: 6px;
-  box-shadow: 0 1px 3px 0 rgba(80,120,180,0.06);
-  transition: background 0.2s;
-}
-/* Untere Umrandung für alle Zeilen außer der letzten in Geolocation-Tabelle */
-#geolocation-table tr:not(:last-child) td {
-  border-bottom: 1.5px solid #b6e0fa;
-}
-/* Schlüssel-Spalte in der Geolocation-Tabelle */
-#geolocation-table td:first-child {
-  font-weight: 600;
-  color: #2176ae;
-  letter-spacing: 0.01em;
-  background: transparent;
-  box-shadow: none;
-  margin-right: 1.5em;
-}
-/* Wert-Spalte in der Geolocation-Tabelle */
-#geolocation-table td:last-child {
-  text-align: right;
-  color: #23476a;
-  font-family: 'Roboto Mono', 'Consolas', monospace;
-  font-size: 0.98em;
-}
 
 /* =====================
    Map Buttons (eigene Buttons, z.B. für Routing)
    ===================== */
+/* Map Buttons (eigene Buttons, z.B. für Routing, links) */
 #map-buttons {
   position: fixed;
   left: var(--leaflet-control-left, 10px);
@@ -415,6 +332,7 @@
   gap: 10px;
   top: calc(10px + 4 * 42px); /* 10px Abstand + 4 Leaflet-Buttons à 42px */
 }
+
 
 /* Spinner-Animation für Routing-Button */
 @keyframes spinBtn {

@@ -391,6 +391,7 @@ document.getElementById('center-btn')?.addEventListener('click', function (e) {
 
 document.getElementById('geolocation-toggle')?.addEventListener('click', function () {
   const geo = document.getElementById('geolocation');
+  const weather = document.getElementById('weather-popup');
   if (geo) {
     if (geo.style.display === 'none' || geo.style.display === '') {
       geo.style.display = 'block';
@@ -400,6 +401,17 @@ document.getElementById('geolocation-toggle')?.addEventListener('click', functio
   }
 });
 
+document.getElementById('weather-toggle')?.addEventListener('click', function () {
+  const geo = document.getElementById('geolocation');
+  const weather = document.getElementById('weather-popup');
+  // Wenn Wetterpanel geöffnet wird, Geolocation-Panel schließen
+  if (weather && (!weather.classList.contains('open') && weather.style.display !== 'block')) {
+    if (geo && (geo.style.display === 'block' || geo.classList.contains('open'))) {
+      geo.style.display = 'none';
+      geo.classList.remove('open');
+    }
+  }
+});
 
 
 // Geolocation-Informationen ########################################################################
@@ -425,5 +437,13 @@ map.on('locationfound', function (e) {
   if (acc) acc.textContent = e.accuracy.toFixed(1) + ' m';
   if (spd) spd.textContent = speed.toFixed(2) + ' km/h';
   if (zoom) zoom.textContent = map.getZoom();
+});
+
+// Geolocation-Panel schließen (Schließen-Button)
+document.getElementById('geolocation-close')?.addEventListener('click', function (e) {
+  e.stopPropagation();
+  const geo = document.getElementById('geolocation');
+  if (geo) geo.style.display = 'none';
+  if (geo) geo.classList.remove('open');
 });
 

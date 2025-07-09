@@ -47,6 +47,8 @@
   <!-- ################## CSS ################## -->
   <link rel="stylesheet" href="css/index.css">
   <link rel="stylesheet" href="css/leaflet_map.css">
+  <link rel="stylesheet" href="css/weather.css">
+  <link rel="stylesheet" href="css/geolocation.css">
 </head>
 
 <body>
@@ -57,21 +59,26 @@
     </div>
     <!-- Karten-Buttons: Zentrum & Geolocation Info -->
     <div id="map-buttons">
-      <button id="center-btn" class="leaflet-center-btn" title="Zurück zum KIT Zentrum" type="button">
+      <button id="weather-toggle" class="leaflet-btn" title="Wie ist das Wetter am KIT?" type="button"
+        style="position: relative;">
+        <span id="weather-icon"><i class="bi bi-cloud"></i></span>
+        <span id="weather-badge"></span>
+      </button>
+      <button id="center-btn" class="leaflet-btn" title="Zurück zum KIT Zentrum" type="button">
         <i class="bi bi-arrow-left-circle-fill"></i>
       </button>
-      <button id="geolocation-toggle" class="leaflet-center-btn" title="Standort-Info anzeigen" type="button">
+      <button id="geolocation-toggle" class="leaflet-btn" title="Standort-Info anzeigen" type="button">
         <i class="bi bi-info-square-fill"></i>
       </button>
-      <button id="legend-toggle" class="leaflet-center-btn" title="Legende anzeigen/ausblenden" type="button">
+      <button id="legend-toggle" class="leaflet-btn" title="Legende anzeigen/ausblenden" type="button">
         <i class="bi bi-map-fill"></i>
       </button>
     </div>
     <div id="geolocation" style="display:none;">
-      <div style="text-align:center; margin-bottom:0.2em;">
-        <i class="bi bi-pin-map-fill" style="font-size:2.2em;color:#4ea1e0;vertical-align:middle;"></i>
+      <div class="weather-popup-header">
+        <span id="geolocation-popup-icon"><i class="bi bi-pin-map-fill" style="color:#4ea1e0;"></i></span>
+        <span id="geolocation-popup-title">Informationen zu deinem Standort</span>
       </div>
-      <h2 style="text-align:center;">Informationen zu deinem Standort</h2>
       <table id="geolocation-table">
         <tr>
           <td>Breite</td>
@@ -94,11 +101,22 @@
           <td id="geo-zoom">-</td>
         </tr>
       </table>
+      <button id="geolocation-close" class="info-close-btn">Schließen</button>
+    </div>
+    <!-- Wetter-Info Popup -->
+    <div id="weather-popup">
+      <div class="weather-popup-header">
+        <span id="weather-popup-icon"><i class="bi bi-cloud"></i></span>
+        <span id="weather-popup-title">Wetter am KIT Campus Süd</span>
+      </div>
+      <div id="weather-popup-entries"></div>
+      <div id="weather-popup-time"></div>
+      <button id="weather-popup-close">Schließen</button>
     </div>
     <!-- Legende für die Karte -->
     <div id="map-legend" class="leaflet-control leaflet-bar">
       <div class="legend-title">
-        <i class="bi bi-info-circle-fill"></i> Legende
+        <i class="bi bi-map-fill"></i> Legende
       </div>
       <div class="legend-row">
         <span class="legend-icon"><i class="bi bi-house-door-fill" style="color:#1976D2"></i></span>
@@ -124,9 +142,9 @@
   </div>
 
   <script src="js/index.js"></script>
-  <script src="js/overpass_fetch.js"></script>
   <script src="js/wfs_fetch.js"></script>
   <script type="module" src="js/leaflet_map.js"></script>
+  <script src="js/weather.js"></script>
 </body>
 
 </html>

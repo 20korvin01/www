@@ -1,0 +1,135 @@
+/* Wetter-Button */
+#weather-toggle {
+  margin-bottom: 0;
+  background: #fff;
+  border: 2px solid #909192;
+  border-radius: 4px;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  cursor: pointer;
+  font-size: 1.5em;
+  margin: 0;
+  position: relative;
+  transition: background 0.2s, border 0.2s;
+}
+#weather-toggle:hover {
+  background: #f4f4f4;
+  border-color: #7da4c7;
+}
+#weather-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  font-size: 1em;
+}
+#weather-badge {
+  position: absolute;
+  top: -10px;
+  left: 20px;
+  min-width: 15px;
+  min-height: 15px;
+  padding: 0 6px;
+  background: #4ea1e0;
+  color: #fff;
+  border-radius: 10px;
+  font-size: 0.55em;
+  line-height: 18px;
+  display: none;
+  z-index: 2;
+  pointer-events: none;
+  box-shadow: 0 1px 4px rgba(60,120,180,0.13);
+}
+
+/* Wetter-Popup */
+
+#weather-popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 38vw;
+  min-width: 300px;
+  max-width: 480px;
+  z-index: 2000;
+  background: linear-gradient(135deg, #fafdff 60%, #e3f0fa 100%);
+  border: none;
+  border-radius: 18px;
+  box-shadow: 0 8px 32px 0 rgba(60, 120, 180, 0.18), 0 1.5px 8px 0 rgba(0,0,0,0.10);
+  padding: 1.6em 1.7em 1.3em 1.7em;
+  font-family: 'Segoe UI', 'Roboto', 'Arial', sans-serif;
+  font-size: clamp(1.05em, 1.6vw, 1.18em);
+  min-height: 1.5em;
+  box-sizing: border-box;
+  border-top: 4px solid #4ea1e0;
+  border-bottom: 4px solid #b6e0fa;
+  opacity: 0.99;
+  display: none;
+  animation: geo-fadein 0.5s cubic-bezier(.4,1.4,.6,1) 1;
+  transition: box-shadow 0.3s, width 0.3s, font-size 0.3s, opacity 0.3s, background 0.3s;
+}
+
+@keyframes geo-fadein {
+  from { opacity: 0; transform: translate(-50%, -60%) scale(0.97); }
+  to   { opacity: 0.99; transform: translate(-50%, -50%) scale(1); }
+}
+
+#weather-popup.open {
+  opacity: 0.99;
+  pointer-events: auto;
+  display: block;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+/* Sichtbar machen durch Klasse */
+#weather-popup.open {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+/* Inhalt des Popups */
+#weather-popup .weather-popup-header,
+#geolocation .weather-popup-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  margin-bottom: 0.5em;
+}
+#weather-popup-icon,
+#geolocation-popup-icon {
+  font-size: 2em;
+}
+#weather-popup-title,
+#geolocation-popup-title {
+  font-weight: 600;
+  color: #2176ae;
+}
+#weather-popup-entries {
+  margin-bottom: 0.2em;
+  color: #23476a;
+  font-size: 1.1em;
+}
+#weather-popup-time {
+  color: #888;
+  font-size: 0.92em;
+  margin-top: 0.5em;
+}
+#weather-popup-close {
+  margin-top: 0.7em;
+  width: 100%;
+  background: #fff;
+  border: 1.5px solid #4ea1e0;
+  border-radius: 8px;
+  font-size: 1em;
+  font-weight: 600;
+  padding: 0.4em 0.2em;
+  box-shadow: 0 2px 8px rgba(80,120,180,0.10);
+  cursor: pointer;
+  color: #2176ae;
+}

@@ -1,0 +1,90 @@
+/* =====================
+   Geolocation Info Block
+   ===================== */
+#map #geolocation {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 38vw;
+  min-width: 300px;
+  max-width: 480px;
+  z-index: 2000;
+  background: linear-gradient(135deg, #fafdff 60%, #e3f0fa 100%);
+  border: none;
+  opacity: 0.99;
+  border-radius: 18px;
+  box-shadow: 0 8px 32px 0 rgba(60, 120, 180, 0.18), 0 1.5px 8px 0 rgba(0,0,0,0.10);
+  padding: 1.6em 1.7em 1.3em 1.7em;
+  font-family: 'Segoe UI', 'Roboto', 'Arial', sans-serif;
+  font-size: clamp(1.05em, 1.6vw, 1.18em);
+  min-height: 1.5em;
+  transition: box-shadow 0.3s, width 0.3s, font-size 0.3s, opacity 0.3s, background 0.3s;
+  box-sizing: border-box;
+  display: block;
+  border-top: 4px solid #4ea1e0;
+  border-bottom: 4px solid #b6e0fa;
+  animation: geo-fadein 0.5s cubic-bezier(.4,1.4,.6,1) 1;
+}
+
+/* Animation für das Einblenden des Geolocation-Blocks */
+@keyframes geo-fadein {
+  from { opacity: 0; transform: translate(-50%, -60%) scale(0.97); }
+  to   { opacity: 0.99; transform: translate(-50%, -50%) scale(1); }
+}
+
+/* Geolocation- und Info-Button */
+#geolocation-toggle, .leaflet-info-btn {
+  background: #fff;
+  border: 2px solid #909192;
+  border-radius: 4px;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  cursor: pointer;
+  font-size: 1.5em;
+  margin-bottom: 0;
+  transition: background 0.2s, border 0.2s;
+}
+#geolocation-toggle:hover, .leaflet-info-btn:hover {
+  background: #f4f4f4;
+}
+
+/* =====================
+   Geolocation Table Styling
+   ===================== */
+#geolocation-table {
+  border-collapse: separate;
+  border-spacing: 0 0.25em;
+  width: 100%;
+  margin-top: 0.2em;
+}
+#geolocation-table td {
+  padding: 0.22em 1.2em 0.22em 0.3em;
+  border: none;
+  font-size: 1.04em;
+  background: rgba(255,255,255,0.82);
+  border-radius: 6px;
+  box-shadow: 0 1px 3px 0 rgba(80,120,180,0.06);
+  transition: background 0.2s;
+}
+#geolocation-table tr:not(:last-child) td {
+  border-bottom: 1.5px solid #b6e0fa;
+}
+#geolocation-table td:first-child {
+  font-weight: 600;
+  color: #2176ae;
+  letter-spacing: 0.01em;
+  background: transparent;
+  box-shadow: none;
+  margin-right: 1.5em;
+}
+#geolocation-table td:last-child {
+  text-align: right;
+  color: #23476a;
+  font-family: 'Roboto Mono', 'Consolas', monospace;
+  font-size: 0.98em;
+}
