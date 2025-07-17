@@ -171,25 +171,43 @@ window.addEventListener('DOMContentLoaded', function () {
         weatherBtn.addEventListener('click', toggleWeatherPopup);
         weatherPopupClose.addEventListener('click', () => {
             weatherPopup.classList.remove('open');
-            weather.style.display = 'none';
             console.log('Weather popup closed');
         });
     }
 });
 
+// Zusätzlicher Weather-Button Handler für Panel-Koordination (migriert aus leaflet_map.js)
+document.getElementById('weather-toggle')?.addEventListener('click', function () {
+    const geo = document.getElementById('geolocation');
+    const weather = document.getElementById('weather-popup');
+    // Wenn Wetterpanel geöffnet wird, Geolocation-Panel schließen
+    if (weather && (!weather.classList.contains('open') && weather.style.display !== 'block')) {
+        if (geo && (geo.style.display === 'block' || geo.classList.contains('open'))) {
+            geo.style.display = 'none';
+            geo.classList.remove('open');
+        }
+    }
+});
 
-
-// Geolocation-Panel: Wetterpanel schließen, wenn geöffnet
+// Geolocation-Panel Handler: Wetterpanel schließen, wenn geöffnet (migriert aus leaflet_map.js)
 document.getElementById('geolocation-toggle')?.addEventListener('click', function () {
     const geo = document.getElementById('geolocation');
     const weather = document.getElementById('weather-popup');
-    if (geo && (geo.style.display === 'none' || geo.style.display === '')) {
-        if (weather && weather.classList.contains('open')) {
-            weather.classList.remove('open');
-        }
-        // Optional: falls display:none/block noch verwendet wird
-        if (weather && weather.style.display === 'block') {
-            weather.style.display = 'none';
+    
+    if (geo) {
+        if (geo.style.display === 'none' || geo.style.display === '') {
+            // Geolocation-Panel öffnen
+            geo.style.display = 'block';
+            // Weather-Panel schließen wenn offen
+            if (weather && weather.classList.contains('open')) {
+                weather.classList.remove('open');
+            }
+            if (weather && weather.style.display === 'block') {
+                weather.style.display = 'none';
+            }
+        } else {
+            // Geolocation-Panel schließen
+            geo.style.display = 'none';
         }
     }
 });

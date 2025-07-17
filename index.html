@@ -115,34 +115,49 @@
     </div>
     <!-- Legende für die Karte -->
     <div id="map-legend" class="leaflet-control leaflet-bar">
-      <div class="legend-title">
+      <div class="legend-title legend-toggle-all" id="legend-toggle-all">
         <i class="bi bi-map-fill"></i> Legende
       </div>
-      <div class="legend-row">
+      <div class="legend-row legend-category" data-category="buildings">
         <span class="legend-icon"><i class="bi bi-house-door-fill" style="color:#1976D2"></i></span>
         Gebäude
       </div>
-      <div class="legend-row">
+      <div class="legend-row legend-category" data-category="grass">
         <span class="legend-icon"><i class="bi bi-tree-fill" style="color:#388e3c"></i></span>
         Rasenfläche
       </div>
-      <div class="legend-row">
+      <div class="legend-row legend-category" data-category="bicycle">
         <span class="legend-icon"><i class="bi bi-bicycle" style="color:#009088"></i></span>
-        Fahrradständer (mit Kapazität)
+        Fahrradständer
       </div>
-      <div class="legend-row">
+      <div class="legend-row legend-category" data-category="parking">
         <span class="legend-icon"><i class="bi bi-car-front-fill" style="color:#444"></i></span>
-        Parkplatz (mit Kapazität)
+        Parkplatz
       </div>
-      <div class="legend-row">
-        <span class="legend-icon"><i class="bi bi-geo-alt-fill" style="color:#FF5722"></i></span>
-        Sonstiges
+      <div class="legend-row legend-category" data-category="bus">
+        <span class="legend-icon"><i class="bi bi-bus-front-fill" style="color:#FFC107"></i></span>
+        Bushaltestelle
+      </div>
+      <div class="legend-row legend-category" data-category="monument">
+        <span class="legend-icon"><i class="bi bi-columns-gap" style="color:#795548"></i></span>
+        Denkmal
+      </div>
+      <div class="legend-row legend-category" data-category="food">
+        <span class="legend-icon"><i class="bi bi-cup-hot-fill" style="color:#5c3f15"></i></span>
+        Essensmöglichkeit
+      </div>
+      <div class="legend-row legend-category" data-category="other">
+        <span class="legend-icon"><i class="bi bi-people-fill" style="color:#FF5722"></i></span>
+        Öffentlicher Platz
       </div>
     </div>
   </div>
 
   <script src="js/index.js"></script>
+  <script src="js/ui_events.js"></script>
   <script src="js/wfs_fetch.js"></script>
+  <script src="js/legend.js"></script>
+  <script src="js/location_info.js"></script>
   <script src="js/leaflet_map.js"></script>
   <script src="js/weather.js"></script>
 </body>

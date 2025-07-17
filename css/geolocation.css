@@ -25,6 +25,8 @@
   border-top: 4px solid #4ea1e0;
   border-bottom: 4px solid #b6e0fa;
   animation: geo-fadein 0.5s cubic-bezier(.4,1.4,.6,1) 1;
+  /* Verhindert Map-Interaktion durch das Geolocation-Popup */
+  pointer-events: auto;
 }
 
 /* Animation für das Einblenden des Geolocation-Blocks */
@@ -48,6 +50,8 @@
   font-size: 1.5em;
   margin-bottom: 0;
   transition: background 0.2s, border 0.2s;
+  /* Verhindert Map-Interaktion durch Geolocation- und Info-Buttons */
+  pointer-events: auto;
 }
 #geolocation-toggle:hover, .leaflet-info-btn:hover {
   background: #f4f4f4;

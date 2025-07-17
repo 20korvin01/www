@@ -36,6 +36,8 @@ html, body {
   box-sizing: border-box;
   border-top: 4px solid #4ea1e0;
   border-bottom: 4px solid #b6e0fa;
+  /* Verhindert Map-Interaktion durch dieses Element */
+  pointer-events: auto;
 }
 
 #map #header h1 {
@@ -194,4 +196,30 @@ html, body {
     left: unset;
     top: unset;
   }
+}
+
+/* =====================
+   Globale UI-Elemente vor Map-Interaktion schützen
+   ===================== */
+/* Alle UI-Elemente sollen Map-Interaktion verhindern */
+#header,
+#map-buttons,
+#map-legend,
+#weather-popup,
+#geolocation,
+.leaflet-control,
+.leaflet-popup,
+.leaflet-popup-content-wrapper,
+.leaflet-popup-content,
+.leaflet-popup-close-button {
+  pointer-events: auto;
+}
+
+/* Buttons und interaktive Elemente explizit aktivieren */
+button,
+.leaflet-btn,
+.info-close-btn,
+.legend-category,
+.legend-toggle-all {
+  pointer-events: auto;
 }

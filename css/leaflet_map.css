@@ -12,6 +12,35 @@
   cursor: pointer;
   color: #2176ae;
   transition: background 0.18s, border 0.18s, color 0.18s;
+  /* Verhindert Map-Interaktion durch Close-Buttons */
+  pointer-events: auto;
+}
+
+  /* Interaktive Legende */
+.legend-category {
+  cursor: pointer;
+  transition: opacity 0.3s ease, background-color 0.2s ease;
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
+.legend-category:hover {
+  background-color: rgba(78, 161, 224, 0.1);
+}
+
+.legend-category.disabled {
+  opacity: 0.5;
+}
+
+.legend-toggle-all {
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+  user-select: none;
+}
+
+.legend-toggle-all:hover {
+  background-color: rgba(78, 161, 224, 0.1);
+  color: #1976D2;
 }
 .info-close-btn:hover {
   background: #fafdff;
@@ -205,6 +234,8 @@
   border-radius: 4px;
   font-size: 1.3em;
   transition: background 0.2s;
+  /* Verhindert Map-Interaktion durch diese Buttons */
+  pointer-events: auto;
 }
 
 /* Hover-Effekt für Leaflet Center-Button */
@@ -239,6 +270,8 @@
   transition: box-shadow 0.3s, width 0.3s, font-size 0.3s, opacity 0.3s, background 0.3s;
   box-sizing: border-box;
   display: block;
+  /* Verhindert Map-Interaktion durch die Legende */
+  pointer-events: auto;
 }
 
 /* Responsive Anpassung für Legende auf kleinen Bildschirmen */
@@ -299,8 +332,6 @@
   text-shadow: 0 1px 2px #fff, 0 0 2px #fff;
 }
 
-
-
 /* =====================
    GeoJSON-Umrandung für Campus
    ===================== */
@@ -317,8 +348,6 @@
   cursor: pointer;
 }
 
-
-
 /* =====================
    Map Buttons (eigene Buttons, z.B. für Routing)
    ===================== */
@@ -331,8 +360,25 @@
   flex-direction: column;
   gap: 10px;
   top: calc(10px + 4 * 42px); /* 10px Abstand + 4 Leaflet-Buttons à 42px */
+  /* Verhindert Map-Interaktion durch diese Buttons */
+  pointer-events: auto;
 }
 
+/* Interaktive Legende */
+.legend-category {
+  cursor: pointer;
+  transition: opacity 0.3s ease, background-color 0.2s ease;
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
+.legend-category:hover {
+  background-color: rgba(78, 161, 224, 0.1);
+}
+
+.legend-category.disabled {
+  opacity: 0.5;
+}
 
 /* Spinner-Animation für Routing-Button */
 @keyframes spinBtn {

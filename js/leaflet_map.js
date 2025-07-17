@@ -14,7 +14,8 @@ function setLegendVisible(visible) {
     legendToggle.classList.remove('active');
   }
 }
-legendToggle.addEventListener('click', () => {
+// Event-Handler für das Ein-/Ausblenden der gesamten Legende
+legendToggle?.addEventListener('click', () => {
   legendVisible = !legendVisible;
   setLegendVisible(legendVisible);
 });
@@ -80,21 +81,9 @@ L.Control.geocoder({
     L.marker(e.geocode.center).addTo(map);
   })
   .addTo(map);
-// Geolocation (User-Position)
-let currentPosition = null;
-const lc = L.control.locate({
-  setView: 'once',
-  flyTo: true,
-  keepCurrentZoomLevel: true,
-  showPopup: false,
-  drawCircle: false,
-  drawMarker: true,
-  locateOptions: { enableHighAccuracy: true }
-}).addTo(map);
-// Standort direkt beim Laden aktivieren
-map.whenReady(function () {
-  lc.start();
-});
+// Geolocation (User-Position) - initialisiert über location_info.js
+const locationResult = initializeGeolocation(map);
+const lc = locationResult.lc;
 
 
 // Routing mit OpenRouteService ########################################################################################################################################################################
@@ -275,6 +264,16 @@ fetchWFS(queryURL, function (osmData) {
     disableClusteringAtZoom: 19
   });
 
+  // Separate Layer-Gruppen für jede POI-Kategorie
+  const buildingMarkers = L.layerGroup();
+  const grassMarkers = L.layerGroup();
+  const bicycleMarkers = L.layerGroup();
+  const parkingMarkers = L.layerGroup();
+  const busMarkers = L.layerGroup();
+  const monumentMarkers = L.layerGroup();
+  const foodMarkers = L.layerGroup();
+  const otherMarkers = L.layerGroup();
+
 
   // Bootstrap Icons als Marker-Icons (inline SVGs, wie in der Legende)
   // Haus-Icon (bi-house-door-fill, #1976D2)
@@ -313,13 +312,40 @@ fetchWFS(queryURL, function (osmData) {
     popupAnchor: [0, -32]
   });
 
-  // Sonstiges Icon (bi-geo-alt-fill, #FF5722)
-  const otherIcon = L.divIcon({
+  // Bus-Icon (bi-bus-front-fill, #FFC107)
+  const busIcon = L.divIcon({
     className: 'custom-marker-icon',
-    html: `<i class="bi bi-geo-alt-fill" style="font-size:1.4em;color:#FF5722;"></i>`,
+    html: `<i class="bi bi-bus-front-fill" style="font-size:2em;color:#FFC107;"></i>`,
+    iconSize: [32, 32],
+    iconAnchor: [16, 32],
+    popupAnchor: [0, -32]
+  });
+
+  // Denkmal-Icon (bi-columns-gap, #795548)
+  const monumentIcon = L.divIcon({
+    className: 'custom-marker-icon',
+    html: `<i class="bi bi-columns-gap" style="font-size:2em;color:#795548;"></i>`,
+    iconSize: [32, 32],
+    iconAnchor: [16, 32],
+    popupAnchor: [0, -32]
+  });
+
+  // Öffentlicher Platz Icon (bi-square, #FF5722)
+  const placeIcon = L.divIcon({
+    className: 'custom-marker-icon',
+    html: `<i class="bi bi-people-fill" style="font-size:1.4em;color:#FF5722;"></i>`,
     iconSize: [22, 22],
     iconAnchor: [11, 22],
     popupAnchor: [0, -22]
+  });
+
+  // Essen-Icon (bi-cup-hot-fill, #5c3f15)
+  const foodIcon = L.divIcon({
+    className: 'custom-marker-icon',
+    html: `<i class="bi bi-cup-hot-fill" style="font-size:2em;color:#5c3f15;"></i>`,
+    iconSize: [32, 32],
+    iconAnchor: [16, 32],
+    popupAnchor: [0, -32]
   });
 
   // GeoJSON-Layer erstellen und Icons zuweisen
@@ -330,7 +356,7 @@ fetchWFS(queryURL, function (osmData) {
         let html = `<span style='position:relative;display:inline-block;'>` +
           `<i class=\"bi bi-bicycle\" style=\"font-size:2em;color:#009088;vertical-align:middle;\"></i>`;
         if (feature.properties.capacity) {
-          html += `<span style=\"position:absolute;bottom:0;left:50%;transform:translateX(-50%);color:#009088;font-weight:bold;font-size:1em;background:rgba(255,255,255,0.85);padding:0 2px;border-radius:4px;line-height:1;\">${feature.properties.capacity}</span>`;
+          html += `<span style=\"position:absolute;bottom:-3px;left:50%;transform:translateX(-50%);color:#009088;font-weight:bold;font-size:1em;background:rgba(255,255,255,0.85);padding:0 2px;border-radius:4px;line-height:1;\">${feature.properties.capacity}</span>`;
         }
         html += `</span>`;
         const icon = L.divIcon({
@@ -340,14 +366,16 @@ fetchWFS(queryURL, function (osmData) {
           iconAnchor: [16, 32],
           popupAnchor: [0, -32]
         });
-        return L.marker(latlng, { icon });
+        const marker = L.marker(latlng, { icon });
+        bicycleMarkers.addLayer(marker);
+        return marker;
       }
       // parking → Auto-Icon + Kapazität als Teil des Icons
       else if (feature.properties && feature.properties.amenity === "parking") {
         let html = `<span style='position:relative;display:inline-block;'>` +
           `<i class=\"bi bi-car-front-fill\" style=\"font-size:2em;color:#444;vertical-align:middle;\"></i>`;
         if (feature.properties.capacity) {
-          html += `<span style=\"position:absolute;bottom:0;left:50%;transform:translateX(-50%);color:#444;font-weight:bold;font-size:1em;background:rgba(255,255,255,0.85);padding:0 2px;border-radius:4px;line-height:1;\">${feature.properties.capacity}</span>`;
+          html += `<span style=\"position:absolute;bottom:-3px;left:50%;transform:translateX(-50%);color:#444;font-weight:bold;font-size:1em;background:rgba(255,255,255,0.85);padding:0 2px;border-radius:4px;line-height:1;\">${feature.properties.capacity}</span>`;
         }
         html += `</span>`;
         const icon = L.divIcon({
@@ -357,11 +385,80 @@ fetchWFS(queryURL, function (osmData) {
           iconAnchor: [16, 32],
           popupAnchor: [0, -32]
         });
-        return L.marker(latlng, { icon });
+        const marker = L.marker(latlng, { icon });
+        parkingMarkers.addLayer(marker);
+        return marker;
+      }
+      // bus → Bus-Icon + name als Teil des Icons
+      else if (feature.properties && feature.properties.bus === "yes") {
+        let html = `<span style='position:relative;display:inline-block;'>` +
+          `<i class=\"bi bi-bus-front-fill\" style=\"font-size:2em;color:#FFC107;vertical-align:middle;\"></i>`;
+        if (feature.properties.name) {
+          html += `<span style=\"position:absolute;bottom:-15px;left:50%;transform:translateX(-50%);color:#FFC107;font-weight:bold;font-size:0.8em;background:rgba(255,255,255,0.85);padding:0 2px;border-radius:4px;line-height:1;white-space:normal;max-width:120px;text-align:center;display:block;overflow:hidden;max-height:2em;\">${feature.properties.name}</span>`;
+        }
+        html += `</span>`;
+        const icon = L.divIcon({
+          className: 'custom-marker-icon',
+          html: html,
+          iconSize: [32, 32],
+          iconAnchor: [16, 32],
+          popupAnchor: [0, -32]
+        });
+        const marker = L.marker(latlng, { icon });
+        busMarkers.addLayer(marker);
+        return marker;
+      }
+      // memorial → Denkmal-Icon + name als Teil des Icons
+      else if (feature.properties && feature.properties.memorial && feature.properties.memorial !== null && feature.properties.memorial !== "null" && feature.properties.memorial !== "") {
+        let html = `<span style='position:relative;display:inline-block;'>` +
+          `<i class=\"bi bi-columns-gap\" style=\"font-size:2em;color:#795548;vertical-align:middle;\"></i>`;
+        if (feature.properties.name) {
+          html += `<span style=\"position:absolute;bottom:-15px;left:50%;transform:translateX(-50%);color:#795548;font-weight:bold;font-size:0.8em;background:rgba(255,255,255,0.85);padding:0 2px;border-radius:4px;line-height:1;white-space:normal;max-width:120px;text-align:center;display:block;overflow:hidden;max-height:2em;\">${feature.properties.name}</span>`;
+        }
+        html += `</span>`;
+        const icon = L.divIcon({
+          className: 'custom-marker-icon',
+          html: html,
+          iconSize: [32, 32],
+          iconAnchor: [16, 32],
+          popupAnchor: [0, -32]
+        });
+        const marker = L.marker(latlng, { icon });
+        monumentMarkers.addLayer(marker);
+        return marker;
+      }
+      // amenity (food establishments) → Essen-Icon + name als Teil des Icons
+      else if (feature.properties && feature.properties.amenity && 
+               (feature.properties.amenity === "restaurant" || 
+                feature.properties.amenity === "cafe" || 
+                feature.properties.amenity === "fast_food" || 
+                feature.properties.amenity === "bar" || 
+                feature.properties.amenity === "pub" || 
+                feature.properties.amenity === "food_court" || 
+                feature.properties.amenity === "canteen" || 
+                feature.properties.amenity === "biergarten")) {
+        let html = `<span style='position:relative;display:inline-block;'>` +
+          `<i class=\"bi bi-cup-hot-fill\" style=\"font-size:2em;color:#5c3f15;vertical-align:middle;\"></i>`;
+        if (feature.properties.name) {
+          html += `<span style=\"position:absolute;bottom:-15px;left:50%;transform:translateX(-50%);color:#5c3f15;font-weight:bold;font-size:0.8em;background:rgba(255,255,255,0.85);padding:0 2px;border-radius:4px;line-height:1;white-space:normal;max-width:120px;text-align:center;display:block;overflow:hidden;max-height:2em;\">${feature.properties.name}</span>`;
+        }
+        html += `</span>`;
+        const icon = L.divIcon({
+          className: 'custom-marker-icon',
+          html: html,
+          iconSize: [32, 32],
+          iconAnchor: [16, 32],
+          popupAnchor: [0, -32]
+        });
+        const marker = L.marker(latlng, { icon });
+        foodMarkers.addLayer(marker);
+        return marker;
       }
       // landuse → Gras-Icon
       else if (feature.properties && feature.properties.landuse) {
-        return L.marker(latlng, { icon: grassIcon });
+        const marker = L.marker(latlng, { icon: grassIcon });
+        grassMarkers.addLayer(marker);
+        return marker;
       }
       // building → Haus-Icon + ref als Teil des Icons
       else if (feature.properties && feature.properties.building) {
@@ -370,7 +467,7 @@ fetchWFS(queryURL, function (osmData) {
         }
         let html = `<span style='position:relative;display:inline-block;'>` +
           `<i class=\"bi bi-house-door-fill\" style=\"font-size:2em;color:#1976D2;vertical-align:middle;\"></i>` +
-          `<span style=\"position:absolute;bottom:0;left:50%;transform:translateX(-50%);color:#1976D2;font-weight:bold;font-size:1em;background:rgba(255,255,255,0.85);padding:0 2px;border-radius:4px;line-height:1;\">${feature.properties.ref}</span>` +
+          `<span style=\"position:absolute;bottom:-5px;left:50%;transform:translateX(-50%);color:#1976D2;font-weight:bold;font-size:1em;background:rgba(255,255,255,0.85);padding:0 2px;border-radius:4px;line-height:1;\">${feature.properties.ref}</span>` +
           `</span>`;
         const icon = L.divIcon({
           className: 'custom-marker-icon',
@@ -379,16 +476,35 @@ fetchWFS(queryURL, function (osmData) {
           iconAnchor: [16, 32],
           popupAnchor: [0, -32]
         });
-        return L.marker(latlng, { icon });
+        const marker = L.marker(latlng, { icon });
+        buildingMarkers.addLayer(marker);
+        return marker;
       } else {
-        return L.marker(latlng, { icon: otherIcon });
+        // Prüfen, ob das Feature nur eine id hat und keine anderen aussagekräftigen Attribute
+        const props = feature.properties || {};
+        const meaningfulKeys = Object.keys(props).filter(key => 
+          key !== "id" && 
+          props[key] !== null && 
+          props[key] !== undefined && 
+          props[key] !== "null" && 
+          props[key] !== ""
+        );
+        
+        // Wenn keine aussagekräftigen Attribute vorhanden sind, Punkt nicht anzeigen
+        if (meaningfulKeys.length === 0) {
+          return null;
+        }
+        
+        const marker = L.marker(latlng, { icon: placeIcon });
+        otherMarkers.addLayer(marker);
+        return marker;
       }
     },
     onEachFeature: function (feature, layer) {
       // Elegantes Popup-Design mit moderner Card-Optik
       let props = feature.properties || {};
       let tableRows = Object.keys(props)
-        .filter(key => props[key] !== null && props[key] !== undefined && props[key] !== "null" && props[key] !== "")
+        .filter(key => key !== "id" && props[key] !== null && props[key] !== undefined && props[key] !== "null" && props[key] !== "")
         .map(key =>
           `<tr><td class='popup-key'>${key}</td><td class='popup-value'>${props[key]}</td></tr>`
         ).join('');
@@ -409,12 +525,37 @@ fetchWFS(queryURL, function (osmData) {
   // Add GeoJSON layer to cluster group
   markers.addLayer(geoJsonLayer);
 
+  // Alle Kategorie-Layer zu Cluster-Gruppe hinzufügen
+  markers.addLayer(buildingMarkers);
+  markers.addLayer(grassMarkers);
+  markers.addLayer(bicycleMarkers);
+  markers.addLayer(parkingMarkers);
+  markers.addLayer(busMarkers);
+  markers.addLayer(monumentMarkers);
+  markers.addLayer(foodMarkers);
+  markers.addLayer(otherMarkers);
+
   // Overlay-Layer für Layer-Control registrieren
   window.overlayMaps["POIs"] = markers;
   window.layerControl.addOverlay(markers, "POIs");
 
   // Add cluster group to map
   map.addLayer(markers);
+
+  // Legende initialisieren
+  const layerGroups = {
+    buildingMarkers,
+    grassMarkers,
+    bicycleMarkers,
+    parkingMarkers,
+    busMarkers,
+    monumentMarkers,
+    foodMarkers,
+    otherMarkers
+  };
+  
+  // Interaktive Legende mit legend.js initialisieren
+  initializeLegend(layerGroups, markers);
 });
 
 
@@ -464,7 +605,6 @@ document.getElementById('center-btn')?.addEventListener('click', function (e) {
 
 document.getElementById('geolocation-toggle')?.addEventListener('click', function () {
   const geo = document.getElementById('geolocation');
-  const weather = document.getElementById('weather-popup');
   if (geo) {
     if (geo.style.display === 'none' || geo.style.display === '') {
       geo.style.display = 'block';
@@ -472,51 +612,5 @@ document.getElementById('geolocation-toggle')?.addEventListener('click', functio
       geo.style.display = 'none';
     }
   }
-});
-
-document.getElementById('weather-toggle')?.addEventListener('click', function () {
-  const geo = document.getElementById('geolocation');
-  const weather = document.getElementById('weather-popup');
-  // Wenn Wetterpanel geöffnet wird, Geolocation-Panel schließen
-  if (weather && (!weather.classList.contains('open') && weather.style.display !== 'block')) {
-    if (geo && (geo.style.display === 'block' || geo.classList.contains('open'))) {
-      geo.style.display = 'none';
-      geo.classList.remove('open');
-    }
-  }
-});
-
-
-// Geolocation-Informationen ########################################################################
-map.on('zoomend', function () {
-  const zoomCell = document.getElementById('geo-zoom');
-  if (zoomCell) {
-    zoomCell.textContent = map.getZoom();
-  }
-});
-
-map.on('locationfound', function (e) {
-  currentPosition = [e.latitude, e.longitude];
-  // Geschwindigkeit berechnen und auf 0 setzen, falls NaN
-  let speed = e.speed * 3.6;
-  if (isNaN(speed)) speed = 0;
-  const lat = document.getElementById('geo-lat');
-  const lng = document.getElementById('geo-lng');
-  const acc = document.getElementById('geo-acc');
-  const spd = document.getElementById('geo-speed');
-  const zoom = document.getElementById('geo-zoom');
-  if (lat) lat.textContent = e.latitude.toFixed(6);
-  if (lng) lng.textContent = e.longitude.toFixed(6);
-  if (acc) acc.textContent = e.accuracy.toFixed(1) + ' m';
-  if (spd) spd.textContent = speed.toFixed(2) + ' km/h';
-  if (zoom) zoom.textContent = map.getZoom();
-});
-
-// Geolocation-Panel schließen (Schließen-Button)
-document.getElementById('geolocation-close')?.addEventListener('click', function (e) {
-  e.stopPropagation();
-  const geo = document.getElementById('geolocation');
-  if (geo) geo.style.display = 'none';
-  if (geo) geo.classList.remove('open');
 });
 
