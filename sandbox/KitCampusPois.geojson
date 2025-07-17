@@ -2,7 +2,7 @@
   "type": "FeatureCollection",
   "generator": "overpass-turbo",
   "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL.",
-  "timestamp": "2025-07-16T12:33:58Z",
+  "timestamp": "2025-07-17T13:04:59Z",
   "features": [
     {
       "type": "Feature",
@@ -109953,6 +109953,46 @@
     {
       "type": "Feature",
       "properties": {
+        "@id": "way/1415262708",
+        "access": "yes",
+        "amenity": "toilets",
+        "building": "toilets",
+        "charge": "0.50 EUR",
+        "fee": "yes",
+        "unisex": "yes"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              8.4184374,
+              49.0095575
+            ],
+            [
+              8.4184189,
+              49.0095797
+            ],
+            [
+              8.4183569,
+              49.0095575
+            ],
+            [
+              8.4183754,
+              49.0095353
+            ],
+            [
+              8.4184374,
+              49.0095575
+            ]
+          ]
+        ]
+      },
+      "id": "way/1415262708"
+    },
+    {
+      "type": "Feature",
+      "properties": {
         "@id": "way/146794379",
         "access": "yes",
         "addr:city": "Karlsruhe",
@@ -112176,6 +112216,30 @@
     {
       "type": "Feature",
       "properties": {
+        "@id": "node/955951761",
+        "access": "private",
+        "access:description": "nur mit Parkausweis oder Transportkarte des KIT",
+        "amenity": "parking",
+        "capacity": "0",
+        "capacity:disabled": "1",
+        "fee": "no",
+        "note": "Behindertenparkplatz",
+        "operator": "Karlsruher Institut für Technologie",
+        "park_ride": "no",
+        "parking": "surface"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4119406,
+          49.0099302
+        ]
+      },
+      "id": "node/955951761"
+    },
+    {
+      "type": "Feature",
+      "properties": {
         "@id": "node/976181336",
         "amenity": "bicycle_parking",
         "bicycle_parking": "stands",
@@ -112465,6 +112529,41 @@
     {
       "type": "Feature",
       "properties": {
+        "@id": "node/1681698050",
+        "access": "yes",
+        "addr:city": "Karlsruhe",
+        "addr:country": "DE",
+        "addr:postcode": "76131",
+        "addr:street": "Waldhornstraße",
+        "amenity": "parking",
+        "capacity": "220",
+        "capacity:charging": "3",
+        "capacity:charging:note": "mindestens 3, eventuell auch mehr",
+        "capacity:disabled": "yes",
+        "fee": "yes",
+        "fixme": "wirklich Ein- und Ausfahrt?",
+        "maxheight": "2.2",
+        "maxspeed": "10",
+        "name": "Parkgarage Waldhornstraße",
+        "old_name": "Tiefgarage Universität",
+        "old_operator": "APCOA Autoparking GmbH",
+        "opening_hours": "24/7",
+        "operator": "Parkraumgesellschaft Baden-Württemberg mbH",
+        "parking": "underground",
+        "website": "https://www.pbw.de/?cmd=Kurzparker&id_city=7&id_object=26"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4078588,
+          49.0116013
+        ]
+      },
+      "id": "node/1681698050"
+    },
+    {
+      "type": "Feature",
+      "properties": {
         "@id": "node/1805145468",
         "bench": "no",
         "bin": "yes",
@@ -112484,6 +112583,39 @@
         ]
       },
       "id": "node/1805145468"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/1811526408",
+        "access": "yes",
+        "addr:city": "Karlsruhe",
+        "addr:country": "DE",
+        "addr:housenumber": "5",
+        "addr:postcode": "76133",
+        "addr:street": "Kreuzstraße",
+        "amenity": "parking",
+        "capacity": "48",
+        "capacity:disabled": "no",
+        "capacity:women": "0",
+        "fee": "yes",
+        "maxheight": "2.2",
+        "name": "Kreuzstraße (C&A)",
+        "opening_hours": "Mo-Sa 08:00-21:00; Th 08:00-21:45",
+        "operator": "Parkwache Fuchs",
+        "parking": "multi-storey",
+        "payment:karlsruher": "yes",
+        "phone": "+49 721 3843824",
+        "wheelchair": "no"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4053733,
+          49.0099415
+        ]
+      },
+      "id": "node/1811526408"
     },
     {
       "type": "Feature",
@@ -114598,6 +114730,22 @@
     {
       "type": "Feature",
       "properties": {
+        "@id": "node/6101427991",
+        "name": "Bernhardusplatz",
+        "place": "square"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4183715,
+          49.0090834
+        ]
+      },
+      "id": "node/6101427991"
+    },
+    {
+      "type": "Feature",
+      "properties": {
         "@id": "node/6126664123",
         "bus": "no",
         "check_date": "2024-04-14",
@@ -114892,6 +115040,22 @@
         ]
       },
       "id": "node/8939406689"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "@id": "node/8944892841",
+        "name": "Paulckeplatz",
+        "place": "square"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.4147508,
+          49.0109509
+        ]
+      },
+      "id": "node/8944892841"
     },
     {
       "type": "Feature",

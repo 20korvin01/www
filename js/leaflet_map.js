@@ -239,7 +239,7 @@ L.geoJSON(campusPolygon, {
 
 
 // GeoServer Abfrage ##########################################################################################################################
-const queryURL = "https://mobilegisserver.mywire.org:8443/geoserver/mobilegis/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=mobilegis%3Agroup3campuslayer&outputFormat=application%2Fjson";
+const queryURL = "https://mobilegisserver.mywire.org:8443/geoserver/mobilegis/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=mobilegis%3Agroup3kit_campus_pois&outputFormat=application%2Fjson";
 
 // Hilfsfunktion: MultiPoints in einzelne Points aufsplitten
 function flattenMultiPoints(geojson) {
