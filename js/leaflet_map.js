@@ -60,7 +60,7 @@ const baseMaps = {
 const map = L.map('map', {
   center: [49.01348979913584, 8.416214959608762],
   zoom: 16,
-  layers: [Thunderforest_Pioneer], // Standardlayer
+  layers: [cartoLight], // Standardlayer
   fullscreenControl: true,
 });
 // Overlay-Layer-Objekt global anlegen
