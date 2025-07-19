@@ -33,7 +33,7 @@
 #weather-badge {
   position: absolute;
   top: -10px;
-  left: 20px;
+  right: 20px;
   min-width: 15px;
   min-height: 15px;
   padding: 0 6px;
