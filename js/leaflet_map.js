@@ -22,65 +22,25 @@ legendToggle?.addEventListener('click', () => {
 
 
 // Hintergrundkarten #########################################################################################################################
-const osm = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-  attribution: '© OpenStreetMap contributors',
-  maxZoom: 19
-});
-
 const cartoLight = L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
   attribution: '© OpenStreetMap, © CartoDB',
   maxZoom: 19,
 });
 
-const cartoDark = L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
-  attribution: '© OpenStreetMap, © CartoDB',
-  maxZoom: 19,
-});
-
-const Thunderforest_Pioneer = L.tileLayer('https://{s}.tile.thunderforest.com/pioneer/{z}/{x}/{y}{r}.png?apikey=9169d91a96a64cd7892be660840f312e', {
-  attribution: '&copy; <a href="http://www.thunderforest.com/">Thunderforest</a>, &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-  maxZoom: 22
-});
-
-const Thunderforest_Landscape = L.tileLayer('https://{s}.tile.thunderforest.com/landscape/{z}/{x}/{y}{r}.png?apikey=9169d91a96a64cd7892be660840f312e', {
-  attribution: '&copy; <a href="http://www.thunderforest.com/">Thunderforest</a>, &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-  maxZoom: 22
-});
-// Basemaps
-const baseMaps = {
-  "Thunderforest Pioneer": Thunderforest_Pioneer,
-  "Thunderforest Landscape": Thunderforest_Landscape,
-  "Carto Light": cartoLight,
-  "Carto Dark": cartoDark,
-  "OpenStreetMap": osm
-};
-
 // Leaflet-Map initialisieren ######################################################################
 // Map initialisieren mit Standardlayer
 const map = L.map('map', {
   center: [49.01348979913584, 8.416214959608762],
-  zoom: 16,
+  zoom: 15,
   layers: [cartoLight], // Standardlayer
   fullscreenControl: true,
 });
 // Overlay-Layer-Objekt global anlegen
 window.overlayMaps = {};
-// Layer-Control direkt initialisieren (Panel ist sofort sichtbar)
-window.layerControl = L.control.layers(baseMaps, window.overlayMaps, { position: 'topright', collapsed: true }).addTo(map);
 // Maßstab
 L.control.scale({ metric: true, imperial: false }).addTo(map);
 
 // Standortgeschichten #################################################################################
-// Geocoder (Suche)
-L.Control.geocoder({
-  defaultMarkGeocode: false,
-  placeholder: 'Search'
-})
-  .on('markgeocode', function (e) {
-    map.setView(e.geocode.center, 16);
-    L.marker(e.geocode.center).addTo(map);
-  })
-  .addTo(map);
 // Geolocation (User-Position) - initialisiert über location_info.js
 const locationResult = initializeGeolocation(map);
 const lc = locationResult.lc;
@@ -259,9 +219,32 @@ fetchWFS(queryURL, function (osmData) {
   // Falls WFS MultiPoints liefert, in Points umwandeln
   const geojson = flattenMultiPoints(osmData);
 
-  // Cluster-Gruppe für Marker
+  // Cluster-Gruppe für Marker mit benutzerdefinierten Farben (dezent und kompakt)
   const markers = L.markerClusterGroup({
-    disableClusteringAtZoom: 19
+    disableClusteringAtZoom: 19,
+    iconCreateFunction: function(cluster) {
+      const childCount = cluster.getChildCount();
+      let c = ' marker-cluster-';
+      let size = 28; // Kleinere Standard-Größe
+      
+      // Kompaktere Größen basierend auf der Anzahl der Marker
+      if (childCount < 10) {
+        c += 'small';
+        size = 28;
+      } else if (childCount < 100) {
+        c += 'medium';
+        size = 34;
+      } else {
+        c += 'large';
+        size = 40;
+      }
+
+      return new L.DivIcon({
+        html: '<div><span>' + childCount + '</span></div>',
+        className: 'marker-cluster' + c,
+        iconSize: new L.Point(size, size)
+      });
+    }
   });
 
   // Separate Layer-Gruppen für jede POI-Kategorie
@@ -537,7 +520,6 @@ fetchWFS(queryURL, function (osmData) {
 
   // Overlay-Layer für Layer-Control registrieren
   window.overlayMaps["POIs"] = markers;
-  window.layerControl.addOverlay(markers, "POIs");
 
   // Add cluster group to map
   map.addLayer(markers);
@@ -600,7 +582,7 @@ document.addEventListener('click', function (e) {
 // Karten-Buttons: Zentrum & Geolocation Info ##################################################
 document.getElementById('center-btn')?.addEventListener('click', function (e) {
   e.stopPropagation();
-  map.setView([49.01348979913584, 8.416214959608762], 16);
+  map.setView([49.01348979913584, 8.416214959608762], 15);
 });
 
 document.getElementById('geolocation-toggle')?.addEventListener('click', function () {
